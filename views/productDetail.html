@@ -12,18 +12,18 @@
     </header>
 
     <main>
-        <section>
-            <div>
-                <h1>PRODUCTO</h1>
-                <h2>(Home> Categoria> NombreDeLaCategoria> NombreDelProducto</h2>
-            </div>
-            <div><!-- exividor de imagenes -->
+        <div class="pageName">
+            <h2 class="title">PRODUCTO</h2>
+            <h4 class="subtitle">(Home> Categoria> NombreDeLaCategoria> NombreDelProducto</h4>
+        </div>
+        <div class="imageDetail">
+        <!-- exividor de imagenes -->
     
-                <div><!-- imagen principal 
+                <div class="imageBig"><!-- imagen principal 
                     <img width="600" height="900" src="https://playboyar.com/wp-content/uploads/2022/01/REMERA-LETRAS-3.jpg" class="attachment-shop_single size-shop_single wp-post-image" alt="REMERA LETRAS 1" loading="lazy" title="REMERA LETRAS 1" srcset="" sizes="(max-width: 600px) 100vw, 600px">
                 -->
                 </div>
-                <div><!-- carrucel de imagenes 
+                <div class="carrousel"><!-- carrucel de imagenes 
                     <div class="images">
     
                         <div class="thumbnails columns-3">
@@ -36,37 +36,27 @@
                     -->
                 </div>
     
-                <div>
+                <div class="colors">
                     <label>Color:</label>
-                    <select name="colorDeProducto">
-                        <option value="rojo">Rojo</option>
-                        <option value="azul">Azul</option>
-                        <option value="blanco">Blanco</option>
+                    <select name="productColor">
+                        <option value="red">Rojo</option>
+                        <option value="blue">Azul</option>
+                        <option value="white">Blanco</option>
                     </select>
                 </div>
-            </div>
-        </section>
-        <section><!-- caracteristicas del producto -->
+        </div>
+        <div class="characteristicsDetail"><!-- caracteristicas del producto -->
             <div>
-                <h2>NombreDelProducto</h2>
-                <h3>Precio</h3>
-            </div>
-            <div>
-                <h2>Descripcion</h2>
-                <p>Texto de descripcion</p>
+                <h2 class="productNameDetail">NombreDelProducto</h2>
+                <h3 class="priceDetail">Precio</h3>
             </div>
             <div>
-                <h2>caracteristicas</h2>
-                <div><!-- uno de estos por cada caracterisitca que se especifique -->
-                    <h3>Titulo de Caracteristica1</h3>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-                <div><!-- uno de estos por cada caracterisitca que se especifique -->
-                    <h3>Titulo de Caracteristica2</h3>
+                <h2 class="itemDetail">Descripcion</h2>
+                <p class="descriptionDetail">Texto de descripcion</p>
+            </div>
+            <div>
+                <h2 class="itemDetail">Caracteristicas</h2>
+                <div class="descriptionDetail"><!-- uno de estos por cada caracterisitca que se especifique -->
                     <ul>
                         <li></li>
                         <li></li>
@@ -75,15 +65,15 @@
                 </div>
             </div>
             <div>
-                <h2>Dimensionamiento</h2>
-                <p>Texto de dimensionamienton</p>
+                <h2 class="itemDetail">Dimensionamiento</h2>
+                <p class="descriptionDetail">Texto de dimensionamienton</p>
                 <div>
-                    <h3>link para acceder a la </h3><a href="http://www.TABLA DE TALLES.com">Tabla de talles para el producto</a>
+                    <h3 class="descriptionDetail">link para acceder a la </h3><a href="http://www.TABLA DE TALLES.com">Tabla de talles para el producto</a>
                 </div>
             </div>
             <div><!-- cantidad de talles -->
                 <form>
-                    <label>Seleccione el talle del producto</label>
+                    <label for="talleSelect">Seleccione el talle del producto</label>
                     
                         <input name="talleSelect" type="radio" value="XXS">XXS
                         <input name="talleSelect" type="radio" value="XS">XS
@@ -97,15 +87,15 @@
                         <input name="talleSelect" type="radio" value="5XL">5XL
                         <input name="talleSelect" type="radio" value="6XL">6XL
                     
-                    <div>
+                    <div class="quantity">
                         <button data-decrease-quantity="">−</button>
                         <input data-quantity-input="" aria-label="Quantity" type="number" min="1" size="4" pattern="[0-9]*" name="quantity" value="1">
                         <button  data-increase-quantity="">+</button>
                     </div>
-                    <button type="submit" value="addToShop">Agregar al carrito -> $xxx,xx</button>
+                    <button class="addToCart" type="submit" value="addToShop">Agregar al carrito -> $xxx,xx</button>
                 </form>
             </div>
-        </section>
+        </div>
     </main>
 
     <footer>
