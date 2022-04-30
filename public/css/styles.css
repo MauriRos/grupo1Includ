@@ -1,5 +1,71 @@
 /*---ROSTI hasta linea 100 ---*/
 
+ Paleta de colores{
+color:  #F4FAFD;
+color: #4893AA;
+color: #7A31DD;
+color: #210E30;
+color: #0E0515;
+color: #0F0417;
+color: #06000A;
+color: #040006 ;
+ }
+
+/* header */
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #040006;
+    color:  #F4FAFD;
+}
+.logoHeader{
+    display: inline-block;
+}
+.cart{
+    color: #4893AA;
+    display: inline-block;
+}
+.burgerMenu{
+    color: #7A31DD;
+    display: inline-block;
+}
+.site, .login{
+    display: none;
+}
+.bannerimg{
+    width: 100%;
+}
+
+body{
+    background-color:#F4FAFD;
+    font-family: 'M PLUS Rounded 1c', 'Rajdhani';
+    font-size: 24px;
+
+}
+.logoHeader{
+    width: 100px;
+}
+
+/* CARD */
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.description{
+    border: solid black;
+    margin: 0px;
+}
+.image{
+    width: 100%;
+}
+
 
 
 
@@ -99,6 +165,8 @@
 
 
 /*---JUANCHO hasta linea 200 ---*/
+
+
 /* Iconos */
 /* Carrito */
 /* <i class="fa-solid fa-cart-shopping"></i> */ 
