@@ -36,13 +36,17 @@ header{
     display: none;
 }
 .bannerimg{
+    display:none;
     width: 100%;
 }
 
 body{
-    background-color:#F4FAFD;
+    
+    background-color: #F4FAFD;
+    color:#210E30;
     font-family: 'M PLUS Rounded 1c', 'Rajdhani';
-    font-size: 24px;
+    font-size: 20px;
+    text-align: center;
 
 }
 .logoHeader{
@@ -50,20 +54,27 @@ body{
 }
 
 /* CARD */
-
+.tarjeta{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
 .card{
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex-wrap: nowrap;
+    width: 75%;
+    align-items: center;
 }
 
 .description{
-    border: solid black;
     margin: 0px;
 }
 .image{
     width: 100%;
+    margin: 5px;
 }
 
 
