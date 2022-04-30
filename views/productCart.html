@@ -11,8 +11,11 @@
         <h1>PRODUCTO</h1>
         <h2>(Home> Categoria> NombreDeLaCategoria> NombreDelProducto</h2>
     </div>
+    <div>  
+        <a href="http://www.VOLVER AL HOME.com">Seguir comprando</a>
+    </div>
     <section><!-- Productos seleccionados -->
-        <div>
+        <div><!-- uno de estos para cada producto seleccionado -->
             <img class="" src="./images/foto del producto" alt="Imagen del Producto"><!-- imagen del producto -->
             <div><!-- caracteristicas del producto seleccionado -->
                 <h2>Nombre del Producto:</h2>
@@ -32,10 +35,36 @@
         </div>
     </section>
     <section><!-- Opciones de compra -->
-
+        
+        <div>
+            <h2>Código del cupón</h2>
+            
+            <button type="submit" value="addCupon">Aplicar CUPON</button>
+        </div>
+        <div>
+            <h2>Estimar envio:</h2>
+            <h3>Pais</h3>
+            <select name="selectCountry">
+                <option value="Country1">Country1</option>
+                <option value="Country2">Country2</option>
+                <option value="Country3">Country3</option>
+            </select>
+            <h3>Provincia</h3>
+            <select name="selectState">
+                <option value="State1">State1</option>
+                <option value="State2">State2</option>
+                <option value="State3">State3</option>
+            </select>
+            <h3>Código postal:</h3>
+            <input type="number" name="postalCode" playholder="3000">
+        </div>
+        <div>
+            <button type="submit" value="addCupon">Obtener cotización</button>
+        </div>
     </section>
-    <section><!-- Recomendaciones de compra -->
-
+    <section><!-- Recomendaciones de compra NO APLICA EN MOVILE FIRST-->
+        <h2>Recomendaciones de compra:</h2>
+        imgaenes
     </section>
 </body>
 </html>
