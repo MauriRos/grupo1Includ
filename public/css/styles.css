@@ -300,3 +300,23 @@ body{
 /*---PINI hasta linea 300 ---*/
 
 
+.imageBig img{
+    width: 300px;
+}
+.carrousel{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+.carrousel img{
+    width: 80px;
+    margin: 2px;
+}
+
+.characteristicsDetail{
+    text-align: left;
+    margin: 5px;
+}
