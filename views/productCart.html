@@ -37,64 +37,147 @@
     </header>
     <main>
         <div class="pageName">
-            <h2 class="title">PRODUCTO</h2>
+            <h2 class="title">CARRITO DE COMPRA</h2>
             <h4 class="subtitle">(Home> Categoria> NombreDeLaCategoria> NombreDelProducto</h4>
         </div>
-        <div>  
-            <a href="http://www.VOLVER AL HOME.com">Seguir comprando</a>
+        <div class="buttonToHome">  
+            <button><a href="/">Seguir comprando</a></button>
         </div>
         <div class="buy">
             <div class="productosToBuy"><!-- Productos seleccionados -->
-                <div class="productCart"><!-- uno de estos para cada producto seleccionado -->
-                    <img class="" src="./images/foto del producto" alt="Imagen del Producto"><!-- imagen del producto -->
-                    <div><!-- caracteristicas del producto seleccionado -->
-                        <h2>Nombre del Producto:</h2>
-                        <h2>Talle:</h2>
-                        <h2>Color:</h2>
-                        <div><!-- precio -1+ = precio final -->
-                            <h2>$xxx,xx x</h2>
-                            <div>
+                <div class="productCart"><!-- Producto 1 -->
+                    <img class="imageProductCart" src="/images/products/Original Overal - Orange/orange-005.webp" alt="Imagen del Producto"><!-- imagen del producto -->
+                    <div class="descriptionProductCart"><!-- caracteristicas del producto seleccionado -->
+                        <h2 class="nameProductCart">Original Overal</h2>
+                        <h4>Talle: M</h4>
+                        <h4>Color: Orange</h4>
+                        <div class="priceStetic"><!-- precio -1+ = precio final -->
+                            <h2 class="priceCart">$8500,00 x</h2>
+                            <div class="quantity">
                                 <button data-decrease-quantity="">−</button>
                                 <input data-quantity-input="" aria-label="Quantity" type="number" min="1" size="4" pattern="[0-9]*" name="quantity" value="1">
                                 <button  data-increase-quantity="">+</button>
                             </div>
-                            <h2>= $xxx,xx</h2>
+                            <h2 class="priceCart">= $8500,00</h2>
                         </div>
                     </div>
-                    <i class="--basurero o cruz--"></i><!-- icono de basurero o cruz -->
+                    <i class="iconTrash fa-solid fa-trash-can"></i><!-- icono de basurero o cruz -->
                 </div>
-                <div class="productosToBuy"> aca pongo otro producto</div>
+                
+                <div class="productCart"><!-- Producto 2 -->
+                    <img class="imageProductCart" src="/images/products/Original Overal - Red/red-009.jpeg" alt="Imagen del Producto"><!-- imagen del producto -->
+                    <div class="descriptionProductCart"><!-- caracteristicas del producto seleccionado -->
+                        <h2 class="nameProductCart">Original Overal</h2>
+                        <h4>Talle: XL</h4>
+                        <h4>Color: Red</h4>
+                        <div class="priceStetic"><!-- precio -1+ = precio final -->
+                            <h2 class="priceCart">$8500,00 x</h2>
+                            <div class="quantity">
+                                <button data-decrease-quantity="">−</button>
+                                <input data-quantity-input="" aria-label="Quantity" type="number" min="1" size="4" pattern="[0-9]*" name="quantity" value="1">
+                                <button  data-increase-quantity="">+</button>
+                            </div>
+                            <h2 class="priceCart">= $8500,00</h2>
+                        </div>
+                    </div>
+                    <i class="iconTrash fa-solid fa-trash-can"></i><!-- icono de basurero o cruz -->
+                </div>
+                
+                
+                <div class="productCart"><!-- Producto 3 -->
+                    <img class="imageProductCart" src="/images/products/Original Overal - Pink/pinp-008.jpg" alt="Imagen del Producto"><!-- imagen del producto -->
+                    <div class="descriptionProductCart"><!-- caracteristicas del producto seleccionado -->
+                        <h2 class="nameProductCart">Original Overal</h2>
+                        <h4>Talle: 4XL</h4>
+                        <h4>Color: Pink</h4>
+                        <div class="priceStetic"><!-- precio -1+ = precio final -->
+                            <h2 class="priceCart">$8500,00 x</h2>
+                            <div class="quantity">
+                                <button data-decrease-quantity="">−</button>
+                                <input data-quantity-input="" aria-label="Quantity" type="number" min="1" size="4" pattern="[0-9]*" name="quantity" value="1">
+                                <button  data-increase-quantity="">+</button>
+                            </div>
+                            <h2 class="priceCart">= $8500,00</h2>
+                        </div>
+                    </div>
+                    <i class="iconTrash fa-solid fa-trash-can"></i><!-- icono de basurero o cruz -->
+                </div>
+                
             </div>
+
             <div class="optionsToBuy"><!-- Opciones de compra -->
+                <div class="buttonToHome2">  
+                    <button><a href="/">Seguir comprando</a></button>
+                </div>
                 <div>
                     <h2>Código del cupón</h2>
-                    <button type="submit" value="addCupon">Aplicar CUPON</button>
+                    <div class="insertCode">
+                        <input type="number" name="postalCode" placholder="5555">
+                        <button type="submit" value="addCupon">Aplicar CUPON</button>
+                    </div>
                 </div>
-                <div>
+                <div class="optionsDelivery">
                     <h2>Estimar envio:</h2>
-                    <h3>Pais</h3>
-                    <select name="selectCountry">
-                        <option value="Country1">Country1</option>
-                        <option value="Country2">Country2</option>
-                        <option value="Country3">Country3</option>
-                    </select>
-                    <h3>Provincia</h3>
-                    <select name="selectState">
-                        <option value="State1">State1</option>
-                        <option value="State2">State2</option>
-                        <option value="State3">State3</option>
-                    </select>
-                    <h3>Código postal:</h3>
-                    <input type="number" name="postalCode" playholder="3000">
+                    <div></div>
+                    <div class="serchOptionsDelivery">
+                        <h3>Pais:</h3>
+                        <select name="selectCountry">
+                            <option value="Country1">Country1</option>
+                            <option value="Country2">Country2</option>
+                            <option value="Country3">Country3</option>
+                        </select>
+                    </div>
+                    <div class="serchOptionsDelivery">
+                        <h3>Provincia:</h3>
+                        <select name="selectState">
+                            <option value="State1">State1</option>
+                            <option value="State2">State2</option>
+                            <option value="State3">State3</option>
+                        </select>
+                    </div>
+                    <div class="serchOptionsDelivery">
+                        <h3>Código postal:</h3>
+                        <input class="inputCP" type="number" name="postalCode" placholder="3000">
+                    </div>
                 </div>
-                <div>
-                    <button type="submit" value="addCupon">Obtener cotización</button>
+                <div class="estimateDelivery">
+                    <button type="submit" value="estimateDelivery">Obtener cotización</button>
+                </div>
+                <div class="finalShop">
+                    <h2>TOTAL DE COMPRA</h2>
+                    <div class="priceFinalShop">
+                        <div>
+                            <h3>Subtotal:</h3><h3>$25500.00</h3>
+                        </div>
+                        <div>
+                            <h3>Envio:</h3><h3>$1000.00</h3>
+                        </div>
+                        <div>
+                            <h3>TOTAL:</h3><h3>$26500.00</h3>
+                        </div>
+
+                    </div>
+                    <div class="endShopBox">
+                        <div class="endShopButtons">
+                            <button type="submit" value="updateCart">Actualizar Carrito</button>
+                        </div>
+                        <div class="endShopButtons">
+                            <button type="submit" value="endShop">Finalizar Compra</button>
+                        </div>
+                    </div>
+    
                 </div>
             </div>
         </div>
         <div class="recomendations"><!-- Recomendaciones de compra NO APLICA EN MOVILE FIRST-->
             <h2>Recomendaciones de compra:</h2>
-            imgaenes
+            <div class="carrouselRecomendations">
+                <img src="/images/products/Original Overal - Red/red-003.jpeg" alt="Orogonal Overol - Red">
+                <img src="/images/products/Original Overal - Red/red-004.jpeg" alt="Orogonal Overol - Red">
+                <img src="/images/products/Original Overal - Red/red-005.jpeg" alt="Orogonal Overol - Red">
+                <img src="/images/products/Original Overal - Red/red-006.jpeg" alt="Orogonal Overol - Red">
+                <img src="/images/products/Original Overal - Red/red-007.jpeg" alt="Orogonal Overol - Red">
+            </div>
         </div>
     </main>
     <footer>
