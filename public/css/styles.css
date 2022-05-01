@@ -98,84 +98,6 @@ body{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*---JUANCHO hasta linea 200 ---*/
 
 
@@ -249,89 +171,23 @@ form{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*---PINI hasta linea 300 ---*/
-
+*{
+    margin: 0px;
+    box-sizing: border-box;
+    padding: 0px;
+}
+.subtitle{
+    display: none;
+}
 
 .imageBig img{
     width: 300px;
+    margin-bottom: 10px;
 }
 .carrousel{
-    width: 100%;
+    width: 90%;
+    margin: auto;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -343,7 +199,90 @@ form{
     margin: 2px;
 }
 
+.descriptionDetails{
+    margin: 8px;
+
+}
 .characteristicsDetail{
     text-align: left;
-    margin: 5px;
+    margin-left: 8px;
+}
+.listaDeAlturaModelos{
+    list-style: none;
+}
+.tallesForm label{
+    display: block;
+}
+.contenedorTalles input{
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+.contenedorTalles{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.quantity{
+    margin-top: 20px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+}
+.addToCart{
+    display: block;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    padding: 15px;
+}
+
+
+
+
+
+
+/* ---- MEDIAS QUERIS------*/
+
+@media (min-width: 426px) {
+    .subtitle{
+        display: block;
+        opacity: .5;
+    }
+    .imageDetailANDcharacteristicsDetail{
+        display: flex;
+        flex-wrap: nowrap;
+       
+    }
+    .imageDetail{
+        width: 50%;
+        display: inline;
+    }
+    .carrousel{
+        width: 360px;
+    }
+    .characteristicsDetail{
+        display: inline;
+        width: 50%;
+    }
+
+    .tallesForm label{
+        text-align: center;
+    }
+    .contenedorTalles{
+        width: 425px;
+        margin-bottom: 30px;
+        margin: auto;
+    }
+    .quantity{
+        margin-top: 20px;
+    }
+    .addToCart{
+        margin-top: 30px;
+    }
 }
