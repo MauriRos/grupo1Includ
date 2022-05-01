@@ -16,21 +16,24 @@ color: #040006 ;
 header{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background-color: #040006;
     color:  #F4FAFD;
 }
 .logoHeader{
     display: inline-block;
+    width: 30%;
 }
 .cart{
     color: #4893AA;
     display: inline-block;
+    width: 30%;
 }
 .burgerMenu{
     color: #7A31DD;
     display: inline-block;
+    width: 30%;
 }
 .site, .login{
     display: none;
@@ -49,9 +52,7 @@ body{
     text-align: center;
 
 }
-.logoHeader{
-    width: 100px;
-}
+
 
 /* CARD */
 .tarjeta{
@@ -200,8 +201,34 @@ body{
 /* Manito plata */
 /* <i class="fa-solid fa-hand-holding-dollar"></i> */
 
+.login-register{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-around;
+}
+.login1{
+    width: 280px;
+}
+.register{
+    width: 280px;
+}
+.formulario{
+    display: flex;
+    justify-content: center;
+}
+.inputLogin{
+    text-align: center;
+}
 
-
+input{
+    display: block;
+    text-align: center;
+    justify-content: center;
+}
+form{
+    justify-content: center;
+}
 
 
 
