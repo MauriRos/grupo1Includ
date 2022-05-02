@@ -208,29 +208,62 @@ body{
     align-items: space-around;
 }
 .login1{
-    width: 280px;
+    width: 382px;
+    text-align: center;
 }
 .register{
-    width: 280px;
+    width: 382px;
+    text-align: center;
 }
 .formulario{
     display: flex;
     justify-content: center;
 }
 .inputLogin{
-    text-align: center;
+    text-align: left;
+    padding: 8px;
 }
-
+.format-input{
+    width: 100%;
+    max-width: 370px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 10px;
+    border: white 2px solid;
+    text-align: left;
+}
+.form-format{
+    margin: 5px 0px 5px 0px;
+    display: block;
+    justify-content: left;
+}
+.form-button{
+    background-color: #4893AA;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #ebebeb;
+}
 input{
     display: block;
-    text-align: center;
+    text-align: left;
     justify-content: center;
 }
 form{
-    justify-content: center;
+    text-align: left;
+}
+.emailUpdates{
+    background-color: #7A31DD;
+}
+.emailUpdates label{
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 5%;
 }
 
-
+@media (min-width: 768px){
+    
+}
 
 
 
