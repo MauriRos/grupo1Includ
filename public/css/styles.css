@@ -11,33 +11,7 @@ color: #06000A;
 color: #040006 ;
  }
 
-/* header */
 
-header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #040006;
-    color:  #F4FAFD;
-}
-.logoHeader{
-    display: inline-block;
-    width: 30%;
-}
-.cart{
-    color: #4893AA;
-    display: inline-block;
-    width: 30%;
-}
-.burgerMenu{
-    color: #7A31DD;
-    display: inline-block;
-    width: 30%;
-}
-.site, .login{
-    display: none;
-}
 .bannerimg{
     display:none;
     width: 100%;
@@ -122,7 +96,43 @@ body{
 /* <i class="fa-solid fa-list-timeline"></i> */
 /* Manito plata */
 /* <i class="fa-solid fa-hand-holding-dollar"></i> */
+/* header */
 
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #040006;
+    color:  #F4FAFD;
+}
+.logoHeader{
+    display: inline-block;
+    width: 33%;
+    max-height: fit-content;
+}
+header i{
+    width: 100%;
+}
+.cart{
+    color: #4893AA;
+    display: inline-block;
+    width: 33%;
+}
+.burgerMenu{
+    color: #7A31DD;
+    display: inline-block;
+    width: 33%;
+}
+.site, .login{
+    display: none;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
 .login-register{
     display: flex;
     flex-wrap: wrap;
@@ -184,7 +194,33 @@ form{
 }
 
 @media (min-width: 768px){
-    
+    /* Media queries para el header */
+.burgerMenu{
+    display: none;
+}
+nav{
+    align-items: flex-end;
+}
+.cart{
+    display: none;
+}
+
+.login{
+    display: flex;
+    width: 100%;
+}
+.site{
+    display: flex;
+    flex-grow: 0.2;
+}
+header ul{
+    list-style: none;
+    display: flex;
+    flex-grow: 0.2;
+}
+header nav a{
+    text-decoration-style: none;
+}
 }
 
 
