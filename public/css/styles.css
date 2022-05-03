@@ -265,6 +265,12 @@ header nav li{
 .subtitle{
     display: none;
 }
+/*---home banner ---*/
+.video-banner{
+    width: 100%;
+    min-width: 100%;
+    
+}
 
 /*---PRODUCT DETAIL ---*/
 .imageBig img{
