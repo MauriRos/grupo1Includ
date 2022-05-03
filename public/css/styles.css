@@ -127,9 +127,18 @@ header{
     color:  #F4FAFD;
     border: #4893AA 3px solid;
 }
-.logoHeader{
+.logoHeaderMobile{
     display: inline-block;
     max-width: 220px;
+}
+.logoHeaderDesktop{
+    display:none;
+}
+.title{
+    font-family: 'Rajdhani';
+}
+.subtitle{
+    font-family: 'M PLUS Rounded 1c';
 }
 /* header i{
     font-size: 1.5em;
@@ -215,11 +224,35 @@ form{
     padding-bottom: 5%;
 }
 
+/* FOOTER */
+footer ul {
+    display:none;
+}
+.topFooter{
+    width: 100%;
+    display: flex;
+}
+.logoFooter{
+    width: 100%;
+}
+.pedidos{
+    display: flex;
+    flex-direction: column;
+}
+
 @media (min-width: 768px){
     /* Media queries para el header */
 .burgerMenu{
     display: none;
 }
+.logoHeaderDesktop{
+    display:inline-block;
+    max-width: 220px;
+}
+.logoHeaderMobile{
+    display: none;
+}
+
 nav{
     display:flex;
     justify-content: space-around;
@@ -256,6 +289,11 @@ header i{
 }
 header nav li{
     margin: 0.3em;
+}
+/* FOOTER */
+footer ul {
+    display:flex;
+    flex-direction: column;
 }
 }
 
