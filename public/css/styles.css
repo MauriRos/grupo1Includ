@@ -20,56 +20,63 @@ color: #040006 ;
 .bannerimg{
     display:none;
     width: 100%;
-}
+} 
 
 body{
     
-    background-color: #F4FAFD;
+    background-color:#F4FAFD;
     color:#210E30;
     font-family: 'M PLUS Rounded 1c', 'Rajdhani';
     font-size: 20px;
 }
 
 .category{
+    margin: 25px;
     text-align: center;
 }
 
 main{
-    align-content: center;
+
+    background-color: #F4FAFD;
     margin: auto;
-    width: 90%;
+    width: 100%;
 }
 
-/* CARD */
 
+.tarjeta{
 
- .tarjeta{
+    background-color: #F4FAFD;
     display: flex;
     flex-direction: row;
     justify-content: center;
-} 
-
-.tarjeta{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     flex-wrap: wrap;
+    
 } 
 .card{
-    border: solid 1px #ebebeb;
-    text-align: left;
-    width: 280px;
-    margin: 5px;
+
+    background-color: #F4FAFD;
+    
 }
 
+
 .description{
-    margin: 0px;
+    
+    text-align: center;
 }
 .image{
-    max-width: 300px;
-    width: 100%;
-    margin: auto;
+    
+    max-width: 255px;
+    margin-left: 10px;
+    margin-right: 10px;
+    
 }
+
+.nameProduct{
+
+    font-weight: bolder;
+}
+
+
 
 
 
