@@ -1,6 +1,8 @@
 /*---ROSTI hasta linea 100 ---*/
 *{
+    margin: 0px;
     box-sizing: border-box;
+    padding: 0px;
 }
 
  Paleta de colores{
@@ -26,40 +28,49 @@ body{
     color:#210E30;
     font-family: 'M PLUS Rounded 1c', 'Rajdhani';
     font-size: 20px;
-    text-align: center;
-
 }
 
+.category{
+    text-align: center;
+}
+
+main{
+    align-content: center;
+    margin: auto;
+    width: 90%;
+}
 
 /* CARD */
 
-.paraponerlasdeados{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-}
-/* .tarjeta{
+
+ .tarjeta{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 100%; */
-}
-.card{
+} 
+
+.tarjeta{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     flex-wrap: wrap;
-    width: 50%;
-    align-items: center;
+} 
+.card{
+    border: solid 1px #ebebeb;
+    text-align: left;
+    width: 280px;
+    margin: 5px;
 }
 
 .description{
     margin: 0px;
 }
 .image{
+    max-width: 300px;
     width: 100%;
     margin: auto;
 }
+
 
 
 
