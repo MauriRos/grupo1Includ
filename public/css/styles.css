@@ -1,4 +1,9 @@
 /*---ROSTI hasta linea 100 ---*/
+*{
+    margin: 0px;
+    box-sizing: border-box;
+    padding: 0px;
+}
 
  Paleta de colores{
 color:  #F4FAFD;
@@ -22,35 +27,50 @@ body{
     background-color: #F4FAFD;
     color:#210E30;
     font-family: 'M PLUS Rounded 1c', 'Rajdhani';
-    font-size: 20px;
-    text-align: center;
-
+    /* font-size: 20px; */
 }
 
+.category{
+    text-align: center;
+}
+
+main{
+    align-content: center;
+    margin: auto;
+    width: 90%;
+}
 
 /* CARD */
-.tarjeta{
+
+
+ .tarjeta{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 100%;
-}
-.card{
+} 
+
+.tarjeta{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: nowrap;
-    width: 75%;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+} 
+.card{
+    border: solid 1px #ebebeb;
+    text-align: left;
+    width: 280px;
+    margin: 5px;
 }
 
 .description{
     margin: 0px;
 }
 .image{
+    max-width: 300px;
     width: 100%;
-    margin: 5px;
+    margin: auto;
 }
+
 
 
 
@@ -107,9 +127,18 @@ header{
     color:  #F4FAFD;
     border: #4893AA 3px solid;
 }
-.logoHeader{
+.logoHeaderMobile{
     display: inline-block;
     max-width: 220px;
+}
+.logoHeaderDesktop{
+    display:none;
+}
+.title{
+    font-family: 'Rajdhani';
+}
+.subtitle{
+    font-family: 'M PLUS Rounded 1c';
 }
 /* header i{
     font-size: 1.5em;
@@ -195,11 +224,55 @@ form{
     padding-bottom: 5%;
 }
 
+/* FOOTER */
+footer{
+    width: 100%;
+}
+footer ul {
+    display:none;
+}
+.contactFooter{
+    background-color: #040006;
+    color: #F4FAFD;
+    width: 100%;
+    height: 100%;
+    font-size: 10px;
+    text-align: justify;
+    display:block;
+    align-items: center;
+}
+.topFooter{
+    width: 100%;
+    display: flex;
+}
+.logoFooter{
+    width: 70%;
+    max-height: 200px;
+}
+.pedidos{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+.footerlinks{
+    text-align: center;
+    background-color: #040006;
+    color:#F4FAFD
+}
+
 @media (min-width: 768px){
     /* Media queries para el header */
 .burgerMenu{
     display: none;
 }
+.logoHeaderDesktop{
+    display:inline-block;
+    max-width: 220px;
+}
+.logoHeaderMobile{
+    display: none;
+}
+
 nav{
     display:flex;
     justify-content: space-around;
@@ -236,6 +309,11 @@ header i{
 }
 header nav li{
     margin: 0.3em;
+}
+/* FOOTER */
+footer ul {
+    display:flex;
+    flex-direction: column;
 }
 }
 
