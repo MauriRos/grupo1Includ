@@ -17,11 +17,6 @@ color: #040006 ;
  }
 
 
-.bannerimg{
-    display:none;
-    width: 100%;
-} 
-
 body{
     
     background-color:#F4FAFD;
@@ -292,6 +287,12 @@ header nav li{
 }
 .subtitle{
     display: none;
+}
+/*---home banner ---*/
+.video-banner{
+    width: 100%;
+    min-width: 100%;
+    padding-top: 20px;
 }
 
 /*---PRODUCT DETAIL ---*/
