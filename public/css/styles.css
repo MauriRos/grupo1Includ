@@ -101,34 +101,35 @@ body{
 header{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background-color: #040006;
     color:  #F4FAFD;
+    border: #4893AA 3px solid;
 }
 .logoHeader{
     display: inline-block;
-    width: 33%;
-    max-height: fit-content;
+    max-width: 220px;
 }
-header i{
-    width: 100%;
-}
+/* header i{
+    font-size: 1.5em;
+} */
 .cart{
     color: #4893AA;
     display: inline-block;
-    width: 33%;
+    /* width: 33%; */
 }
 .burgerMenu{
     color: #7A31DD;
     display: inline-block;
-    width: 33%;
+    /* width: 33%; */
 }
 .site, .login{
     display: none;
 }
 nav{
     display: flex;
+    flex-wrap: nowrap;
     justify-content: space-around;
     align-items: center;
     width: 100%;
@@ -161,7 +162,7 @@ nav{
     padding-top: 8px;
     padding-bottom: 8px;
     border-radius: 10px;
-    border: white 2px solid;
+    border: #0F0417 1px solid;
     text-align: left;
 }
 .form-format{
@@ -185,6 +186,7 @@ form{
 }
 .emailUpdates{
     background-color: #7A31DD;
+    margin: 3px 0px 3px 0px;
 }
 .emailUpdates label{
     display: flex;
@@ -199,7 +201,11 @@ form{
     display: none;
 }
 nav{
+    display:flex;
+    justify-content: space-around;
     align-items: flex-end;
+    border: red 2px solid;
+    flex-wrap: nowrap;
 }
 .cart{
     display: none;
@@ -207,19 +213,29 @@ nav{
 
 .login{
     display: flex;
-    width: 100%;
+    justify-content: space-around;
+    /* width: 100%; */
 }
 .site{
     display: flex;
-    flex-grow: 0.2;
+    justify-content: space-around;
+    /* width: 100%; */
 }
 header ul{
     list-style: none;
     display: flex;
-    flex-grow: 0.2;
+    flex-grow: 0.2; 
 }
+
 header nav a{
-    text-decoration-style: none;
+    text-decoration: none;
+    color: #4893AA;
+}
+header i{
+    font-size: 0.8em;
+}
+header nav li{
+    margin: 0.3em;
 }
 }
 
