@@ -47,6 +47,8 @@ main{
     
 } 
 .card{
+
+    position: relative;
     border: solid 2px #4893AA;
     border-radius: 10px;
     position: relative;
@@ -60,6 +62,7 @@ main{
     
     text-align: center;
 }
+
 .image{
     
     position: relative;
@@ -72,7 +75,8 @@ main{
     opacity: 1;
     transition: opacity 600ms;
 }
- .image:hover{
+
+.image:hover{
     opacity: 0;
 } 
 
@@ -83,13 +87,33 @@ main{
     max-width: 255px;
     margin-left: 12px;
     margin-right: 12px; 
-    z-index: 5;
+    
 }
 
 .nameProduct{
 
     font-weight: bolder;
 }
+
+.carrouselinfo{
+    background-color: #F4FAFD;
+    display: flex;
+    justify-content: space-between;
+}
+
+.designerImg{
+    
+    display: block;
+    max-width: 255px;
+    margin-left: 12px;
+    margin-right: 12px; 
+}
+
+designerDescription{
+    display: block;
+}
+
+
 
 
 
