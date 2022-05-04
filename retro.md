@@ -2,7 +2,7 @@ Restrospectiva de los sprints
 
 Sprint 1:
 
-Nos basamos en el Starfish retrospective (retrospectiva de estrella de mar) para analizar como hemos venido trabajando. Tomando las categorias que
+Nos basamos en el Starfish retrospective (retrospectiva de estrella de mar) para analizar como hemos venido trabajando. Tomando las categorias que propone, analizamos el trabajo desarrollado viendo que acciones modificar de manera ágil para los próximos sprints:
 
 - Comenzar a hacer:
     - Calendarizar reuniones (poner día fijo)
