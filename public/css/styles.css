@@ -447,7 +447,7 @@ footer ul {
 .descriptionDetail{
     margin: 8px;
     padding-left: 20px;
-
+    font-size: 14px;
 }
 .characteristicsDetail{
     text-align: left;
@@ -460,17 +460,21 @@ footer ul {
     list-style: none;
     padding-left: 20px;
     margin: 8px;
+    margin-bottom: 15px;
+    font-size: 14px;
 }
 .tallesForm .labelTalles{
     display: block;
     margin: 8px;
     padding-left: 20px;
+    margin-top: 10px;
 }
 .contenedorTalles .inputContenedorTalles{
     margin: 10px;
     padding: 10px;
     font-size: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
+    
 }
 .contenedorTalles{
     display: flex;
@@ -492,10 +496,17 @@ footer ul {
     text-align: center;
     margin: auto;
     margin-top: 20px;
+    margin-bottom: 20px;
     padding: 15px;
+    border-radius: 20px;
+    font-size: 20px;
 }
 
 /*--- PRODUCT CART ---*/
+.mainProductCart, .mainProductDetail{
+    background-color: #0E0515;
+    color:white
+}
 .subtitleCart{
     display: none;
     text-align: center;
@@ -617,7 +628,11 @@ footer ul {
     width: 45%;
     text-align: end;
     margin-bottom: 12px;
-    font-size: 18px;
+    font-size: 18px; 
+}
+.serchOptionsDelivery h2{
+    font-size: 22px;
+    font-weight: bold;
 }
 .serchOptionsDelivery select, .inputCP{
     width: 173px;
@@ -661,6 +676,7 @@ footer ul {
 }
 .iconoRecomendations{
     font-size: 60px;
+    color:#51b8d8
 }
 .buttonCart, .inputContenedorTalles, .addToCart{
     color:#ebebeb;
@@ -668,7 +684,7 @@ footer ul {
     
 }
 .buttonCart:hover, .imageProductCart:hover, .inputContenedorTalles:hover, .addToCart:hover{
-    background-color: #210E30;
+    background-color: #4893AA;
     text-decoration: none;
     
 }
@@ -676,8 +692,9 @@ footer ul {
     padding: 5px;
 }
 .iconTrash:hover{
-    border:solid 1px  #210E30;
+    border:solid 2px  #4893AA;
     border-radius: 50%;
+    color: #4893AA
 }
 
 /* ---- MEDIAS QUERIS------*/
