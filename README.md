@@ -23,3 +23,6 @@ https://drole.com.ar/
 https://eugeniakim.com/
 https://www.boohoo.com/
 https://www.thisisbp.com/
+
+Tablero Kanban de trabajo en plataforma Miro:
+https://miro.com/app/board/uXjVO-fg1d4=/
