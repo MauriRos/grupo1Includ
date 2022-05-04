@@ -19,7 +19,7 @@ color: #040006 ;
 
 body{
     
-    background-color:#F4FAFD;
+    background-color:#ebebeb;
     color:#210E30;
     font-family: 'M PLUS Rounded 1c', 'Rajdhani';
     font-size: 20px;
@@ -32,7 +32,7 @@ body{
 
 main{
 
-    background-color: #F4FAFD;
+    background-color:#4893AA;
     margin: auto;
     width: 100%;
 }
@@ -40,7 +40,6 @@ main{
 
 .tarjeta{
     
-    background-color: #F4FAFD;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -48,7 +47,8 @@ main{
     
 } 
 .card{
-    border: solid 2px red;
+    border: solid 2px #4893AA;
+    border-radius: 10px;
     position: relative;
     background-color: #F4FAFD;
     width: 300px;
@@ -70,6 +70,7 @@ main{
     margin-right: 12px;
     z-index: 1;
     opacity: 1;
+    transition: opacity 600ms;
 }
  .image:hover{
     opacity: 0;
