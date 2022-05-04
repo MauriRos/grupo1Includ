@@ -11,3 +11,15 @@ Soy Ingeniero Químico y Diplomado en Gestión y Control de Políticas Públicas
 Entiendo a la tecnología y a las políticas públicas como herramientas fundamentales para hacer un mundo más accesible, inclusivo y justo para todxs.
 
 Pini Clavero: Tengo 28 años, santafesino y recientemente recibido de la carrera de Ingeniería Química. Mi experiencia laborar es amplia, comenzando por profesor particular, experiencias de emprendedurismo, prácticas en instituto de investigación y en planta industrial, culminando en la actualidad como profesional en un Laboratorio Ambiental.  Disfruto mucho al realizar actividades sociales y creativas, al igual que actividades individuales como leer y meditar. Soy bailarin de los estilos Femme y Heels desde hace 4 años y desde hace un tiempo realizo presentaciones y shows en diversas propuestas culturales de la ciuda a la que pertenesco. Soy militante de la inclusión enfocandome en la comunidad LGBTIQ+ y tambien del ambientalismo. En los tiempos actuales considero a la tecnologia como herramienta fundamental de cambio y transformacion para poder construir un mundo mejor para todas las personas.
+
+Paginas de Referencias:
+https://bigbudpress.com/ 
+https://playboyar.com/
+https://www.peaudeloup.com/
+https://lucyandyak.com/
+https://www.genderfreeworld.com/
+https://www.stuzoclothing.com/
+https://drole.com.ar/ 
+https://eugeniakim.com/
+https://www.boohoo.com/
+https://www.thisisbp.com/
