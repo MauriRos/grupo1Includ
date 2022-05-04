@@ -19,8 +19,8 @@ color: #040006 ;
 
 body{
     
-    background-color:#ebebeb;
-    color:#210E30;
+    background-color:#210E30;
+    color:white;
     font-family: 'M PLUS Rounded 1c', 'Rajdhani';
     font-size: 20px;
 }
@@ -192,52 +192,81 @@ main{
 /* <i class="fa-solid fa-hand-holding-dollar"></i> */
 /* header */
 
-.header{
+.headerPositions{
+    position: fixed;
+}
+.bannerHeader, .video-bannerLogin{
+    display: none;
+}
+.bannerHeaderMovil{
+    width: 100%;
+    min-width: 100%;
+    position: relative;
+}.headerIconMovil{
+    width: 80%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #040006;
-    color:  #F4FAFD;
-    border: #4893AA 3px solid;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    position: relative;
+    top: -80px;
+    left: 35px;   
 }
-.logoHeaderMobile{
-    display: inline-block;
-    max-width: 220px;
+.iconBurguerMenu, .iconCart{
+    font-size: 30px;
+    color:#51b8d8;
 }
-.logoHeaderDesktop{
-    display:none;
+.siteYlogin{
+    display: none;
 }
+.divSite, .divLogin{
+    margin: 15px;
+    font-size: 12px;
+    width: 50%;
+    display: inline;
+}
+.divSite, .divLogin{
+    text-align: center;
+}
+.divSite a, .divLogin a{
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+}
+.divSite li, .divLogin li{
+    list-style: none;
+    text-decoration: none;
+}
+.login{
+    display: flex;
+    justify-content: space-around;
+    /* width: 100%; */
+}
+.site{
+    display: flex;
+    justify-content: space-around;
+    /* width: 100%; */
+}
+.header ul{
+    
+    display: flex;
+    flex-grow: 0.2; 
+}
+
+/* .header nav a{
+    text-decoration: none;
+    color: #4893AA;
+}*/
+
+
+
+
+/* ---- FORMULARIOS ------*/
 .title{
     font-family: 'Rajdhani';
 }
 .subtitle{
     font-family: 'M PLUS Rounded 1c';
-}
-/* header i{
-    font-size: 1.5em;
-} */
-.cart{
-    color: #4893AA;
-    display: inline-block;
-    font-size: 1.3em;
-    /* width: 33%; */
-}
-.burgerMenu{
-    color: #7A31DD;
-    display: inline-block;
-    font-size: 1.3em;
-    /* width: 33%; */
-}
-.site, .login{
-    display: none;
-}
-.nav{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
 }
 .login-register{
     display: flex;
@@ -300,7 +329,11 @@ form{
     padding-bottom: 5%;
 }
 
-/* FOOTER */
+.topFooter{
+    display: none;
+}
+
+/* ---- FOOTER ----- */
 .footer{
     width: 100%;
 }
@@ -341,66 +374,48 @@ form{
     color:#F4FAFD
 }
 
-@media (min-width: 768px){
-    /* Media queries para el header */
-.burgerMenu{
-    display: none;
-}
-.logoHeaderDesktop{
-    display:inline-block;
-    max-width: 220px;
-}
-.logoHeaderMobile{
-    display: none;
-}
-
-.nav{
-    display:flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    border: red 2px solid;
-    flex-wrap: nowrap;
-}
-.cart{
-    display: none;
-}
-
-.login{
-    display: flex;
-    justify-content: space-around;
-    /* width: 100%; */
-}
-.site{
-    display: flex;
-    justify-content: space-around;
-    /* width: 100%; */
-}
-.header ul{
-    list-style: none;
-    display: flex;
-    flex-grow: 0.2; 
-}
-
-.header nav a{
-    text-decoration: none;
-    color: #4893AA;
-}
-.header i{
-    font-size: 0.8em;
-}
-.header nav li{
-    margin: 0.3em;
-}
-/* FOOTER */
-.footer ul {
-    display:flex;
-    flex-direction: column;
-}
-}
 
 
+/* ---- MEDIAS QUERIS------*/
 
-
+@media (min-width: 426px) {
+    .bannerHeader{
+        width: 100%;
+        min-width: 100%;
+        position: fixed;
+        display: block;
+        top: -25px;
+    }
+    .siteYlogin{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 60px;
+    }
+    .login-register{
+        padding-top: 21%;
+    }
+    .bannerHeaderMovil{
+        display: none;
+    }
+    .headerIconMovil{
+        display: none;
+    }
+    .video-bannerLogin{
+        width: 100%;
+        min-width: 100%;
+        display: block;
+    }
+    .topFooter{
+        display: block;
+    }
+    /* ---- FORMULARIOS ------*/
+    .footer ul {
+        display:flex;
+        flex-direction: column;
+    }
+}
 
 
 
