@@ -357,6 +357,7 @@ header nav li{
     padding: 15px;
 }
 
+
 /*--- PRODUCT CART ---*/
 .buttonToHome button{
     padding: 10px;
@@ -497,6 +498,9 @@ header nav li{
 }
 .recomendations{
     display: none;
+}
+.iconoRecomendations{
+    font-size: 40px;
 }
 
 
