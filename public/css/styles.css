@@ -83,6 +83,7 @@ main{
     max-width: 255px;
     margin-left: 12px;
     margin-right: 12px; 
+    z-index: 5;
 }
 
 .nameProduct{
@@ -148,9 +149,18 @@ header{
     color:  #F4FAFD;
     border: #4893AA 3px solid;
 }
-.logoHeader{
+.logoHeaderMobile{
     display: inline-block;
     max-width: 220px;
+}
+.logoHeaderDesktop{
+    display:none;
+}
+.title{
+    font-family: 'Rajdhani';
+}
+.subtitle{
+    font-family: 'M PLUS Rounded 1c';
 }
 /* header i{
     font-size: 1.5em;
@@ -236,11 +246,55 @@ form{
     padding-bottom: 5%;
 }
 
+/* FOOTER */
+footer{
+    width: 100%;
+}
+footer ul {
+    display:none;
+}
+.contactFooter{
+    background-color: #040006;
+    color: #F4FAFD;
+    width: 100%;
+    height: 100%;
+    font-size: 10px;
+    text-align: justify;
+    display:block;
+    align-items: center;
+}
+.topFooter{
+    width: 100%;
+    display: flex;
+}
+.logoFooter{
+    width: 70%;
+    max-height: 200px;
+}
+.pedidos{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+.footerlinks{
+    text-align: center;
+    background-color: #040006;
+    color:#F4FAFD
+}
+
 @media (min-width: 768px){
     /* Media queries para el header */
 .burgerMenu{
     display: none;
 }
+.logoHeaderDesktop{
+    display:inline-block;
+    max-width: 220px;
+}
+.logoHeaderMobile{
+    display: none;
+}
+
 nav{
     display:flex;
     justify-content: space-around;
@@ -278,8 +332,12 @@ header i{
 header nav li{
     margin: 0.3em;
 }
+/* FOOTER */
+footer ul {
+    display:flex;
+    flex-direction: column;
 }
-
+}
 
 
 
@@ -317,6 +375,7 @@ header nav li{
 .imageBig img{
     width: 300px;
     margin-bottom: 10px;
+    justify-content: center;
 }
 .carrousel{
     width: 90%;
@@ -374,6 +433,7 @@ header nav li{
     margin-top: 20px;
     padding: 15px;
 }
+
 
 /*--- PRODUCT CART ---*/
 .buttonToHome button{
@@ -516,15 +576,23 @@ header nav li{
 .recomendations{
     display: none;
 }
+.iconoRecomendations{
+    font-size: 40px;
+}
 
 
 
 /* ---- MEDIAS QUERIS------*/
 
 @media (min-width: 426px) {
-    .subtitle{
+    .pageName .title{
+        text-align: center;
+        
+    }
+    .pageName .subtitle{
         display: block;
         opacity: .5;
+        text-align: center;
     }
     /* - MQ para DETALLE DE PROD - */
     .imageDetailANDcharacteristicsDetail{
