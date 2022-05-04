@@ -385,25 +385,37 @@ footer ul {
     box-sizing: border-box;
     padding: 0px;
 }
-.subtitle{
+.subtitleDetail{
     display: none;
+    text-align: center;
+    font-family: 'Rajdhani';
 }
-/*---home banner ---*/
-.video-banner{
-    width: 100%;
-    min-width: 100%;
+.titleDetail{
+    text-align: center;
+    font-family: 'Rajdhani';
+    font-size: 40px;
     padding-top: 20px;
 }
 
 /*---PRODUCT DETAIL ---*/
-.imageBig .imgImgBig{
-    width: 300px;
+.pageName{
+    margin-bottom: 15px;
+}
+.imageDetail{
     text-align: center;
-    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-top: 20px;
+}
+.imageBig .imagenDetail{
+    width: 300px;
+    margin-bottom: 10px; 
     
 }
+
+
 .carrousel{
     width: 90%;
+    
     margin: auto;
     display: flex;
     justify-content: space-around;
@@ -411,26 +423,50 @@ footer ul {
     flex-wrap: wrap;
 
 }
-.carrousel img{
+.carrousel .imagenDetailCarrusel{
     width: 80px;
     margin: 2px;
+    margin-top: 10px;
+}
+.colors{
+    margin-top: 20px;
+    text-align: center
 }
 
-.descriptionDetails{
+.productNameDetail, .priceDetail{
+    text-align: center;
+    font-family: 'Rajdhani';
+    font-size: 30px;
+    
+}
+.itemDetail{
+    font-family: 'Rajdhani';
+    font-size: 25px;
+    margin-top: 25px;
+}
+.descriptionDetail{
     margin: 8px;
+    padding-left: 20px;
 
 }
 .characteristicsDetail{
     text-align: left;
-    margin-left: 8px;
+    margin-right: 50px;
+}
+.ulCaracteristicas{
+    padding-left: 10px;
 }
 .listaDeAlturaModelos{
     list-style: none;
+    padding-left: 20px;
+    margin: 8px;
 }
-.tallesForm label{
+.tallesForm .labelTalles{
     display: block;
+    margin: 8px;
+    padding-left: 20px;
 }
-.contenedorTalles input{
+.contenedorTalles .inputContenedorTalles{
     margin: 10px;
     padding: 10px;
     font-size: 20px;
@@ -459,8 +495,19 @@ footer ul {
     padding: 15px;
 }
 
-
 /*--- PRODUCT CART ---*/
+.subtitleCart{
+    display: none;
+    text-align: center;
+    font-family: 'Rajdhani';
+}
+.titleCart, .titleRecomendations{
+    text-align: center;
+    font-family: 'Rajdhani';
+    font-size: 40px;
+    padding-top: 20px;
+}
+
 .buttonToHome button{
     padding: 10px;
     margin-bottom: 8px;
@@ -471,7 +518,7 @@ footer ul {
     text-decoration: none;
 }
 .productCart{
-    border: 2px black solid;
+    border: 2px rgba(255, 255, 255, 0.301) solid;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -486,7 +533,8 @@ footer ul {
     height: 200px;
     padding: 15px;
     margin: 20px;
-    border: solid black 1px;
+    border-radius: 15px;
+    background-color: #7931dd70;
 }
 .descriptionProductCart{
     text-align: left;
@@ -523,15 +571,22 @@ footer ul {
 }
 
 .optionsToBuy{
-    border: solid black 2px;
+    border: solid 2px rgba(255, 255, 255, 0.301);
     margin: 8px;
 }
 .optionsToBuy h2{
     font-size: 25px;
     margin-top: 5px;
 }
-.buttonToHome2{
+.optionsToBuy h2{
+    padding-left: 8px;
+    font-family: 'Rajdhani';
+    font-weight: bold;
+}
+.buttonToHome2 a{
     display: none;
+    text-decoration: none;
+    color: #ebebeb;
 }
 .insertCode{
     display: flex;
@@ -552,7 +607,7 @@ footer ul {
     padding: 5px;
 }
 .optionsDelivery{
-    border-top: solid black 2px;
+    border-top: solid rgba(255, 255, 255, 0.301) 2px;
 }
 .serchOptionsDelivery{
     display: flex;
@@ -575,7 +630,7 @@ footer ul {
     font-size: 18px;
 }
 .finalShop{
-    border-top: 2px black solid;
+    border-top: 2px rgba(255, 255, 255, 0.301) solid;
 }
 .priceFinalShop h3{
     display: inline-block;
@@ -601,23 +656,39 @@ footer ul {
 .recomendations{
     display: none;
 }
-.iconoRecomendations{
-    font-size: 40px;
+.bannerCart{
+    margin-top: 25px;
 }
-
-
+.iconoRecomendations{
+    font-size: 60px;
+}
+.buttonCart, .inputContenedorTalles, .addToCart{
+    color:#ebebeb;
+    background-color:#7931dd70;
+    
+}
+.buttonCart:hover, .imageProductCart:hover, .inputContenedorTalles:hover, .addToCart:hover{
+    background-color: #210E30;
+    text-decoration: none;
+    
+}
+.iconTrash{
+    padding: 5px;
+}
+.iconTrash:hover{
+    border:solid 1px  #210E30;
+    border-radius: 50%;
+}
 
 /* ---- MEDIAS QUERIS------*/
 
 @media (min-width: 426px) {
-    .pageName .title{
-        text-align: center;
-        
-    }
-    .pageName .subtitle{
+    .subtitleDetail{
         display: block;
         opacity: .5;
-        text-align: center;
+    }.subtitleCart{
+        display: block;
+        opacity: .5;
     }
     /* - MQ para DETALLE DE PROD - */
     .imageDetailANDcharacteristicsDetail{
@@ -637,7 +708,7 @@ footer ul {
         width: 50%;
     }
 
-    .tallesForm label{
+    .tallesForm .labelTalleslabel{
         text-align: center;
     }
     .contenedorTalles{
@@ -662,9 +733,10 @@ footer ul {
     .buttonToHome button{
         display: none;
     }
-    .buttonToHome2{
+    .buttonToHome2 a{
         display: block;
-        border-bottom: 2px black solid;
+        text-decoration: none;
+        color: #ebebeb;
     }
     .buttonToHome2 button{
         width: 100%;
@@ -738,3 +810,4 @@ footer ul {
     }
     
 }
+

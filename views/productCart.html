@@ -37,8 +37,8 @@
     </header>
     <main>
         <div class="pageName">
-            <h2 class="title">CARRITO DE COMPRA</h2>
-            <h4 class="subtitle">(Home> Categoria> NombreDeLaCategoria> NombreDelProducto</h4>
+            <h2 class="titleCart">CARRITO DE COMPRA</h2>
+            <h4 class="subtitleCart">(Home> Categoria> NombreDeLaCategoria> NombreDelProducto</h4>
         </div>
         <div class="buttonToHome">  
             <button><a href="/">Seguir comprando</a></button>
@@ -107,13 +107,13 @@
 
             <div class="optionsToBuy"><!-- Opciones de compra -->
                 <div class="buttonToHome2">  
-                    <button><a href="/">Seguir comprando</a></button>
+                    <button class="buttonCart"><a href="/">Seguir comprando</a></button>
                 </div>
                 <div>
                     <h2>Código del cupón</h2>
                     <div class="insertCode">
                         <input type="number" name="postalCode" placholder="5555">
-                        <button type="submit" value="addCupon">Aplicar CUPON</button>
+                        <button class="buttonCart" type="submit" value="addCupon">Aplicar CUPON</button>
                     </div>
                 </div>
                 <div class="optionsDelivery">
@@ -141,7 +141,7 @@
                     </div>
                 </div>
                 <div class="estimateDelivery">
-                    <button type="submit" value="estimateDelivery">Obtener cotización</button>
+                    <button class="buttonCart" type="submit" value="estimateDelivery">Obtener cotización</button>
                 </div>
                 <div class="finalShop">
                     <h2>TOTAL DE COMPRA</h2>
@@ -159,18 +159,22 @@
                     </div>
                     <div class="endShopBox">
                         <div class="endShopButtons">
-                            <button type="submit" value="updateCart">Actualizar Carrito</button>
+                            <button class="buttonCart" type="submit" value="updateCart">Actualizar Carrito</button>
                         </div>
                         <div class="endShopButtons">
-                            <button type="submit" value="endShop">Finalizar Compra</button>
+                            <button class="buttonCart" type="submit" value="endShop">Finalizar Compra</button>
                         </div>
                     </div>
     
                 </div>
             </div>
         </div>
+        <div class="bannerCart">
+            <video class="video-bannerCart" src="/videos/banner-recomendaciones.mp4" autoplay loop muted>
+            </video>
+        </div>
         <div class="recomendations"><!-- Recomendaciones de compra NO APLICA EN MOVILE FIRST-->
-            <h2>Recomendaciones de compra:</h2>
+            
             <div class="carrouselRecomendations">
                 <i class="iconoRecomendations fa-solid fa-circle-chevron-left"></i>
                 <img src="/images/products/Original Overal - Red/red-003.jpeg" alt="Orogonal Overol - Red">
