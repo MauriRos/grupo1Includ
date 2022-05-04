@@ -32,7 +32,7 @@ body{
 
 main{
 
-    background-color:#4893AA;
+    background-color:#210E30;
     margin: auto;
     width: 100%;
 }
@@ -95,24 +95,52 @@ main{
     font-weight: bolder;
 }
 
-.carrouselinfo{
-    background-color: #F4FAFD;
-    display: flex;
-    justify-content: space-between;
+.video-bannerDesigner{
+    display: none;
 }
 
-.designerImg{
+.carruselinfo{
     
-    display: block;
-    max-width: 255px;
-    margin-left: 12px;
-    margin-right: 12px; 
+    display: none;
+}
+.designerImg{
+    width: 50%;
+    border-radius: 30px;
+}
+.designerDescription{
+    padding: 20px;
+    font-size: 15px;
+}
+.designer{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    justify-content: center;
+    color: white;
+    align-items: center;
+    padding-bottom: 30px;
+}
+.icononDesigner{
+    padding: 10px;
+    color:#4893AA;
+    font-size: 50px;
 }
 
-designerDescription{
-    display: block;
+@media (min-width: 426px) {
+    .carruselinfo{
+        margin-top: 20px;
+        background-color: #210E30;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .video-bannerDesigner{
+        display: block;
+        width: 100%;
+        min-width: 100%;
+    }
 }
-
 
 
 
@@ -385,6 +413,12 @@ footer ul {
     box-sizing: border-box;
     padding: 0px;
 }
+.video-banner, .video-bannerCart{
+    width: 100%;
+    min-width: 100%;
+    margin-top: 25px;
+    
+}
 .subtitleDetail{
     display: none;
     text-align: center;
@@ -469,19 +503,26 @@ footer ul {
     padding-left: 20px;
     margin-top: 10px;
 }
-.contenedorTalles .inputContenedorTalles{
-    margin: 10px;
-    padding: 10px;
-    font-size: 20px;
-    border-radius: 10px;
+.inputContenedorTalles{
+    margin: 5px;
+    padding: 8px;
+    font-size: 15px;
+    
     
 }
+
 .contenedorTalles{
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    padding: 5px;
     margin-bottom: 20px;
+    width: 100%;
+    max-width: 315px;
+    border-radius: 10px;
+    margin-left: 10px;
+    font-size: 13px;
 }
 .quantity{
     margin-top: 20px;
@@ -499,7 +540,7 @@ footer ul {
     margin-bottom: 20px;
     padding: 15px;
     border-radius: 20px;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 /*--- PRODUCT CART ---*/
@@ -527,6 +568,7 @@ footer ul {
 }
 .buttonToHome a{
     text-decoration: none;
+    color: #ebebeb;
 }
 .productCart{
     border: 2px rgba(255, 255, 255, 0.301) solid;
@@ -672,7 +714,10 @@ footer ul {
     display: none;
 }
 .bannerCart{
+    width: 100%;
+    min-width: 100%;
     margin-top: 25px;
+    display: none;
 }
 .iconoRecomendations{
     font-size: 60px;
@@ -745,6 +790,7 @@ footer ul {
         display: flex;
         flex-direction: row;
         justify-content: center;
+        flex-wrap: wrap;
         margin-top: 30px;
     }
     .buttonToHome button{
@@ -813,8 +859,17 @@ footer ul {
         display: block;
         margin: 30px;
     }
-    .carrouselRecomendations{
+    .cajaPadreCarrouselRecomendations{
         width: 90%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .carrouselRecomendations{
+        width: 70%;
         margin: auto;
         display: flex;
         justify-content: space-around;
@@ -824,6 +879,9 @@ footer ul {
     .carrouselRecomendations img{
         width: 150px;
         margin: 2px;
+    }
+    .bannerCart{
+        display: block;
     }
     
 }
