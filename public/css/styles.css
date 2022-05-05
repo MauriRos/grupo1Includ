@@ -19,7 +19,7 @@ color: #040006 ;
 
 body{
     
-    background-color:#210E30;
+    background-color:#0F0417;
     color:white;
     font-family: 'M PLUS Rounded 1c', 'Rajdhani';
     font-size: 20px;
@@ -39,7 +39,7 @@ main{
 
 
 .tarjeta{
-    
+    color: white;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -52,7 +52,7 @@ main{
     border: solid 2px #4893AA;
     border-radius: 10px;
     position: relative;
-    background-color: #F4FAFD;
+    background-color: #040006;
     width: 300px;
     margin: 15px;
 }
@@ -444,7 +444,7 @@ form{
 .footerLinks li{
     font-size: 0.7em;
 }
-}
+
 
 
 
@@ -593,7 +593,7 @@ form{
 }
 
 /*--- PRODUCT CART ---*/
-.mainProductCart, .mainProductDetail{
+.mainProductCart, .mainProductDetail, .mainLoginRegister{
     background-color: #0E0515;
     color:white
 }

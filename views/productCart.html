@@ -12,29 +12,56 @@
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body>
-    <header>
-      <nav>
-      <div class="site">
-        <ul>
-          <li><a href="x">Productos</a></li>
-          <li><a href="x">Rebajas</a></li>
-          <li><a href="x">Ofertas</a></li>
-          <li><a href="x">Categorias</a></li>
-        </ul>
-      </div>
-      <div class="burgerMenu"></div>
-      <img class="logoHeader" src="">
-      <div class="car"></div>
-        <div class="login">
-          <ul>
-            <li><a href="x">Buscar</a></li>
-            <li><a href="./loginRegister">Registrarse</a></li>
-            <li><a href="x">Deseos</a></li>
-            <li><a href="./loginRegister">Compras</a></li>
+    <header class="header">
+        <nav class="nav">
+          <ul class="site">
+            <div>
+              <i class="fa-solid fa-shirt"></i>
+              <li><a href="x">Productos</a></li>
+            </div>
+            <div>
+              <i class="fa-solid fa-star"></i>
+              <li><a href="x">Nuevo</a></li>
+            </div>
+            <div>
+              <i class="fa-solid fa-hand-holding-dollar"></i>
+              <li><a href="x">Rebajas</a></li>
+            </div>
+            <div>
+              <i class="fa-solid fa-list"></i>
+              <li><a href="x">Categorias</a></li>
+            </div>
           </ul>
+        <div class="burgerMenu">
+          <i class="fa-solid fa-bars"></i>
         </div>
-      </nav>
-    </header>
+        <img class="logoHeaderMobile" src="/images/logos/logo-text.png">
+        <img class="logoHeaderDesktop" src="/images/logos/logo-text.png">
+        <div class="cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+            <ul class="login">
+              <div>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <li><a href="x">Buscar</a></li>
+              </div>
+              <div>
+                <i class="fa-solid fa-circle-user"></i>
+                <li><a href="./loginRegister">Registrarse</a></li>
+              </div>
+              <div>
+                <i class="fa-solid fa-heart"></i>
+                <li><a href="x">Deseos</a></li>
+              </div>
+              <div>
+              <i class="fa-solid fa-bag-shopping"></i>
+              <li><a href="./loginRegister">Compras</a></li>
+              </div>
+            </ul>
+          
+        </nav>
+      </header>
+      
     <main class="mainProductCart">
         <div class="pageName">
             <h2 class="titleCart">CARRITO DE COMPRA</h2>
@@ -187,8 +214,47 @@
             </div>
         </div>
     </main>
-    <footer>
-
+    <footer class="footer">
+        <div class="topFooter">
+          <div class="bannerLogin">
+            <video class="video-bannerLogin" src="/videos/banner-mail.mp4" autoplay loop muted>
+            </video>
+          </div>
+          <!-- <div class="pedidos"> -->
+          <div class="buttonsFooterLogin">
+            <button class="footer-button" type="submit">Para ventas mayoristas comunicarse por mail</button> 
+            <button class="footer-button" type="submit">Para pedidos personalizados comunicarse por mail</button> 
+          </div><!-- </div> -->
+        </div>
+      <div class="footerLinks">
+        <div class="aboutUs">
+          <h5>Mas sobre INCLUDE</h5>
+          <ul>
+            <li>Histiria</li>
+            <li>Referentes/influencers</li>
+            <li>Marcas y Diseñadores</li>
+            <li>Equipo y Fundadores</li>
+          </ul>
+        </div>
+        <div class="information">
+          <h5>Información</h5>
+          <ul>
+            <li>Preguntas Frecuentes</li>
+            <li>Politicas de Privacidad</li>
+            <li>Politicas de Devolucion</li>
+            <li>Términos y condiciones</li>
+          </ul>
+        </div>
+        <div class="followUs">
+          <h5>Seguinos</h5>
+          <ul>
+            <li>Facebook</li>
+            <li>Twitter</li>
+            <li>Instagram</li>
+            <li>Pinterest</li>
+          </ul>
+        </div>
+      </div>
     </footer>
 </body>
 </html>
