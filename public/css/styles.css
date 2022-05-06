@@ -286,6 +286,15 @@ main{
     padding: 5px 10px;
     border-radius: 5px;
     color: #ebebeb;
+    transition: all 500ms;
+}
+.form-button a{
+    text-decoration: none;
+    color: #ebebeb;
+}
+.form-button:hover{
+    background-color: #7A31DD;
+    color: #4893AA;
 }
 input{
     display: block;
@@ -330,7 +339,6 @@ form{
 }
 .buttonsFooterLogin{
     display: none;
-
 }
 .footer-button{
     position: relative;
@@ -356,6 +364,9 @@ form{
     text-align: center;
     background-color: #040006;
     color:#F4FAFD
+}
+.footer li{
+    display: none;
 }
 
 @media (min-width: 768px){
@@ -441,6 +452,8 @@ form{
 }
 
 
+.footer li{
+    display: block;
 }
 .footer ul{
     display: block;
@@ -455,6 +468,7 @@ form{
     font-size: 0.7em;
 }
 
+}
 
 
 
