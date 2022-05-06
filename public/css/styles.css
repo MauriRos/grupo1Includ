@@ -295,6 +295,16 @@ input{
 form{
     text-align: left;
 }
+.checkRemember{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.remember{
+    display: inline;
+    font-size: 13px;
+    margin: 1.5%;
+}
 .emailUpdates{
     display: none;
 }
