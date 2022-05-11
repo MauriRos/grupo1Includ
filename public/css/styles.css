@@ -468,6 +468,14 @@ form{
     font-size: 0.7em;
 }
 
+/* - MQ para DETALLE DE PROD - */
+.imageDetailANDcharacteristicsDetail{
+    display: flex;
+    flex-wrap: nowrap;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 }
 
 
@@ -550,11 +558,13 @@ form{
     font-family: 'Rajdhani';
     font-size: 25px;
     margin-top: 25px;
+    margin-left: 10px;
 }
 .descriptionDetail{
-    margin: 8px;
+    margin: 10px;
     padding-left: 20px;
     font-size: 14px;
+
 }
 .characteristicsDetail{
     text-align: left;
@@ -825,12 +835,7 @@ form{
         display: block;
         opacity: .5;
     }
-    /* - MQ para DETALLE DE PROD - */
-    .imageDetailANDcharacteristicsDetail{
-        display: flex;
-        flex-wrap: nowrap;
-       
-    }
+    
     .imageDetail{
         width: 50%;
         display: inline;
