@@ -363,7 +363,11 @@ form{
 .footerLinks{
     text-align: center;
     background-color: #040006;
-    color:#F4FAFD
+    color:#F4FAFD;
+    background-image: url('../videos/banner-footer.jpg');
+}
+.aboutUs, .information, .followUs{
+    background-color: #040006;
 }
 .footer li{
     display: none;
