@@ -1,66 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login - Registro</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=M+PLUS+Rounded+1c&family=Rajdhani&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
+  <%- include('partials/head')  %> 
+
   <body>
-    <header class="header">
-      <nav class="nav">
-        <ul class="site">
-          <div>
-            <i class="fa-solid fa-shirt"></i>
-            <li><a href="./productDetail">Productos</a></li>
-          </div>
-          <div>
-            <i class="fa-solid fa-star"></i>
-            <li><a href="x">Nuevo</a></li>
-          </div>
-          <div>
-            <i class="fa-solid fa-hand-holding-dollar"></i>
-            <li><a href="x">Rebajas</a></li>
-          </div>
-          <div>
-            <i class="fa-solid fa-list"></i>
-            <li><a href="x">Categorias</a></li>
-          </div>
-        </ul>
-      <div class="burgerMenu">
-        <i class="fa-solid fa-bars"></i>
-      </div>
-      <img class="logoHeaderMobile" src="/images/logos/logo-text.png">
-      <img class="logoHeaderDesktop" src="/images/logos/logo-text.png">
-      <div class="cart">
-        <i class="fa-solid fa-cart-shopping"></i>
-      </div>
-          <ul class="login">
-            <div>
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <li><a href="x">Buscar</a></li>
-            </div>
-            <div>
-              <i class="fa-solid fa-circle-user"></i>
-              <li><a href="./loginRegister">Registrarse</a></li>
-            </div>
-            <div>
-              <i class="fa-solid fa-heart"></i>
-              <li><a href="x">Deseos</a></li>
-            </div>
-            <div>
-            <i class="fa-solid fa-bag-shopping"></i>
-            <li><a href="./productCart">Compras</a></li>
-            </div>
-          </ul>
-        
-      </nav>
-    </header>
+    <%- include('partials/header') %>
   
       <main class="mainLoginRegister">
       <div class="login-register">
