@@ -584,6 +584,7 @@ form{
     margin-bottom: 15px;
     font-size: 14px;
 }
+
 .tallesForm .labelTalles{
     display: block;
     margin: 8px;
@@ -865,6 +866,25 @@ form{
     }
     .addToCart{
         margin-top: 30px;
+    }
+
+    /* .acordeon{
+        
+    }
+    .acordeon .bloqueAcordeon{
+        
+    }
+    .acordeon .itemDetail{
+       
+    } */
+    .acordeon .descriptionDetail{
+        height: 0px;
+        padding: 0px;
+        overflow: hidden; 
+        transition: height 450ms; 
+    }
+    .acordeon .bloqueAcordeon:hover .descriptionDetail{
+        height: min-content;
     }
 
     /* - MQ para CARRITO DE COMPRA - */
