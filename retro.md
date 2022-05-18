@@ -25,3 +25,30 @@ Nos basamos en el Starfish retrospective (retrospectiva de estrella de mar) para
 - Dejar de hacer:
 
 
+Sprint 2:
+
+- Comenzar a hacer:
+    - Detallar más las tareas en el tablero
+    - Investigar uso GIT
+    - Recursero paginas utiles
+
+- Hacer más:
+    - Consultar más seguido
+    - Reasignar tareas si no salen
+    - Implementar metodologias agiles
+    - Usar más el tablero
+    - Ir al día
+    - Definir mejor criterios de diseño
+
+- Continuar haciendo:
+    - Reuniones presenciales
+    - Analisis en conjunto de codigo
+    - Calendarizar reuniones
+  
+- Hacer menos:
+    - Obstinarse ante un bloqueo. Consultar
+    - Usar  clases comunes en estilos
+ 
+- Dejar de hacer:
+    - Juntarse los domingos
+    - Toquetear sin saber bien GIT
