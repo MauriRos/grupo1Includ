@@ -47,7 +47,7 @@ main{
     
 } 
 .card{
-
+    
     position: relative;
     border: solid 2px #4893AA;
     border-radius: 10px;
@@ -57,9 +57,13 @@ main{
     margin: 15px;
 }
 
+.card a{
+    text-decoration: none;
+    font-family: 'Rajdhani';
+    color: white;
+}
 
 .description{
-    
     text-align: center;
 }
 
@@ -91,7 +95,7 @@ main{
 }
 
 .nameProduct{
-
+    
     font-weight: bolder;
 }
 
@@ -564,6 +568,37 @@ form{
     margin-top: 25px;
     margin-left: 10px;
 }
+.itemDetail i{
+    font-size: 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.neonIcon{
+    margin: 0;
+    
+}
+
+.down1{
+    animation: parpadear 2s infinite alternate-reverse;
+    text-shadow: none
+}
+.down2{
+    animation: parpadear 2s infinite alternate-reverse;
+    text-shadow: none
+}
+.down3{
+    animation: parpadear 2s infinite alternate-reverse;
+    text-shadow: none
+}
+@keyframes parpadear {
+    to {
+        color: white;
+        text-shadow: 0 0 5px #4893AA, 0 0 15px #4893AA,  0 0 25px #4893AA;
+    }
+}
+
+
+
 .descriptionDetail{
     margin: 10px;
     padding-left: 20px;
@@ -660,6 +695,7 @@ form{
 }
 .productCart{
     border: 2px rgba(255, 255, 255, 0.301) solid;
+    box-shadow: 0 0 5px white, inset 0 0 5px white;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -713,6 +749,7 @@ form{
 
 .optionsToBuy{
     border: solid 2px rgba(255, 255, 255, 0.301);
+    box-shadow: 0 0 5px white, inset 0 0 5px white;
     margin: 8px;
 }
 .optionsToBuy h2{
@@ -749,6 +786,7 @@ form{
 }
 .optionsDelivery{
     border-top: solid rgba(255, 255, 255, 0.301) 2px;
+    
 }
 .serchOptionsDelivery{
     display: flex;
@@ -776,6 +814,8 @@ form{
 }
 .finalShop{
     border-top: 2px rgba(255, 255, 255, 0.301) solid;
+    
+    
 }
 .priceFinalShop h3{
     display: inline-block;
