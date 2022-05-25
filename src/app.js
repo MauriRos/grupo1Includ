@@ -22,18 +22,3 @@ app.use('/', mainRouter);
 app.use('/product', productRouter);
 app.use('/user', userRouter); 
 
-//  app.get ('/', (req,res) => {
-//      res.render('home')
-//  });
-
-//  app.get ('/loginRegister', (req,res) => {
-//     res.sendFile(path.join(__dirname, "./views/loginRegister.html"))
-// });
-
-// app.get ('/productCart', (req,res) => {
-//     res.sendFile(path.join(__dirname, "./views/productCart.html"))
-// });
-
-// app.get ('/productDetail', (req,res) => {
-//     res.sendFile(path.join(__dirname, "./views/productDetail.html"))
-// });
