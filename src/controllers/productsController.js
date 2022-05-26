@@ -29,7 +29,7 @@ const productsController = {
     createProduct: (req,res) => {
         let image
 		
-		if(req.files[0] != undefined){
+		if(req.files[0] !== undefined){
 			image = req.files[0].filename;
 		
 		}else{
