@@ -16,7 +16,7 @@ const productsController = {
 		res.render('productDetail', product )
 	},
 	productsList: (req,res) => {
-		res.render('productList')
+		res.render('productsList')
 	},
     createProductView: (req,res) => {
         res.render('createProduct')
@@ -29,12 +29,12 @@ const productsController = {
     createProduct: (req,res) => {
         let image
 		
-		// if(req.files[0] != undefined){
-		// 	image = req.files[0].filename;
+		if(req.files[0] != undefined){
+			image = req.files[0].filename;
 		
-		// }else{
-		// 	image= 'default-image.png'
-		// }
+		}else{
+			image= 'default-image.png'
+		}
 		console.log(req.body);	
 		let newProduct={
 		id: products[products.length - 1].id + 1,
