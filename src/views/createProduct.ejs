@@ -14,21 +14,21 @@
             <h5 class="subtitle">Home > Crear/Editar</h5>
           </div>
           <div class="formulario">
-            <form>
+            <form action="/products/create" method="POST" enctype="multipart/form-data">
               <div class="form-format">
-                <label for="user">Nombre del Producto</label>
-                <input class="format-input" type="text" minlength="6" name="user">
+                <label for="name">Nombre del Producto</label>
+                <input class="format-input" type="text" minlength="6" name="name">
               </div>
               <div class="form-format">
-                <label for="user">Descripción del Producto</label>
-                <input class="format-input" type="text" minlength="6" name="user">
+                <label for="description">Descripción del Producto</label>
+                <input class="format-input" type="text" minlength="6" id="description" name="description">
               </div>
               <div class="form-format">
-                <label>Imagen</label>
-                <input class="format-input" type="file" name="imagenProducto" accept=".jpg, .png">
+                <label for="image">Imagen</label>
+                <input class="format-input" type="file" name="image" accept=".jpg, .png">
               </div>
               <div class="form-format">
-                <label>Categoria:</label>
+                <label for="categoryProduct">Categoria:</label>
                 <select name="categoryProduct">
                     <option value="orange">Top</option>
                     <option value="pink">Pantalon</option>
@@ -36,13 +36,13 @@
                 </select>
               </div>
               <div class="form-format">
-                <label>Colores:</label>                
+                <label for="color">Colores:</label>                
                 <ul>
-                    <li><input type="checkbox" name="colores" value="rojo">rojo</li>
-                    <li><input type="checkbox" name="colores" value="negro">negro</li>
-                    <li><input type="checkbox" name="colores" value="blanco">blanco</li>
-                    <li><input type="checkbox" name="colores" value="verde">verde</li>
-                    <li><input type="checkbox" name="colores" value="naranja">naranja</li>
+                    <li><input type="checkbox" name="color" value="rojo">rojo</li>
+                    <li><input type="checkbox" name="color" value="negro">negro</li>
+                    <li><input type="checkbox" name="color" value="blanco">blanco</li>
+                    <li><input type="checkbox" name="color" value="verde">verde</li>
+                    <li><input type="checkbox" name="color" value="naranja">naranja</li>
                 </ul>
               </div>
               <div class="form-format">
@@ -56,24 +56,24 @@
                 </ul>
               </div>
               <div class="form-format">
-                <label>Talles:</label>                
+                <label for="size">Talles:</label>                
                 <ul>
-                    <li><input type="checkbox" name="colores" value="XXS">XXS</li>
-                    <li><input type="checkbox" name="colores" value="XS">XS</li>
-                    <li><input type="checkbox" name="colores" value="S">S</li>
-                    <li><input type="checkbox" name="colores" value="M">M</li>
-                    <li><input type="checkbox" name="colores" value="L">L</li>
-                    <li><input type="checkbox" name="colores" value="XL">XL</li>
-                    <li><input type="checkbox" name="colores" value="2XL">2XL</li>
-                    <li><input type="checkbox" name="colores" value="3XL">3XL</li>
-                    <li><input type="checkbox" name="colores" value="4XL">4XL</li>
-                    <li><input type="checkbox" name="colores" value="5XL">5XL</li>
-                    <li><input type="checkbox" name="colores" value="6XL">6XL</li>
+                    <li><input type="checkbox" name="size" value="XXS">XXS</li>
+                    <li><input type="checkbox" name="size" value="XS">XS</li>
+                    <li><input type="checkbox" name="size" value="S">S</li>
+                    <li><input type="checkbox" name="size" value="M">M</li>
+                    <li><input type="checkbox" name="size" value="L">L</li>
+                    <li><input type="checkbox" name="size" value="XL">XL</li>
+                    <li><input type="checkbox" name="size" value="2XL">2XL</li>
+                    <li><input type="checkbox" name="size" value="3XL">3XL</li>
+                    <li><input type="checkbox" name="size" value="4XL">4XL</li>
+                    <li><input type="checkbox" name="size" value="5XL">5XL</li>
+                    <li><input type="checkbox" name="size" value="6XL">6XL</li>
                 </ul>
               </div>
               <div class="form-format">
-                <label for="user">Precio</label>
-                <input class="format-input" type="number" minlength="6" name="user">
+                <label for="price">Precio</label>
+                <input class="format-input" name="price" type="number" minlength="6" >
               </div>
               <button type="submit" class="form-button">Crear</button>
             </form>
