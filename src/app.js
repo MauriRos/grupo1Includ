@@ -19,6 +19,6 @@ app.listen(port, () => {
 });
 
 app.use('/', mainRouter);
-app.use('/product', productRouter);
+app.use('/products', productRouter);
 app.use('/user', userRouter); 
 

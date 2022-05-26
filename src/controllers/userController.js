@@ -5,9 +5,7 @@ const userController = {
     loginRegister: (req,res) => {
         res.render('loginRegister')
     },
-    createProduct: (req,res) => {
-            res.render('createProduct')
-    }
+    
 
 }
 
