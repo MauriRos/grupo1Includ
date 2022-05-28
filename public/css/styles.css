@@ -873,6 +873,33 @@ form{
     color: #4893AA
 }
 
+
+/* ----- ESTILOS PARA  CREATEPRODUCT ----- */
+
+
+.mainCreateProduct{
+    padding: 20px 15px;
+}
+
+.editarCP{
+    margin-bottom: 15px;
+}
+.editarCP label{
+    margin-bottom: 5px;
+    font-style: italic;
+    display: block;
+}
+
+.formatCreateProductInput {
+    width: 100%;
+    padding: 8px;
+}
+.checkCP{
+    display: inline;
+}
+
+
+
 /* ---- MEDIAS QUERIS------*/
 
 @media (min-width: 426px) {

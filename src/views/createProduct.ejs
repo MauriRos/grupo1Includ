@@ -5,78 +5,98 @@
   <body>
     <%- include('partials/header') %>
   
-    <main class="mainLoginRegister">
-      <div class="login-register">
-        
-        <section class="register">
+    <main class="mainCreateProduct">
+      
           <div>
-            <h2 class="title">Crear/Editar Productos</h2>
-            <h5 class="subtitle">Home > Crear/Editar</h5>
+            <h2 class="titleCreateProduct">Crear Productos</h2>
+            <h5 class="subtitleCreatProduct">Home > Crear/Editar</h5>
           </div>
-          <div class="formulario">
-            <form action="/products/create" method="POST" enctype="multipart/form-data">
-              <div class="form-format">
-                <label for="name">Nombre del Producto</label>
-                <input class="format-input" type="text" minlength="6" name="name">
+
+          
+
+            <form class='formularioCreateProducts' action="/products/create" method="POST" enctype="multipart/form-data">
+
+              <div class="editarCP">
+                  <label for="name">Nombre del Producto</label>
+                  <input class="formatCreateProductInput" type="text" minlength="6" name="name">
               </div>
-              <div class="form-format">
-                <label for="description">Descripción del Producto</label>
-                <input class="format-input" type="text" minlength="6" id="description" name="description">
+
+              <div class="editarCP">
+                  <label for="description">Descripción del Producto</label>
+                  <input class="formatCreateProductInput" type="text" minlength="6" id="description" name="description">
               </div>
-              <div class="form-format">
-                <label for="image">Imagen</label>
-                <input class="format-input" type="file" name="image" accept=".jpg, .png">
+
+              <div class="editarCP">
+                <label for="catacteristicas">Caracteristicas</label>
+                <input class="formatCreateProductInput" type='textarea' minlength="6" id="ca" name="catacteristicas">
               </div>
-              <div class="form-format">
-                <label for="categoryProduct">Categoria:</label>
-                <select name="categoryProduct">
-                    <option value="orange">Top</option>
-                    <option value="pink">Pantalon</option>
-                    <option value="red">Accesorios</option>
-                </select>
+
+              <div class="editarCP">
+                <label for="dimensionamiento">Dimensionamiento</label>
+                <input class="formatCreateProductInput" type='textarea' minlength="6" id="ca" name="dimensionamiento">
               </div>
-              <div class="form-format">
-                <label for="color">Colores:</label>                
-                <ul>
-                    <li><input type="checkbox" name="color" value="rojo">rojo</li>
-                    <li><input type="checkbox" name="color" value="negro">negro</li>
-                    <li><input type="checkbox" name="color" value="blanco">blanco</li>
-                    <li><input type="checkbox" name="color" value="verde">verde</li>
-                    <li><input type="checkbox" name="color" value="naranja">naranja</li>
-                </ul>
+
+              <div class="editarCP">
+                 <label for="image">Imagen</label>
+                 <p>Imagen Principal</p>
+                 <input class="formatFileCP" type="file" name="image1" accept=".jpg, .png">
+                 <p>Imagenes Generales</p>
+                 <input class="formatFileCP" type="file" name="image2" accept=".jpg, .png">
+                 <input class="formatFileCP" type="file" name="image3" accept=".jpg, .png">
+                 <input class="formatFileCP" type="file" name="image4" accept=".jpg, .png">
+                 <input class="formatFileCP" type="file" name="image5" accept=".jpg, .png">
               </div>
-              <div class="form-format">
-                <label>Talles:</label>                
-                <ul>
-                    <li><input type="checkbox" name="colores" value="rojo">rojo</li>
-                    <li><input type="checkbox" name="colores" value="negro">negro</li>
-                    <li><input type="checkbox" name="colores" value="blanco">blanco</li>
-                    <li><input type="checkbox" name="colores" value="verde">verde</li>
-                    <li><input type="checkbox" name="colores" value="naranja">naranja</li>
-                </ul>
+
+              <div class="editarCP">
+                <label for="categoryProduct">Categoría:</label>
+                    <select name="categoryProduct">
+                        <option value="orange">Top</option>
+                        <option value="pink">Pantalon</option>
+                        <option value="red">Accesorios</option>
+                    </select>
               </div>
-              <div class="form-format">
+
+              <div class="editarCP">
+                <label for="color">Talles:</label>                
+                    <ul>
+                        <li> <input type="checkbox" name="color" value="Rojo" class="checkCP"> Rojo</li>
+                        <li><input type="checkbox" name="color" value="Negro" class="checkCP"> Negro</li>
+                        <li><input type="checkbox" name="color" value="Blanco" class="checkCP"> Blanco</li>
+                        <li><input type="checkbox" name="color" value="Verde" class="checkCP"> Verde</li>
+                        <li><input type="checkbox" name="color" value="Naranja" class="checkCP"> Naranja</li>
+                    </ul> 
+              </div>
+
+              <div class="editarCP">
                 <label for="size">Talles:</label>                
-                <ul>
-                    <li><input type="checkbox" name="size" value="XXS">XXS</li>
-                    <li><input type="checkbox" name="size" value="XS">XS</li>
-                    <li><input type="checkbox" name="size" value="S">S</li>
-                    <li><input type="checkbox" name="size" value="M">M</li>
-                    <li><input type="checkbox" name="size" value="L">L</li>
-                    <li><input type="checkbox" name="size" value="XL">XL</li>
-                    <li><input type="checkbox" name="size" value="2XL">2XL</li>
-                    <li><input type="checkbox" name="size" value="3XL">3XL</li>
-                    <li><input type="checkbox" name="size" value="4XL">4XL</li>
-                    <li><input type="checkbox" name="size" value="5XL">5XL</li>
-                    <li><input type="checkbox" name="size" value="6XL">6XL</li>
-                </ul>
+                  <ul>
+                    <li> <input type="checkbox" name="size" value="XXS" class="checkCP"> XXS</li>
+                    <li><input type="checkbox" name="size" value="XS" class="checkCP"> XS</li>
+                    <li><input type="checkbox" name="size" value="S" class="checkCP"> S</li>
+                    <li><input type="checkbox" name="size" value="M" class="checkCP"> M</li>
+                    <li><input type="checkbox" name="size" value="L" class="checkCP"> L</li>
+                    <li><input type="checkbox" name="size" value="XL" class="checkCP"> XL</li>
+                    <li><input type="checkbox" name="size" value="2XL" class="checkCP"> 2XL</li>
+                    <li><input type="checkbox" name="size" value="3XL" class="checkCP"> 3XL</li>
+                    <li><input type="checkbox" name="size" value="4XL" class="checkCP"> 4XL</li>
+                    <li><input type="checkbox" name="size" value="5XL" class="checkCP"> 5XL</li>
+                    <li><input type="checkbox" name="size" value="6XL"class="checkCP"> 6XL</li>
+                  </ul>
               </div>
-              <div class="form-format">
+
+              <div class="editarCP">
                 <label for="price">Precio</label>
-                <input class="format-input" name="price" type="number" minlength="6" >
+                <input class="formatCreateProductInput" name="price" type="number" minlength="6" >
               </div>
+              <div class="editarCP">
+                <label for="cantidad">Cantidad</label>
+                <input class="formatCreateProductInput" name="cantidad" type="number" minlength="6" >
+              </div>
+
               <button type="submit" class="form-button">Crear</button>
+
             </form>
+
     </main>
   
   <%- include('partials/footer')  %> 
