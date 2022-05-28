@@ -13,10 +13,10 @@ const productsController = {
     detail: (req,res) => {
 		let id =req.params.id;
 		let product = products.find(product => product.id == id)
-		res.render('productDetail', product )
+		res.render('productDetail', {products: products} )
 	},
 	productsList: (req,res) => {
-		res.render('productsList')
+		res.render('productsList', {products: products})
 	},
     createProductView: (req,res) => {
         res.render('createProduct')

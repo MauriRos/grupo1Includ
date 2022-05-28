@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "id": 1,
+    "name": "Arena",
+    "description": "Por m3",
+    "categoryProduct": "red",
+    "color": "negro",
+    "size": "XL",
+    "price": "2500",
+    "image": "default-image.png"
+  },
+  {
+    "id": 2,
+    "name": "Planchuela",
+    "description": "De hierro",
+    "categoryProduct": "orange",
+    "color": "negro",
+    "size": "XXS",
+    "price": "1670",
+    "image": "1653771007163_img_.JPG"
+  },
+  {
+    "id": 3,
+    "name": "Perfil C",
+    "description": "80x20x12mm Galvanizado",
+    "categoryProduct": "pink",
+    "color": "blanco",
+    "size": "XXS",
+    "price": "2200",
+    "image": "1653771100899_img_.JPG"
+  }
+]
