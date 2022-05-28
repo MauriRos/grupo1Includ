@@ -29,13 +29,14 @@ const productsController = {
     createProduct: (req,res) => {
         let image
 		
-		if(req.files[0] !== undefined){
+		if(req.files[0] != undefined){
 			image = req.files[0].filename;
 		
 		}else{
 			image= 'default-image.png'
 		}
-		console.log(req.body);	
+		console.log(req.body);
+		console.log(req.files)	
 		let newProduct={
 		id: products[products.length - 1].id + 1,
 		...req.body,
@@ -47,7 +48,7 @@ const productsController = {
 	},
     edit: (req, res) => {
 		let id= req.params.id;
-		let product = products.find(product => product.id == id);
+		let productToEdit = products.find(product => product.id == id);
 
 		let image
 		
