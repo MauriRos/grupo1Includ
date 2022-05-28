@@ -19,7 +19,7 @@ color: #040006 ;
 
 body{
     
-    background-color:#0F0417;
+    background-color:#0E0515;
     color:white;
     font-family: 'M PLUS Rounded 1c', 'Rajdhani';
     font-size: 20px;
@@ -32,7 +32,7 @@ body{
 
 main{
 
-    background-color:#210E30;
+    background-color:#0E0515;
     margin: auto;
     width: 100%;
 }
@@ -133,7 +133,7 @@ main{
 @media (min-width: 426px) {
     .carruselinfo{
         margin-top: 20px;
-        background-color: #210E30;
+        background-color: #0E0515;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
