@@ -938,15 +938,7 @@ form{
         margin-top: 30px;
     }
 
-    /* .acordeon{
-        
-    }
-    .acordeon .bloqueAcordeon{
-        
-    }
-    .acordeon .itemDetail{
-       
-    } */
+
     .acordeon .descriptionDetail{
         height: 0px;
         padding: 0px;
@@ -1054,6 +1046,25 @@ form{
     }
     .bannerCart{
         display: block;
+    }
+
+    /* MEDIA QUERY CRATEPRODUCT */
+
+    .mainCreateProduct{
+      padding: 0;
+      text-align: center;
+    }
+    
+    .contaicontainCreate {
+        margin:2% 15%;
+    }
+
+    .formatCreateProductInput {
+        width: 60%;
+        padding: 8px;
+    }
+    .editarCP{
+        align-items: center;
     }
     
 }
