@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head')  %> 
+
+  <body>
+    <%- include('partials/header') %>
+
+    <main class="mainProductDetail">
+        <div class="pageName">
+            <h2 class="titleDetail">PRODUCTO</h2>
+            <h4 class="subtitleDetail">(Home > Categoria > Original Overal - Orange)</h4>
+        </div>
+        <div class="imageDetailANDcharacteristicsDetail">
+            <div class="imageDetail">
+                    <div class="imageBig">
+                        <img class="imagenDetail" src="/images/products/<%= product.image %>" alt="<%= product.name %> ">
+                    </div>
+                    <div class="carrousel">
+                        <img class="imagenDetailCarrusel" src="/images/products/<%= product.image1 %>" alt="<%= product.name %> ">
+                        <img class="imagenDetailCarrusel" src="/images/products/<%= product.image2 %>" alt="<%= product.name %> ">
+                        <img class="imagenDetailCarrusel" src="/images/products/<%= product.image3 %>" alt="<%= product.name %> ">
+                        <img class="imagenDetailCarrusel" src="/images/products/<%= product.image4 %>" alt="<%= product.name %> ">
+                    </div>
+        
+                    <div class="colors">
+                        <label class="labelColor">Color:</label>
+                        <p><%= product.color %></p>
+                    </div>
+            </div>
+            <div class="characteristicsDetail"><!-- caracteristicas del producto -->
+                <div>
+                    <h2 class="productNameDetail"><%= product.name %></h2>
+                    <h3 class="priceDetail">$<%= product.price %></h3>
+                </div>
+                <div class="acordeon">
+                    <div class="bloqueAcordeon">
+                        <h2 class="itemDetail"><span class="down1"><i class="neonIcon fa-solid fa-angles-down"></i></span></i>Descripcion</h2>
+                        <p class="descriptionDetail"><%= product.description%></p>
+                    </div>
+                    <div class="bloqueAcordeon">
+                        <h2 class="itemDetail"><span class="down2"><i class="neonIcon fa-solid fa-angles-down"></i></span></i>Caracteristicas</h2>
+                        <div class="descriptionDetail">
+                            <ul class="ulCaracteristicas">
+                                <li><%= product.characteristics %></li>
+                                <!-- <li class="liCaracteristicas">Elavorado con mezclilla no elastica 100% algodon.</li>
+                                <li class="liCaracteristicas">No estirable.</li>
+                                <li class="liCaracteristicas">Pierna recta.</li>
+                                <li class="liCaracteristicas">Grandes bolsillos.</li>
+                                <li class="liCaracteristicas">Cuello curvo.</li>
+                                <li class="liCaracteristicas">Costuras resistentes.</li>
+                                <li class="liCaracteristicas">Botones dorados con logotipo.</li>
+                                <li class="liCaracteristicas">Etiqueta con logotipo.</li> -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bloqueAcordeon">
+                        <h2 class="itemDetail"><span class="down3"><i class="neonIcon fa-solid fa-angles-down"></i></span>Dimensionamiento</h2>
+                        <div class="descriptionDetail">
+                            <p class="descriptionDetail"><%= product.sizing %></p>
+                            <!-- <p class="descriptionDetail">Recomendamos encarecidamente elegir correctamente su talla ya que la tela tiene una naturaleza restrictiva.</p>
+                            <ul class="liDimensionamiento">
+                                <li class="liDimensionamiento">Jerrod mide 1.90cm y usa M</li>
+                                <li class="liDimensionamiento">Mara mide 1.65cm y usa 4XL</li>
+                                <li class="liDimensionamiento">Alex mide 1.73cm y usa S</li>
+                                <li class="liDimensionamiento">Shai mide 1.65cm y usa M</li>
+                            </ul> -->
+                            <div>
+                                <h3 class="descriptionDetail">link para acceder a la <a href="http://www.TABLA DE TALLES.com">Tabla de talles para el producto</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+
+
+
+                <div class="tallesForm">
+                    <form>
+                        <label class="labelTalles" for="talleSelect">Talles disponibles</label>
+                        <div class="contenedorTalles">
+                            <button class="inputContenedorTalles" name="talleSelect" type="submit" value=<%= product.size%>>
+                        </div>
+                        
+                        <div class="quantity">
+                            <button data-decrease-quantity="">−</button>
+                            <input data-quantity-input="" aria-label="Quantity" type="number" min="1" size="4" pattern="[0-9]*" name="quantity" value="1">
+                            <button  data-increase-quantity="">+</button>
+                        </div>
+                        <a href="/<%= product.id %>/edit"><button class="form-button">Editar producto</button></a>
+                        <button class="addToCart" type="submit" value="addToShop">Agregar al carrito -> $<%= product.price%></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        
+
+    </main>
+
+    <%- include('partials/footer')  %> 
+    
+</body>
+</html>
