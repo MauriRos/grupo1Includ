@@ -1052,20 +1052,25 @@ form{
 
     .mainCreateProduct{
       padding: 0;
-      text-align: center;
     }
     
     .contaicontainCreate {
         margin:2% 15%;
+        text-align: center;
+    }
+
+    .editarCP{
+       
+        margin-bottom: 0;
+        
     }
 
     .formatCreateProductInput {
-        width: 60%;
-        padding: 8px;
-    }
-    .editarCP{
         align-items: center;
+        width: 100%;
+        padding: 8px 20%;
     }
+    
     
 }
 
