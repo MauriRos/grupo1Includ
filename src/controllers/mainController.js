@@ -40,8 +40,8 @@ let productsPantalones = [
     {
         nombre: "Biker Negra",
         precio: "$8000",
-        imagen1: "pantalones2.png",
-        imagen2: "pantalones2.1.png"
+        imagen1: "pantalones2.jpg",
+        imagen2: "pantalones2.1.jpg"
     },
     {
         nombre: "Biker Naranja",
@@ -50,7 +50,7 @@ let productsPantalones = [
         imagen2: "pantalones3.1.jpg"
     },
     {
-        nombre: "Biker Verde",
+        nombre: "Short Batik",
         precio: "$9800",
         imagen1: "pantalones4.jpg",
         imagen2: "pantalones4.1.jpg"
