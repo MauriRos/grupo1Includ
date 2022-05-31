@@ -12,8 +12,8 @@ const productsController = {
         },
     detail: (req,res) => {
 		let id =req.params.id;
-		let product = products.find(product => product.id == id)
-		res.render('productDetail', {products: products} )
+		let product = products.find(product => product.id == id);
+		res.render('productDetail2', {products: products, product} )
 	},
 	productsList: (req,res) => {
 		res.render('productsList', {products: products})
@@ -24,7 +24,7 @@ const productsController = {
 	editView: (req,res) => {
 		let id =req.params.id;
 		let product = products.find(product => product.id == id)
-		res.render('edit', product )
+		res.render('edit', {products: products, product} )
 	},
     createProduct: (req,res) => {
         let image

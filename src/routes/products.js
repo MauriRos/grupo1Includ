@@ -15,7 +15,7 @@ const storage = multer.diskStorage({
 const uploadFile = multer({ storage });
 
 router.get("/productDetail", productsController.detail)
-
+router.get("/productsList", productsController.productsList)
 router.get("/productCart", productsController.cart);
 router.get("/create", productsController.createProductView);
 router.get("/:id/edit",productsController.editView);
