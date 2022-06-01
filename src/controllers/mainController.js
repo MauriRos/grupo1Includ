@@ -4,7 +4,7 @@ let ejs = require(('ejs'));
 
 let productsTop = [
     {
-        nombre: "Remera Stras M/C",
+        nombre: "Remera Estrass M/C",
         precio: "$4100",
         imagen1: "top1.jpg",
         imagen2: "top1.1.jpg"
@@ -16,7 +16,7 @@ let productsTop = [
         imagen2: "top2.1.jpg"
     },
     {
-        nombre: "Remerón Blanco C/MC",
+        nombre: "Remerón Blanco M/C",
         precio: "$7400",
         imagen1: "top3.jpg",
         imagen2: "top3.1.jpg"
