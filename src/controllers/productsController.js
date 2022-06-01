@@ -23,6 +23,7 @@ const productsController = {
     },
 	editView: (req,res) => {
 		let id =req.params.id;
+		console.log(req.params);
 		let product = products.find(product => product.id == id)
 		res.render('edit', {products: products, product} )
 	},
