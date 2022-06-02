@@ -28,16 +28,18 @@ const productsController = {
 		res.render('edit', {products: products, product} )
 	},
     createProduct: (req,res) => {
-        let image
+		let image =[];
+        for(let i=0; i<req.files.length; i++){
 		
-		if(req.files[0] != undefined){
-			image = req.files[0].filename;
+		if(req.files[i] != undefined){
+			
+			image[i] = req.files[i].filename;
 		
 		}else{
 			image= 'default-image.png'
 		}
-		console.log(req.body);
-		console.log(req.files)	
+		}
+		console.log(image);
 		let newProduct={
 		id: products[products.length - 1].id + 1,
 		...req.body,
