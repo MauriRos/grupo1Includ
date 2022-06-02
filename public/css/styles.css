@@ -1051,24 +1051,45 @@ form{
     /* MEDIA QUERY CRATEPRODUCT */
 
     .mainCreateProduct{
-      padding: 0;
+        text-align: center;
+        width: 60%;
+        padding: 0;
     }
     
-    .contaicontainCreate {
-        margin:2% 15%;
-        text-align: center;
-    }
 
     .editarCP{
-       
+        width: 100%;
         margin-bottom: 0;
-        
+        text-align: center;
+        margin-top: 15px;
     }
 
     .formatCreateProductInput {
-        align-items: center;
-        width: 100%;
-        padding: 8px 20%;
+        margin:auto;
+        width: 50%;
+          
+    }
+    .formatFileCP{
+        margin-left: 25%;
+        margin-top:  8px;
+    }
+    .selectContainer{
+        margin:auto;
+        width: 50%;
+        display: flex;
+    }
+    .selectContainer .editarCP{
+       
+        justify-content: space-between;
+    }
+
+    .formatCreateProductInputPrice{
+        width: 25%;
+        margin:auto;
+    }
+
+    .form-button{
+        margin:auto;
     }
     
     

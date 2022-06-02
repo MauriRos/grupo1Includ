@@ -7,7 +7,7 @@
   
     <main class="mainCreateProduct">
       
-        <div class="contaicontainCreate">
+        
               <div>
                 <h2 class="titleCreateProduct">Crear Productos</h2>
                 <h5 class="subtitleCreatProduct">Home > Crear</h5>
@@ -22,30 +22,28 @@
 
                   <div class="editarCP">
                       <label for="description">Descripción del Producto</label>
-                      <input class="formatCreateProductInput" type="text" minlength="6" id="description" name="description">
+                      <textarea class="formatCreateProductInput" name="description" id="description" rows="5" cols="50"></textarea>
                   </div>
 
                   <div class="editarCP">
                     <label for="characteristics">Caracteristicas</label>
-                    <input class="formatCreateProductInput" type='textarea' minlength="6" id="ca" name="characteristics">
+                    <textarea class="formatCreateProductInput" name="characteristics" id="characteristics" rows="5" cols="50"></textarea>
+                    
                   </div>
 
                   <div class="editarCP">
                     <label for="sizing">Dimensionamiento</label>
-                    <input class="formatCreateProductInput" type='texta' minlength="6" id="ca" name="sizing">
+                    <textarea class="formatCreateProductInput" name="sizing" id="sizing" rows="5" cols="50"></textarea>
                   </div>
 
                   <div class="editarCP">
-                    <label for="image">Imagen</label>
-                    <p>Imagen Principal</p>
-                    <input class="formatFileCP" type="file" name="image1" accept=".jpg, .png">
-                    <p>Imagenes Generales</p>
-                    <input class="formatFileCP" type="file" name="image2" accept=".jpg, .png">
-                    <input class="formatFileCP" type="file" name="image3" accept=".jpg, .png">
-                    <input class="formatFileCP" type="file" name="image4" accept=".jpg, .png">
-                    <input class="formatFileCP" type="file" name="image5" accept=".jpg, .png">
+                    <label for="image">Imagenes</label>
+                    <input class="formatFileCP" type="file" name="image1" accept=".jpg, .png" multiple>
+                   
                   </div>
+                  
 
+                  <div class ='selectContainer'>
                   <div class="editarCP">
                     <label for="categoryProduct">Categoría:</label>
                         <select name="categoryProduct">
@@ -81,20 +79,20 @@
                             <option value="6XL">6XL</option>
                         </select>
                     </div>
-
+                  </div>
                   <div class="editarCP">
                     <label for="price">Precio</label>
-                    <input class="formatCreateProductInput" name="price" type="number" minlength="6" >
+                    <input class="formatCreateProductInputPrice" name="price" type="number" minlength="6" >
                   </div>
                   <div class="editarCP">
                     <label for="cantidad">Cantidad</label>
-                    <input class="formatCreateProductInput" name="cantidad" type="number" minlength="6" >
+                    <input class="formatCreateProductInputPrice" name="cantidad" type="number" minlength="6" >
                   </div>
 
                   <button type="submit" class="form-button">Crear</button>
             </form>
 
-          </div>
+       
 
     </main>
   
