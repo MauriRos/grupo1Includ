@@ -23,8 +23,7 @@ const productsController = {
     },
 	editView: (req,res) => {
 		let id =req.params.id;
-		console.log(req.params);
-		let product = products.find(product => product.id == id)
+		let product = products.find(product => product.id == id);
 		res.render('edit', {products: products, product} )
 	},
     createProduct: (req,res) => {
@@ -50,29 +49,29 @@ const productsController = {
 		res.redirect('/')
 	},
     edit: (req, res) => {
-		let id= req.params.id;
-		let productToEdit = products.find(product => product.id == id);
-
-		let image
+		let id =req.params.id;
+		let product = products.find(product => product.id == id);
+		console.log(product);
+		let image =[];
 		
 		if(req.files[0] != undefined){
-			image = req.files[0].filename;
+			for(let i=0; i<req.files.length; i++){
+			image[i] = req.files[i].filename;
 		
-		}else{
-			image= productToEdit.image
+		}}
+		else{
+			image= product.image
 		}
-
-
-		productToEdit = {
-			id: productToEdit.id,
-			...req.body,
-			image:image,
-
-		}
-
-		fs.writeFileSync(productsFilePath, JSON.stringify(products));
+		
+		product={
+		id: product.id,
+		...req.body,
+		image: image,
+	};
+		console.log(product);
+		products[id-1]= product;
+		fs.writeFileSync(productsFilePath, JSON.stringify(products))
 		res.redirect('/')
-
 	},
 	delete: (req,res) => {
 		let id= req.params.id;

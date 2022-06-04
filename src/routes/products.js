@@ -24,7 +24,7 @@ router.get("/:id", productsController.detail)
 
 
 router.post("/create", uploadFile.any(), productsController.createProduct);
-router.put("/:id/edit", productsController.edit);
+router.post("/:id/edit", uploadFile.any(), productsController.edit);
 router.delete("/:id", productsController.delete);
 
 
