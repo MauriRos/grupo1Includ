@@ -88,9 +88,10 @@
                             <input data-quantity-input="" aria-label="Quantity" type="number" min="1" size="4" pattern="[0-9]*" name="quantity" value="1">
                             <button  data-increase-quantity="">+</button>
                         </div>
-                        <a href="/products/<%= product.id %>/edit">Editar</a><button class="form-button">Editar producto</button>
-                        <button class="addToCart" type="submit" value="addToShop">Agregar al carrito -> $<%= product.price%></button>
+                        
+                        <button class="addToCart" type="submit" value="addToShop">Agregar al carrito <i class="fa-solid fa-angles-right"></i> $<%= product.price%></button>
                     </form>
+                    <button class="form-button"><a href="/products/<%= product.id %>/edit">Editar Producto</a></button>
                 </div>
             </div>
         </div>
