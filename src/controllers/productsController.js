@@ -38,7 +38,6 @@ const productsController = {
 			image= 'default-image.png'
 		}
 		}
-		console.log(image);
 		let newProduct={
 		id: products[products.length - 1].id + 1,
 		...req.body,
@@ -51,13 +50,11 @@ const productsController = {
     edit: (req, res) => {
 		let id =req.params.id;
 		let product = products.find(product => product.id == id);
-		console.log(product);
 		let image =[];
 		
 		if(req.files[0] != undefined){
 			for(let i=0; i<req.files.length; i++){
 			image[i] = req.files[i].filename;
-		
 		}}
 		else{
 			image= product.image
@@ -73,10 +70,12 @@ const productsController = {
 		res.redirect('/')
 	},
 	delete: (req,res) => {
+		console.log('andando');
 		let id= req.params.id;
+		console.log(id);
 		let product = products.find(product => product.id == id);
-		let products = products.filter(productToDelete => {return productToDelete.id != product.id  });
-		fs.writeFileSync(productsFilePath, JSON.stringify(products));
+		let productsFilter = products.filter(productToDelete => productToDelete.id != product.id);
+		fs.writeFileSync(productsFilePath, JSON.stringify(productsFilter));
 		res.redirect('/');
 	},
     }
