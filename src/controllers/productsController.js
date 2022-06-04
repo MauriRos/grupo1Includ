@@ -23,21 +23,22 @@ const productsController = {
     },
 	editView: (req,res) => {
 		let id =req.params.id;
-		console.log(req.params);
-		let product = products.find(product => product.id == id)
+		let product = products.find(product => product.id == id);
 		res.render('edit', {products: products, product} )
 	},
     createProduct: (req,res) => {
-        let image
+		let image =[];
+        for(let i=0; i<req.files.length; i++){
 		
-		if(req.files[0] != undefined){
-			image = req.files[0].filename;
+		if(req.files[i] != undefined){
+			
+			image[i] = req.files[i].filename;
 		
 		}else{
 			image= 'default-image.png'
 		}
-		console.log(req.body);
-		console.log(req.files)	
+		}
+		console.log(image);
 		let newProduct={
 		id: products[products.length - 1].id + 1,
 		...req.body,
@@ -48,36 +49,35 @@ const productsController = {
 		res.redirect('/')
 	},
     edit: (req, res) => {
-		let id= req.params.id;
-		let productToEdit = products.find(product => product.id == id);
-
-		let image
+		let id =req.params.id;
+		let product = products.find(product => product.id == id);
+		console.log(product);
+		let image =[];
 		
 		if(req.files[0] != undefined){
-			image = req.files[0].filename;
+			for(let i=0; i<req.files.length; i++){
+			image[i] = req.files[i].filename;
 		
-		}else{
-			image= productToEdit.image
+		}}
+		else{
+			image= product.image
 		}
-
-
-		productToEdit = {
-			id: productToEdit.id,
-			...req.body,
-			image:image,
-
-		}
-
-		fs.writeFileSync(productsFilePath, JSON.stringify(products));
+		
+		product={
+		id: product.id,
+		...req.body,
+		image: image,
+	};
+		products[id-1]= product;
+		fs.writeFileSync(productsFilePath, JSON.stringify(products))
 		res.redirect('/')
-
 	},
 	delete: (req,res) => {
 		let id= req.params.id;
 		let product = products.find(product => product.id == id);
 		let products = products.filter(productToDelete => {return productToDelete.id != product.id  });
 		fs.writeFileSync(productsFilePath, JSON.stringify(products));
-		res.redirect('/products');
+		res.redirect('/');
 	},
     }
     

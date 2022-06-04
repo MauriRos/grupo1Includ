@@ -4,6 +4,7 @@
 
   <body>
     <%- include('partials/header') %>
+    <title>Editar Producto</title>
   
     <main class="mainCreateProduct">
       
@@ -13,7 +14,7 @@
                 <h5 class="subtitleCreatProduct">Home > Editar</h5>
               </div>
 
-              <form class='formularioCreateProducts' action="/products/create" method="POST" enctype="multipart/form-data">
+              <form class='formularioCreateProducts' method="POST" action="/products/<%= product.id %>/edit" enctype="multipart/form-data">
 
                   <div class="editarCP">
                       <label for="name">Nombre del Producto</label>
@@ -26,8 +27,8 @@
                   </div>
 
                   <div class="editarCP">
-                    <label for="charateristics">Caracteristicas</label>
-                    <input class="formatCreateProductInput" type='textarea' value="<%=product.characteristics  %>" minlength="6" id="ca" name="charateristics">
+                    <label for="characteristics">Caracteristicas</label>
+                    <input class="formatCreateProductInput" type='text' value="<%=product.characteristics  %>" minlength="6" id="ca" name="charateristics">
                   </div>
 
                   <div class="editarCP">
@@ -38,13 +39,11 @@
                   <div class="editarCP">
                     <label for="image">Imagen</label>
                     <p>Imagen Principal</p>
-                    <img src="/images/products/<%= product.image %> ">
-                    <input class="formatFileCP" type="file" name="image1" accept=".jpg, .png">
-                    <p>Imagenes Generales</p>
-                    <input class="formatFileCP" type="file" name="image2" accept=".jpg, .png">
-                    <input class="formatFileCP" type="file" name="image3" accept=".jpg, .png">
-                    <input class="formatFileCP" type="file" name="image4" accept=".jpg, .png">
-                    <input class="formatFileCP" type="file" name="image5" accept=".jpg, .png">
+                    <% for( let i = 0; i < product.image.length; i++ ) { %>
+                      
+                      <img src="/images/products/<%= product.image[i] %> ">
+                    <% } %>
+                    <input class="formatFileCP" type="file" name="image1" multiple accept=".jpg, .png">
                   </div>
 
                   <div class="editarCP">
@@ -57,8 +56,8 @@
                   </div>
 
                   <div class="editarCP">
-                    <label for="colorProduct">Colores:</label>
-                        <select name="colorProduct">
+                    <label for="color">Colores:</label>
+                        <select name="color">
                             <option value="Rojo">Rojo</option>
                             <option value="Negro">Negro</option>
                             <option value="Blanco">Blanco</option>
@@ -68,8 +67,8 @@
                   </div>
                   
                   <div class="editarCP">
-                    <label for="sizeProduct">Talles:</label>
-                        <select name="sizeProduct">
+                    <label for="size">Talles:</label>
+                        <select name="size">
                             <option value="XXS">XXS</option>
                             <option value="XS">S</option>
                             <option value="S">S</option>
