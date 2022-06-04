@@ -1088,8 +1088,14 @@ form{
         margin:auto;
     }
 
-    .form-button{
-        margin:auto;
+    .buttonCP {
+    
+    background-color: #4893AA;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #ebebeb;
+    transition: all 500ms;
+    
     }
     
     
