@@ -68,7 +68,6 @@ const productsController = {
 		...req.body,
 		image: image,
 	};
-		console.log(product);
 		products[id-1]= product;
 		fs.writeFileSync(productsFilePath, JSON.stringify(products))
 		res.redirect('/')
@@ -78,7 +77,7 @@ const productsController = {
 		let product = products.find(product => product.id == id);
 		let products = products.filter(productToDelete => {return productToDelete.id != product.id  });
 		fs.writeFileSync(productsFilePath, JSON.stringify(products));
-		res.redirect('/products');
+		res.redirect('/');
 	},
     }
     
