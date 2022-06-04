@@ -1,12 +1,1 @@
-[
-  {
-    "id": 1,
-    "name": "Arena",
-    "description": "Por m3",
-    "categoryProduct": "red",
-    "color": "negro",
-    "size": "XL",
-    "price": "2500",
-    "image": "default-image.png"
-  }
-]
+[]

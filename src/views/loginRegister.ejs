@@ -35,10 +35,22 @@
             <h5 class="subtitle">Home > Registrate</h5>
           </div>
           <div class="formulario">
-            <form>
+            <form method="POST" action="/user/register" enctype="multipart/form-data">
               <div class="form-format">
-                <label for="user">¿Como querés que te agendemos?</label>
+                <label for="name">Nombre</label>
+                <input class="format-input" type="text" minlength="6" name="name">
+              </div>
+              <div class="form-format">
+                <label for="apellido">Apellido</label>
+                <input class="format-input" type="text" minlength="6" name="apellido">
+              </div>
+              <div class="form-format">
+                <label for="avatar">¿Cómo querés que te agendemos?</label>
                 <input class="format-input" type="text" minlength="6" name="user">
+              </div>
+              <div class="form-format">
+                <label for="avatar">Avatar</label>
+                <input class="format-input" type="file" name="avatar">
               </div>
               <div class="form-format">
                 <label for="email">Email</label>
@@ -52,7 +64,7 @@
                 <label for="password">Confirmar contraseña</label>
                 <input class="format-input" type="password" minlength="6" name="password">
               </div>
-              <button class="form-button" type="submit"><a href="./">Crear cuenta</a></button>
+              <button class="form-button" type="submit">Crear cuenta</button>
             </form>
           </div>
         </section>

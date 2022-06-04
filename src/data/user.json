@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "id": 1,
+    "nombre": "Juancho",
+    "apellido": "Lopez",
+    "user": "JuanchoCapo",
+    "contraseña": "capojuancho2020",
+    "avatar": "default-avatar.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Maximiliano",
+    "apellido": "Clavero",
+    "user": "Piniss",
+    "password": ["pinicapo1010", "pinicapo1010"],
+    "avatar": "default-avatar.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Mauricio",
+    "apellido": "Rostagno",
+    "user": "Rostyx",
+    "password": ["rostycapo88", "rostycapo88"],
+    "avatar": "default-avatar.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Mauricio",
+    "apellido": "Rostagno",
+    "user": "Rostyx",
+    "password": ["", ""],
+    "avatar": "default-avatar.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Mauricio",
+    "apellido": "Rostagno",
+    "user": "Rostyx",
+    "password": ["", ""],
+    "avatar": "default-avatar.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Mauricio",
+    "apellido": "Rostagno",
+    "user": "Rostyx",
+    "password": ["", ""],
+    "avatar": "1654375100404_avatar_.jpg"
+  }
+]

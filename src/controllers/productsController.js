@@ -38,7 +38,6 @@ const productsController = {
 			image= 'default-image.png'
 		}
 		}
-		console.log(image);
 		let newProduct={
 		id: products[products.length - 1].id + 1,
 		...req.body,
