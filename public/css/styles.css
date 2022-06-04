@@ -55,6 +55,7 @@ main{
     background-color: #040006;
     width: 300px;
     margin: 15px;
+    max-height: 420.2px;
 }
 
 .card a{
@@ -73,11 +74,13 @@ main{
     left: 10px;
     top:10px;;
     max-width: 255px;
+    max-height: 357px;
     margin-left: 12px;
     margin-right: 12px;
     z-index: 1;
     opacity: 1;
     transition: opacity 600ms;
+    
 }
 
 .image:hover{
@@ -89,8 +92,10 @@ main{
     top: 10px;
     left: 10px;
     max-width: 255px;
+    max-height: 357px;
     margin-left: 12px;
     margin-right: 12px; 
+    
     
 }
 
@@ -511,7 +516,7 @@ form{
     margin-top: 25px;
     
 }
-.subtitleDetail{
+.subtitleDetail, .subtitleProductsList{
     display: none;
     text-align: center;
     font-family: 'Rajdhani';
@@ -674,12 +679,12 @@ form{
     background-color: #0E0515;
     color:white
 }
-.subtitleCart{
+.subtitleCart, .subtitleProductsList{
     display: none;
     text-align: center;
     font-family: 'Rajdhani';
 }
-.titleCart, .titleRecomendations{
+.titleCart, .titleRecomendations, .titleProductsList{
     text-align: center;
     font-family: 'Rajdhani';
     font-size: 40px;
@@ -903,10 +908,7 @@ form{
 /* ---- MEDIAS QUERIS------*/
 
 @media (min-width: 426px) {
-    .subtitleDetail{
-        display: block;
-        opacity: .5;
-    }.subtitleCart{
+    .subtitleDetail, .subtitleCart, .subtitleProductsList{
         display: block;
         opacity: .5;
     }
