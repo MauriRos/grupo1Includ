@@ -17,14 +17,14 @@
             <!-- <h1 class="category"> TOP </h1> -->
 
               <div class="tarjeta">  
-                 <%productsTop.forEach(product => { %>
+                <%(products.filter(product => product.categoryProduct == "top")).forEach(product => { %>
 
-                  <article class="card"><a href="/product/productDetail">
-                        <img class="image" src="/images/productHome/<%= product.imagen1 %>" alt="Overal Orange">
-                        <img class="image2" src="/images/productHome/<%= product.imagen2 %>" alt="Overal Orange">
+                  <article class="card"><a href="/products/<%= product.id %> ">
+                        <img class="image" src="/images/products/<%= product.image[0] %>" alt="<%= product.name %>">
+                        <img class="image2" src="/images/products/<%= product.image[1] %>" alt="<%= product.name %>">
                         <div class="description">
-                            <p class="nameProduct"><%= product.nombre %></p>
-                            <p class="price"><%= product.precio %></p>
+                            <p class="nameProduct"><%= product.name %></p>
+                            <p class="price">$<%= product.price %></p>
                         </div>
                     </a></article>
                        
@@ -65,19 +65,19 @@
       <section> 
 <!-- 
         <h1 class="category"> PANTALONES </h1> -->
-              <div class="tarjeta">  
-                  <%productsPantalones.forEach(product => { %>
+        <div class="tarjeta">  
+          <%(products.filter(product => product.categoryProduct == "pantalon")).forEach(product => { %>
 
-                        <article class="card"><a href="/product/productDetail">
-                              <img class="image" src="/images/productHome/<%= product.imagen1 %>" alt="Overal Orange">
-                              <img class="image2" src="/images/productHome/<%= product.imagen2 %>" alt="Overal Orange">
-                              <div class="description">
-                                  <p class="nameProduct"><%= product.nombre %></p>
-                                  <p class="price"><%= product.precio %></p>
-                              </div>
-                          </a></article>
-                             
-                        <% }) %>
+           <article class="card"><a href="/products/<%= product.id %> ">
+                 <img class="image" src="/images/products/<%= product.image[0] %>" alt="<%= product.name %>">
+                 <img class="image2" src="/images/products/<%= product.image[1] %>" alt="<%= product.name %>">
+                 <div class="description">
+                     <p class="nameProduct"><%= product.name %></p>
+                     <p class="price">$<%= product.price %></p>
+                 </div>
+             </a></article>
+                
+           <% }) %>
                   
                   <!-- <a href="/product/productDetail"><article class="card">
                           <img class="image" src="/images/productHome/pantalones1.jpg" alt="Overal Orange" >
@@ -119,19 +119,19 @@
           </video>
         </div>
         <!-- <h1 class="category"> ACCESORIOS </h1> -->
-              <div class="tarjeta"> 
-                  <%productsAccesorios.forEach(product => { %>
+        <div class="tarjeta">  
+          <%(products.filter(product => product.categoryProduct == "accesorio")).forEach(product => { %>
 
-                        <article class="card"><a href="/product/productDetail">
-                              <img class="image" src="/images/productHome/<%= product.imagen1 %>" alt="Overal Orange">
-                              <img class="image2" src="/images/productHome/<%= product.imagen2 %>" alt="Overal Orange">
-                              <div class="description">
-                                  <p class="nameProduct"><%= product.nombre %></p>
-                                  <p class="price"><%= product.precio %></p>
-                              </div>
-                          </a></article>
-                             
-                        <% }) %>
+           <article class="card"><a href="/products/<%= product.id %> ">
+                 <img class="image" src="/images/products/<%= product.image[0] %>" alt="<%= product.name %>">
+                 <img class="image2" src="/images/products/<%= product.image[1] %>" alt="<%= product.name %>">
+                 <div class="description">
+                     <p class="nameProduct"><%= product.name %></p>
+                     <p class="price">$<%= product.price %></p>
+                 </div>
+             </a></article>
+                
+           <% }) %>
 
                   <!-- <a href="/product/productDetail"><article class="card">
                           <img class="image" src="/images/productHome/accesorios1.webp" alt="Overal Orange" >

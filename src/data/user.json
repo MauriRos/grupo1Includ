@@ -1,50 +1,68 @@
 [
   {
     "id": 1,
-    "nombre": "Juancho",
-    "apellido": "Lopez",
-    "user": "JuanchoCapo",
-    "contraseña": "capojuancho2020",
+    "name": "Mauricio",
+    "apellido": "Leguiza",
+    "user": "MLeguiza11",
+    "password": [
+      "mauricioLegui11",
+      "mauricioLegui11"
+    ],
     "avatar": "default-avatar.jpg"
   },
   {
     "id": 2,
-    "name": "Maximiliano",
-    "apellido": "Clavero",
-    "user": "Piniss",
-    "password": ["pinicapo1010", "pinicapo1010"],
-    "avatar": "default-avatar.jpg"
+    "name": "Juanignacio",
+    "apellido": "Ferrari",
+    "user": "@JFerrari12",
+    "password": [
+      " juanFerra12",
+      " juanFerra12"
+    ],
+    "avatar": "1654379420540_avatar_.jpg"
   },
   {
     "id": 3,
-    "name": "Mauricio",
-    "apellido": "Rostagno",
-    "user": "Rostyx",
-    "password": ["rostycapo88", "rostycapo88"],
-    "avatar": "default-avatar.jpg"
+    "name": "Viviana",
+    "apellido": "Grecco",
+    "user": "@VGrecco13",
+    "password": [
+      "vivianaGre13",
+      "vivianaGre13"
+    ],
+    "avatar": "1654379454267_avatar_.jpg"
   },
   {
     "id": 4,
-    "name": "Mauricio",
-    "apellido": "Rostagno",
-    "user": "Rostyx",
-    "password": ["", ""],
-    "avatar": "default-avatar.jpg"
+    "name": "Luisina",
+    "apellido": " Bassi",
+    "user": "@LBassi14",
+    "password": [
+      "luisinaBas14",
+      "luisinaBas14"
+    ],
+    "avatar": "1654379489975_avatar_.jpg"
   },
   {
     "id": 5,
-    "name": "Mauricio",
-    "apellido": "Rostagno",
-    "user": "Rostyx",
-    "password": ["", ""],
-    "avatar": "default-avatar.jpg"
+    "name": "Virginia",
+    "apellido": "Amherdt",
+    "user": "@VAmherdt15",
+    "password": [
+      " virginiaAm15",
+      " virginiaAm15"
+    ],
+    "avatar": "1654379521969_avatar_.jpg"
   },
   {
     "id": 6,
-    "name": "Mauricio",
-    "apellido": "Rostagno",
-    "user": "Rostyx",
-    "password": ["", ""],
-    "avatar": "1654375100404_avatar_.jpg"
+    "name": "Maximiliano",
+    "apellido": "Colombo",
+    "user": "@MColombo16",
+    "password": [
+      "maximilianoColo16",
+      "maximilianoColo16"
+    ],
+    "avatar": "1654379570648_avatar_.jpg"
   }
 ]
