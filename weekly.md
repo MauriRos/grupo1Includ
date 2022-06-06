@@ -17,3 +17,22 @@ Realizamos la Retro.(conclusiones en retro.md)
 Dividimos algunas tareas para el sprint. (grupales e individuales)
 
 
+Reunion de sabado 4/06
+
+Revisamos lo que cada uno iba a hacer durante la jornada del día. (trabajamos sobre el tablero MIRO)
+
+Turno Mañana: (10 am a 13:30 hs)
+    - Ordenar joranada y dividir tareas.  15'
+    - Rutas y Controles:_____ :ID/Edit (PUT)
+                    |________ :ID (DELET)
+    - CSS ____ Lista de Productos.
+        |______ EditProducts.
+
+Turno Tarde (15 hs)
+    -Terminar lo que quede del turno mañana (60')
+    -Rutas y controladores del login Registrer (60')
+    - Cargar Productos
+    - Revision Final.
+    
+FIN: 19hs
+    
