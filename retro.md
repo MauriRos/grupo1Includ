@@ -52,3 +52,31 @@ Sprint 2:
 - Dejar de hacer:
     - Juntarse los domingos
     - Toquetear sin saber bien GIT
+
+Sprint 3:
+
+- Comenzar a hacer:
+    - Detallar más las tareas en el tablero
+    - Investigar uso GIT
+    - Recursero paginas utiles
+    - Llegar con tiempo para hacer una ultima revision con tiempo
+
+- Hacer más:
+    - Consultar más seguido
+    - Reasignar tareas si no salen
+    - Implementar metodologias agiles
+    - Usar más el tablero
+    - Definir criterios comunes
+    - Dividir tareas y trabajar con GIT
+
+- Continuar haciendo:
+    - Reuniones presenciales
+    - Analisis en conjunto de codigo
+    - Calendarizar reuniones
+    - Ir al día
+  
+- Hacer menos:
+    - Trabajar en grupo (presencial) en una sola compu
+ 
+- Dejar de hacer:
+
