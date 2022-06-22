@@ -12,7 +12,7 @@ const userController = {
     },
     register: (req,res) => {
         let image;
-        console.log(req.files);
+        // console.log(req.files);
         if(req.files[0] !=undefined){
             image = req.files[0].filename
         }else{

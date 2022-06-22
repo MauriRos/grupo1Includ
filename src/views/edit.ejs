@@ -14,7 +14,7 @@
                 <h5 class="subtitleCreatProduct">Home > Editar</h5>
               </div>
 
-              <form class='formularioCreateProducts' method="POST" action="/products/<%= product.id %>/edit" enctype="multipart/form-data">
+              <form class='formularioCreateProducts' method="POST" action="/products/<%= product.id %>/edit?_method=PUT" enctype="multipart/form-data">
 
                   <div class="editarCP">
                       <label for="name">Nombre del Producto</label>
@@ -28,7 +28,7 @@
 
                   <div class="editarCP">
                     <label for="characteristics">Caracteristicas</label>
-                    <input class="formatCreateProductInput" type='text' value="<%=product.characteristics  %>" minlength="6" id="ca" name="charateristics">
+                    <input class="formatCreateProductInput" type='text' value="<%=product.characteristics  %>" minlength="6" id="ca" name="characteristics">
                   </div>
 
                   <div class="editarCP">
@@ -49,26 +49,31 @@
                   <div class="editarCP">
                     <label for="categoryProduct">Categoría:</label>
                         <select name="categoryProduct">
-                            <option value="orange">Top</option>
-                            <option value="pink">Pantalon</option>
-                            <option value="red">Accesorios</option>
+                            <option value="top">Top</option>
+                            <option value="pantalon">Pantalon</option>
+                            <option value="accesorio">Accesorios</option>
                         </select>
                   </div>
 
                   <div class="editarCP">
                     <label for="color">Colores:</label>
                         <select name="color">
-                            <option value="Rojo">Rojo</option>
-                            <option value="Negro">Negro</option>
-                            <option value="Blanco">Blanco</option>
-                            <option value="Verde">Verde</option>
-                            <option value="Naranja">Naranja</option>
+                          <option selected="selected" value="<%=product.color %>"><%=product.color %></option>
+                          <option value="Rojo">Rojo</option>
+                          <option value="Azul">Azul</option>
+                          <option value="Amarillo">Amarillo</option>
+                          <option value="Negro">Negro</option>
+                          <option value="Blanco">Blanco</option>
+                          <option value="Verde">Verde</option>
+                          <option value="Naranja">Naranja</option>
+                          <option value="Violta">Violta</option>
                         </select>
                   </div>
                   
                   <div class="editarCP">
                     <label for="size">Talles:</label>
                         <select name="size">
+                            <option selected="selected" value="<%=product.size %>"><%=product.size %></option>
                             <option value="XXS">XXS</option>
                             <option value="XS">S</option>
                             <option value="S">S</option>

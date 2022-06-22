@@ -17,10 +17,12 @@
                         <img class="imagenDetail" src="/images/products/<%= product.image[0] %>" alt="<%= product.name %> ">
                     </div>
                     <div class="carrousel">
-                        <img class="imagenDetailCarrusel" src="/images/products/<%= product.image[1] %>" alt="<%= product.name %> ">
-                        <img class="imagenDetailCarrusel" src="/images/products/<%= product.image[2] %>" alt="<%= product.name %> ">
+                        <% for( let i = 1; i < product.image.length; i++ ) { %>
+                            <img class="imagenDetailCarrusel" src="/images/products/<%= product.image[i] %>" alt="<%= product.name %> ">
+                        <% } %>
+                        <!-- <img class="imagenDetailCarrusel" src="/images/products/<%= product.image[2] %>" alt="<%= product.name %> ">
                         <img class="imagenDetailCarrusel" src="/images/products/<%= product.image[3] %>" alt="<%= product.name %> ">
-                        <img class="imagenDetailCarrusel" src="/images/products/<%= product.image[4] %>" alt="<%= product.name %> ">
+                        <img class="imagenDetailCarrusel" src="/images/products/<%= product.image[4] %>" alt="<%= product.name %> "> -->
                     </div>
         
                     <div class="colors">
@@ -79,7 +81,7 @@
                 <div class="tallesForm">
                         <label class="labelTalles" for="talleSelect">Talles disponibles</label>
                         <div class="contenedorTalles">
-                            <button class="inputContenedorTalles" name="talleSelect" type="submit" value=<%= product.size%>>
+                            <button class="inputContenedorTalles" name="talleSelect" type="submit" value="<%= product.size%>"><%= product.size%>
                         </div>
                         
                         <div class="quantity">
@@ -91,7 +93,7 @@
                         
 
                         <button class="addToCart" type="submit" value="addToShop">Agregar al carrito <i class="fa-solid fa-angles-right"></i> $<%= product.price%></button>
-                    <form class='formularioCreateProducts' method="POST" action="/products/<%= product.id %>">
+                    <form class='formularioCreateProducts' method="POST" action="/products/<%= product.id %>?_method=DELETE">
                     <button class="form-button" type="submit">Eliminar Producto</button>
                     </form>
                     <button class="form-button"><a href="/products/<%= product.id %>/edit">Editar Producto</a></button>
