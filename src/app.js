@@ -8,6 +8,8 @@ const productRouter = require('./routes/products.js');
 const userRouter = require('./routes/users.js');
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
 const cookieParser = require('cookie-parser');
+const session = require('express-session');
+
 
 
 app.use(express.static(publicPth) );
@@ -24,4 +26,5 @@ app.use('/products', productRouter);
 app.use('/user', userRouter); 
 app.use(express.json());
 app.use(cookieParser());
-app.use(express.urlencoded({ extended: false }));;
+app.use(express.urlencoded({ extended: false }));
+app.use(session({secret: 'Secreto'}));

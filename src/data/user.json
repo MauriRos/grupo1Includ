@@ -4,65 +4,35 @@
     "name": "Mauricio",
     "apellido": "Leguiza",
     "user": "MLeguiza11",
-    "password": [
-      "mauricioLegui11",
-      "mauricioLegui11"
-    ],
+    "email": "mauricio@include.com",
+    "password": "mauricioLegui11",
     "avatar": "default-avatar.jpg"
   },
   {
     "id": 2,
-    "name": "Juanignacio",
-    "apellido": "Ferrari",
-    "user": "@JFerrari12",
-    "password": [
-      " juanFerra12",
-      " juanFerra12"
-    ],
-    "avatar": "1654379420540_avatar_.jpg"
+    "name": "Juanchos",
+    "apellido": "Sarasa",
+    "user": "Sarasero",
+    "email": "belbeyjuan@gmail.com",
+    "password": "12345678",
+    "avatar": "default-avatar.jpg"
   },
   {
     "id": 3,
-    "name": "Viviana",
-    "apellido": "Grecco",
-    "user": "@VGrecco13",
-    "password": [
-      "vivianaGre13",
-      "vivianaGre13"
-    ],
-    "avatar": "1654379454267_avatar_.jpg"
+    "name": "Maximiliano",
+    "apellido": "Aimaretti",
+    "user": "Elmasi",
+    "email": "aimarettipini@gmail.com",
+    "password": "juanchomaster",
+    "avatar": "default-avatar.jpg"
   },
   {
     "id": 4,
-    "name": "Luisina",
-    "apellido": " Bassi",
-    "user": "@LBassi14",
-    "password": [
-      "luisinaBas14",
-      "luisinaBas14"
-    ],
-    "avatar": "1654379489975_avatar_.jpg"
-  },
-  {
-    "id": 5,
-    "name": "Virginia",
-    "apellido": "Amherdt",
-    "user": "@VAmherdt15",
-    "password": [
-      " virginiaAm15",
-      " virginiaAm15"
-    ],
-    "avatar": "1654379521969_avatar_.jpg"
-  },
-  {
-    "id": 6,
-    "name": "Maximiliano",
-    "apellido": "Colombo",
-    "user": "@MColombo16",
-    "password": [
-      "maximilianoColo16",
-      "maximilianoColo16"
-    ],
-    "avatar": "1654379570648_avatar_.jpg"
+    "name": "Mauricio",
+    "apellido": "Aimaretti",
+    "user": "Piniss",
+    "email": "juan@perez.com",
+    "password": "$2a$10$thjzOJXW2Wx5pfKwgmBPU.87SH4pqdCzHhdvZ7D8lmT1FbkbrYxOC",
+    "avatar": "default-avatar.jpg"
   }
 ]

@@ -13,20 +13,32 @@
             <h2 class="title">Login</h2>
             <h5 class="subtitle">Home > Registrate</h5>
           </div>
-          <div class="inputLogin">
-            <div class="form-format">
-              <label for="email">Email</label>
-              <input class="format-input" type="email" name="email" placeholder="ariel@perez.com">
-            </div>
-            <div class="form-format">
-              <label for="password">Contraseña</label>
-              <input class="format-input" type="password" name="password">
-            </div>
-            <div class="checkRemember">
-              <p class="remember">Recordar cuenta</p>
-              <input class ="checkButton" type="checkbox" name="remember" value="remember">
-            </div>
-            <button class="form-button" type="submit"><a href="./">Ingresar</a></button>
+          <form  method="POST" action="/user/login">
+            <div class="inputLogin">
+              <div class="form-format">
+                <label for="email">Email</label>
+                <input class="format-input" name="email" type="email" placeholder="ariel@perez.com">
+              </div>
+                <div class="form-format">
+                  <label for="password">Contraseña</label>
+                  <input class="format-input" type="password" name="password">
+                </div>
+                <div class="checkRemember">
+                  <p class="remember">Recordar cuenta</p>
+                  <input class ="checkButton" type="checkbox" name="remember" value="remember">
+                </div>
+                <% if (typeof errors != "undefined") { %>
+                  <p style="color:red">Error</p>
+                  <ul>
+                    <% for (let i=0; i<errors.length; i++) { %>
+                      <li>
+                        <%= errors[i].msg %>
+                      </li>
+                    <% } %>
+                  </ul> 
+                <% } %>
+                <input class="form-button" type="submit" value="Ingresar">
+          </form>
           </div>
         </section>
         <section class="register">
@@ -54,16 +66,16 @@
               </div>
               <div class="form-format">
                 <label for="email">Email</label>
-                <input class="format-input" type="email" placeholder="ariel@perez.com">
+                <input class="format-input" type="email" name="email" placeholder="ariel@perez.com">
               </div>
               <div class="form-format">
                 <label for="password">Contraseña</label>
                 <input class="format-input" type="password" minlength="6" name="password">
               </div>
-              <div class="form-format">
+              <!-- <div class="form-format">
                 <label for="password">Confirmar contraseña</label>
                 <input class="format-input" type="password" minlength="6" name="password">
-              </div>
+              </div> -->
               <button class="form-button" type="submit">Crear cuenta</button>
             </form>
           </div>
