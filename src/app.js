@@ -19,12 +19,16 @@ app.set('view engine', 'ejs');
 app.listen(port, () => {
     console.log('Servidor Corriendo en el Puerto 3000');
 });
-
+app.use(session({
+    secret: 'Secreto',
+    resave : false,
+    saveUninitialized: false}
+));
+app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 app.use('/', mainRouter);
 app.use('/products', productRouter);
 app.use('/user', userRouter); 
 app.use(express.json());
 app.use(cookieParser());
-app.use(express.urlencoded({ extended: false }));
-app.use(session({secret: 'Secreto'}));
+

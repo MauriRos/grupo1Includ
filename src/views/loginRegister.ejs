@@ -18,6 +18,10 @@
               <div class="form-format">
                 <label for="email">Email</label>
                 <input class="format-input" name="email" type="email" placeholder="ariel@perez.com">
+                <% if (typeof errorsLogin != "undefined") { %>
+                  <p style="color:red">Error</p>
+                  <p class="feedback is-danger"><%= errorsLogin.msg %></p>
+                <% } %>
               </div>
                 <div class="form-format">
                   <label for="password">Contraseña</label>

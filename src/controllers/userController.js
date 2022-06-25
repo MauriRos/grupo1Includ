@@ -10,34 +10,41 @@ const users = JSON.parse(fs.readFileSync(usersPathFile, 'utf-8'));
 
 const userController = {
     login: (req,res) => {
-        
+        // VALIDACIONES
         let errorsLogin = validationResult(req);
         // console.log(errorsLogin);
         // console.log(users);
         // console.log(req.body);
         if(errorsLogin.isEmpty()){
             for( let i=0; i<users.length; i++){
-                if(users[i].email === req.body.email){
+                if(users[i].email == req.body.email){
                     if(bcrypt.compareSync(req.body.password, users[i].password)){
                         var userALoguearse = users[i];
                         break;
                     }
-                }
-            }
+                    return res.render('loginRegister', {errorsLogin: [{
+                        msg: "Credenciales invalidas"}]
+                    });
+                    
+                }}
             if(userALoguearse == undefined){
-                return res.render('loginRegister', {errorsLogin: [{
-                    msg: "Credenciales invalidas"
-                }]})
+                res.render("loginRegister", {errorsLogin: {
+                msg: "No hay un usuario registrado con este email, registrese!"}})
             }else{
                 req.session.userLogueado = userALoguearse;
-                res.send('Joyaaaa')}
-            }else{
-                return res.render('loginRegister', {errors: errorsLogin})
+                console.log(req.session.userLogueado)
+                res.redirect("/")
+            
             }
-        },
-        loginRegister: (req,res) => {
-            res.render('loginRegister')
-        },
+        }else{
+            return res.render('loginRegister', {errors: errorsLogin}
+            )};
+    },
+
+    loginRegister: (req,res) => {
+        res.render('loginRegister')
+    },
+
     register: (req,res) => {
         let userInDB = users.find (user => user.email == req.body.email)
         console.log(userInDB)

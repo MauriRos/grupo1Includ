@@ -35,7 +35,7 @@ const validacionesLogin = [
 router.get("/loginRegister", userController.loginRegister);
 
 router.post("/register",  uploadFile.any(), validateRegisterForm,userController.register)
-router.post('/login', userController.login);
+router.post("/login", validacionesLogin, userController.login);
 
 
 
