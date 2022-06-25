@@ -1,7 +1,7 @@
 const path = require('path');
 let ejs = require(('ejs'));
 const fs = require('fs');
-const {body, validationResult} = require('express-validator');
+const {validationResult} = require('express-validator');
 const bcrypt = require('bcryptjs');
 
 const usersPathFile =path.join(__dirname, "../data/user.json");
@@ -10,10 +10,11 @@ const users = JSON.parse(fs.readFileSync(usersPathFile, 'utf-8'));
 
 const userController = {
     login: (req,res) => {
+        
         let errorsLogin = validationResult(req);
-        console.log(errorsLogin);
-        console.log(users);
-        console.log(req.body);
+        // console.log(errorsLogin);
+        // console.log(users);
+        // console.log(req.body);
         if(errorsLogin.isEmpty()){
             for( let i=0; i<users.length; i++){
                 if(users[i].email === req.body.email){
@@ -38,8 +39,22 @@ const userController = {
             res.render('loginRegister')
         },
     register: (req,res) => {
+        let userInDB = users.find (user => user.email == req.body.email)
+        console.log(userInDB)
+
+        if (userInDB != undefined){
+            return res.render('loginRegister',{
+                errorsDB:  {
+                    email: {
+                        msg:'Este email ya está registrado'
+                    }
+                },
+                old : req.body,
+            }) ;     
+    }
         // Validacion de datos 
         let errors = validationResult(req)
+        // console.log(req.body)
         if(errors.isEmpty()){
         //Creación del usuario
         let image;
@@ -58,6 +73,7 @@ const userController = {
         fs.writeFileSync(usersPathFile, JSON.stringify(users, 'utf-8'));
         res.redirect('/')
     } else {
+        console.log(errors)
        res.render('loginRegister', {
                 errors: errors.array(),
                 old: req.body,
