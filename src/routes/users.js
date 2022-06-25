@@ -15,9 +15,17 @@ const storage = multer.diskStorage({
 
 const uploadFile = multer({ storage });
 
+const validateRegisterForm = [
+   body('name').notEmpty().withMessage('Nombre obligatorio'),
+   body('apellido').notEmpty().withMessage('Apellido obligatorio'),
+   body('email').isEmail().withMessage('Ingrese un email correcto'),
+   body('user').notEmpty().withMessage('Ingrese su nombre de usuario'),
+   body('password').isLength({min:8}).withMessage('Constraseña minimo 8 caracteres'),
+]
+
 
 router.get("/loginRegister", userController.loginRegister);
-router.post("/register", uploadFile.any(), userController.register)
+router.post("/register",  uploadFile.any(),validateRegisterForm, userController.register)
 router.post('/login', 
 //   [
       //body("email").isEmail().withMessage("Email invalido"),
