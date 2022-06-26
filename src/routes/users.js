@@ -35,7 +35,7 @@ router.get("/loginRegister", userController.loginRegister);
 
 router.post("/register",  uploadFile.any(), validateRegisterForm,userController.register)
 router.post("/login", validacionesLogin, userController.login);
-
+router.get("/check", userController.check)
 
 
 

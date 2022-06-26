@@ -3,6 +3,8 @@ let ejs = require(('ejs'));
 const fs = require('fs');
 const {validationResult} = require('express-validator');
 const bcrypt = require('bcryptjs');
+const rememberMiddleware = require('../../middleware/rememberMiddleware');
+
 
 const usersPathFile =path.join(__dirname, "../data/user.json");
 const users = JSON.parse(fs.readFileSync(usersPathFile, 'utf-8'));
@@ -31,15 +33,24 @@ const userController = {
                 res.render("loginRegister", {errorsLogin: {
                 msg: "No hay un usuario registrado con este email, registrese!"}})
             }else{
+                console.log(userALoguearse)
                 req.session.userLogueado = userALoguearse;
-                console.log(req.session.userLogueado)
+                
+                if (req.body.remember != undefined){
+                    res.cookie("remember", userALoguearse.email, { maxAge: 600000});
+                }
+
                 res.redirect("/")
             
             }
         }else{
-            return res.render('loginRegister', {errors: errorsLogin}
+            return res.render('loginRegister', {errorsLogin: errorsLogin}
             )};
     },
+    check: (req,res) => {
+        res.send("el usuario logueado es "+ req.session.userLogueado.email);
+        console.log(userALoguearse)
+    } ,
 
     loginRegister: (req,res) => {
         res.render('loginRegister')
