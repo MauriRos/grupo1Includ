@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head')  %> 
+  
+  <body>
+    <%-/* include('partials/header') */%>
+    <title>Home</title>
+    <header class="header">
+        <nav class="nav">
+          <ul class="site">
+            <div>
+              <i class="fa-solid fa-shirt"></i>
+              <li><a href="/products/productsList">Productos</a></li>
+            </div>
+            <div>
+              <i class="fa-solid fa-star"></i>
+              <li><a href="/products/create">Nuevo</a></li>
+            </div>
+            <div>
+              <i class="fa-solid fa-hand-holding-dollar"></i>
+              <li><a href="x">Rebajas</a></li>
+            </div>
+            <div>
+              <i class="fa-solid fa-list"></i>
+              <li><a href="x">Categorias</a></li>
+            </div>
+          </ul>
+            <div class="burgerMenu">
+            <i class="fa-solid fa-bars"></i>
+            </div>
+            <a href="/"><img class="logoHeaderMobile" src="/images/logos/logo-text.png"></a>
+            <a href="/"><img class="logoHeaderDesktop" src="/images/logos/logo-text.png"></a>
+            <div class="cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+            <ul class="login">
+              <div>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <li><a href="x">Buscar</a></li>
+              </div>
+              <div>
+                <i class="fa-solid fa-circle-user"></i>
+                <li><a href="/user/loginRegister">Registrarse</a></li>
+              </div>
+              <div>
+                <i class="fa-solid fa-heart"></i>
+                <li><a href="/products/edit">Deseos</a></li>
+              </div>
+              <div>
+                <i class="fa-solid fa-bag-shopping"></i>
+                <li><a href="/products/productCart">Compras</a></li>
+              </div>
+            </ul>
+        </nav>
+        <div class="userSession">
+                
+            <img class="userImg" src="/images/users/default-avatar.jpg" alt="Default Avatar">
+            <a href="/loginRegister">Iniciar Sesión</a>
+            <i class="iconOutSession fa-solid fa-arrow-right-from-bracket"></i>
+                  
+        </div>
+    </header>
+
+
+    <main>
+      <!-- aca voy a meter el cuerpo del home - trabajo mobilefirst   -->
+      <div class="banner">
+        <video class="video-banner" src="/videos/banner-toptop.mp4" autoplay loop muted>
+        </video>
+      </div>
+      
+      <section>
+
+            <!-- <h1 class="category"> TOP </h1> -->
+
+              <div class="tarjeta">  
+                <%(products.filter(product => product.categoryProduct == "top")).forEach(product => { %>
+
+                  <article class="card"><a href="/products/<%= product.id %> ">
+                        <img class="image" src="/images/products/<%= product.image[0] %>" alt="<%= product.name %>">
+                        <img class="image2" src="/images/products/<%= product.image[1] %>" alt="<%= product.name %>">
+                        <div class="description">
+                            <p class="nameProduct"><%= product.name %></p>
+                            <p class="price">$<%= product.price %></p>
+                        </div>
+                    </a></article>
+                       
+                  <% }) %>
+                  
+                  <!-- <a href="/product/productDetail"><article class="card">
+                          <img class="image" src="/images/productHome/top2.jpg" alt="destalle-del-producto" >
+                          <img class="image2" src="/images/productHome/top2.1.jpg" alt="Overal Orange">
+                          <div class="description">
+                              <p class="nameProduct">Top Amarillo S/M</p>
+                              <p class="price">$5500</p>
+                          </div>
+                    </article></a>  
+                  <a href="/product/productDetail"><article class="card">
+                          <img class="image" src='/images/productHome/top3.jpg' alt="destalle-del-producto" >
+                          <img class="image2" src="/images/productHome/top3.1.jpg" alt="Overal Orange">
+                          <div class="description">
+                              <p class="nameProduct">Remerón Blanco C/M</p>
+                              <p class="price">$7400</p>
+                          </div>
+                    </article></a>
+                  <a href="/product/productDetail"><article class="card">
+                          <img class="image" src='/images/productHome/top4.jpg' alt="destalle-del-producto" >
+                          <img class="image2" src="/images/productHome/top4.1.jpg" alt="Overal Orange">
+                          <div class="description">
+                              <p class="nameProduct">Top Negro S/M</p>
+                              <p class="price">$6300</p>
+                          </div>
+                    </article></a> -->
+              </div>
+
+      </section>
+
+      <div class="banner">
+        <video class="video-banner" src="/videos/banner-pantalones.mp4" autoplay loop muted>
+        </video>
+      </div>
+      <section> 
+<!-- 
+        <h1 class="category"> PANTALONES </h1> -->
+        <div class="tarjeta">  
+          <%(products.filter(product => product.categoryProduct == "pantalon")).forEach(product => { %>
+
+           <article class="card"><a href="/products/<%= product.id %> ">
+                 <img class="image" src="/images/products/<%= product.image[0] %>" alt="<%= product.name %>">
+                 <img class="image2" src="/images/products/<%= product.image[1] %>" alt="<%= product.name %>">
+                 <div class="description">
+                     <p class="nameProduct"><%= product.name %></p>
+                     <p class="price">$<%= product.price %></p>
+                 </div>
+             </a></article>
+                
+           <% }) %>
+                  
+                  <!-- <a href="/product/productDetail"><article class="card">
+                          <img class="image" src="/images/productHome/pantalones1.jpg" alt="Overal Orange" >
+                          <img class="image2" src="/images/productHome/pantalones1.1.jpg" alt="Overal Orange" >
+                          <div class="description">
+                              <p class="nameProduct">Pantalon Jirafa</p>
+                              <p class="price">$10200</p>
+                          </div>
+                    </article></a>
+                  <a href="/product/productDetail"><article class="card">
+                          <img class="image" src="/images/productHome/pantalones2.png" alt="destalle-del-producto" >
+                          <img class="image2" src="/images/productHome/pantalones2.1.png" alt="Overal Orange" >
+                          <div class="description">
+                              <p class="nameProduct">Biker Negra</p>
+                              <p class="price">$8000</p>
+                          </div>
+                    </article></a>
+                    <a href="/product/productDetail"><article class="card">
+                          <img class="image" src='/images/productHome/pantalones3.jpg' alt="destalle-del-producto" >
+                          <img class="image2" src="/images/productHome/pantalones3.1.jpg" alt="Overal Orange" >
+                          <div class="description">
+                              <p class="nameProduct">Biker Naranja</p>
+                              <p class="price">$8000</p>
+                          </div>
+                    </article></a>
+                  <a href="/product/productDetail"><article class="card">
+                          <img class="image" src='/images/productHome/pantalones4.jpg' alt="destalle-del-producto" >
+                          <img class="image2" src="/images/productHome/pantalones4.1.jpg" alt="Overal Orange" >
+                          <div class="description">
+                              <p class="nameProduct">Biker Verde</p>
+                              <p class="price">$9800</p>
+                          </div>
+                    </article></a> -->
+          </div>
+      </section>
+      <section>
+        <div class="banner">
+          <video class="video-banner" src="/videos/banner-accesorios.mp4" autoplay loop muted>
+          </video>
+        </div>
+        <!-- <h1 class="category"> ACCESORIOS </h1> -->
+        <div class="tarjeta">  
+          <%(products.filter(product => product.categoryProduct == "accesorio")).forEach(product => { %>
+
+           <article class="card"><a href="/products/<%= product.id %> ">
+                 <img class="image" src="/images/products/<%= product.image[0] %>" alt="<%= product.name %>">
+                 <img class="image2" src="/images/products/<%= product.image[1] %>" alt="<%= product.name %>">
+                 <div class="description">
+                     <p class="nameProduct"><%= product.name %></p>
+                     <p class="price">$<%= product.price %></p>
+                 </div>
+             </a></article>
+                
+           <% }) %>
+
+                  <!-- <a href="/product/productDetail"><article class="card">
+                          <img class="image" src="/images/productHome/accesorios1.webp" alt="Overal Orange" >
+                          <img class="image2" src="/images/productHome/accesorios1.1.webp" alt="Overal Orange" >
+                          <div class="description">
+                              <p class="nameProduct">Medias</p>
+                              <p class="price">$1500</p>
+                          </div>
+                    </article></a>
+                  <a href="/product/productDetail"><article class="card">
+                          <img class="image" src="/images/productHome/accesorios2.webp" alt="destalle-del-producto" >
+                          <img class="image2" src="/images/productHome/accesorios2.1.webp" alt="Overal Orange" >
+                          <div class="description">
+                              <p class="nameProduct">Bandana</p>
+                              <p class="price">$1200</p>
+                          </div>
+                    </article></a>  
+                  <a href="/product/productDetail"><article class="card">
+                          <img class="image" src='/images/productHome/accesorios3.webp' alt="destalle-del-producto" >
+                          <img class="image2" src="/images/productHome/accesorios3.1.webp" alt="Overal Orange" >
+                          <div class="description">
+                              <p class="nameProduct">Pin Rainbow</p>
+                              <p class="price">$400</p>
+                          </div>
+                    </article></a>
+                  <a href="/product/productDetail"><article class="card">
+                          <img class="image" src='/images/productHome/accesorios4.webp' alt="destalle-del-producto" >
+                          <img class="image2" src="/images/productHome/accesorios4.1.webp" alt="Overal Orange" >
+                          <div class="description">
+                              <p class="nameProduct">Pin Sandia</p>
+                              <p class="price">$400</p>
+                          </div>
+                    </article></a> -->
+          </div>
+      </section>
+
+      <div class="viewAll">
+        <button>Boton View All</button>
+      </div>
+
+    <section>
+
+      <div class="banner">
+        <video class="video-bannerDesigner" src="/videos/banner-diseñoymarca.mp4" autoplay loop muted>
+        </video>
+      </div>
+          <div class="carruselinfo">
+            <i class="icononDesigner fa-solid fa-circle-chevron-left"></i>
+            <div class="designer">
+              <img class="designerImg" src="/images/productHome/diseño1.jpg" alt="diseñador tal">
+              <p class ="designerDescription">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique tenetur in, odio nihil nulla ullam placeat quisquam maxime accusamus suscipit officia exercitationem architecto libero ab rerum iusto fuga rem doloribus!
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam cumque quidem omnis animi, alias provident architecto qui aliquam eius ipsa veritatis sit? Quia doloribus qui error minima, officiis iusto repellat!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis perspiciatis id reprehenderit illo ducimus obcaecati in cumque facilis minima? Adipisci dolor eius ducimus explicabo repellendus, modi in placeat rem debitis!
+              </p>
+            </div>
+            <i class="icononDesigner fa-solid fa-circle-chevron-right"></i>
+          </div>
+    </section>
+
+    </main>
+
+    <%- include('partials/footer')  %> 
+    
+  </body>
+</html>
