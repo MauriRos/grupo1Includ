@@ -17,9 +17,9 @@
         <div class="buy">
             <div class="productosToBuy"><!-- Productos seleccionados -->
                 <div class="productCart"><!-- Producto 1 -->
-                    <img class="imageProductCart" src="/images/products/Original Overal - Orange/orange-005.webp" alt="Imagen del Producto"><!-- imagen del producto -->
+                    <img class="imageProductCart" src="/images/products/<%= products[0].image[0] %>" alt="Imagen del Producto"><!-- imagen del producto -->
                     <div class="descriptionProductCart"><!-- caracteristicas del producto seleccionado -->
-                        <h2 class="nameProductCart">Original Overal</h2>
+                        <h2 class="nameProductCart"><%= products[0].name %></h2>
                         <h4>Talle: M</h4>
                         <h4>Color: Orange</h4>
                         <div class="priceStetic"><!-- precio -1+ = precio final -->
@@ -36,9 +36,9 @@
                 </div>
                 
                 <div class="productCart"><!-- Producto 2 -->
-                    <img class="imageProductCart" src="/images/products/Original Overal - Red/red-009.jpeg" alt="Imagen del Producto"><!-- imagen del producto -->
+                    <img class="imageProductCart" src="/images/products/<%= products[0].image[0] %>" alt="Imagen del Producto"><!-- imagen del producto -->
                     <div class="descriptionProductCart"><!-- caracteristicas del producto seleccionado -->
-                        <h2 class="nameProductCart">Original Overal</h2>
+                        <h2 class="nameProductCart"><%= products[0].name %></h2>
                         <h4>Talle: XL</h4>
                         <h4>Color: Red</h4>
                         <div class="priceStetic"><!-- precio -1+ = precio final -->
@@ -56,9 +56,9 @@
                 
                 
                 <div class="productCart"><!-- Producto 3 -->
-                    <img class="imageProductCart" src="/images/products/Original Overal - Pink/pinp-008.jpg" alt="Imagen del Producto"><!-- imagen del producto -->
+                    <img class="imageProductCart" src="/images/products/<%= products[0].image[0] %>" alt="Imagen del Producto"><!-- imagen del producto -->
                     <div class="descriptionProductCart"><!-- caracteristicas del producto seleccionado -->
-                        <h2 class="nameProductCart">Original Overal</h2>
+                        <h2 class="nameProductCart"><%= products[0].name %> </h2>
                         <h4>Talle: 4XL</h4>
                         <h4>Color: Pink</h4>
                         <div class="priceStetic"><!-- precio -1+ = precio final -->
@@ -148,11 +148,10 @@
             <div class="cajaPadreCarrouselRecomendations">
                 <i class="iconoRecomendations fa-solid fa-circle-chevron-left"></i>
                 <div class="carrouselRecomendations">
-                    <img src="/images/products/Original Overal - Red/red-003.jpeg" alt="Orogonal Overol - Red">
-                    <img src="/images/products/Original Overal - Red/red-004.jpeg" alt="Orogonal Overol - Red">
-                    <img src="/images/products/Original Overal - Red/red-005.jpeg" alt="Orogonal Overol - Red">
-                    <img src="/images/products/Original Overal - Red/red-006.jpeg" alt="Orogonal Overol - Red">
-                    <img src="/images/products/Original Overal - Red/red-007.jpeg" alt="Orogonal Overol - Red">
+                    <% for( let i = 0; i < 5; i++ ) { %>
+                        <img src="/images/products/<%= products[0].image[i] %>" alt="Orogonal Overol - Red">
+                    
+                    <% } %>
                 </div>
                 <i class="iconoRecomendations fa-solid fa-circle-chevron-right"></i>
             </div>

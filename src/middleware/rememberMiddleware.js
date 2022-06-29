@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-const usersPathFile =path.join(__dirname, "../src/data/user.json");
+const usersPathFile =path.join(__dirname, "../data/user.json");
 const users = JSON.parse(fs.readFileSync(usersPathFile, 'utf-8'));
 
 function rememberMiddleware(req, res, next) {

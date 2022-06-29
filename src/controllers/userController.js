@@ -3,7 +3,7 @@ let ejs = require(('ejs'));
 const fs = require('fs');
 const {validationResult} = require('express-validator');
 const bcrypt = require('bcryptjs');
-const rememberMiddleware = require('../../middleware/rememberMiddleware');
+const rememberMiddleware = require('../middleware/rememberMiddleware');
 
 
 const usersPathFile =path.join(__dirname, "../data/user.json");

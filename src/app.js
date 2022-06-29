@@ -9,7 +9,7 @@ const userRouter = require('./routes/users.js');
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
-const rememberMiddleware = require("../middleware/rememberMiddleware");
+const rememberMiddleware = require("../src/middleware/rememberMiddleware");
 
 
 
