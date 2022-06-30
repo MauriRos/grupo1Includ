@@ -80,3 +80,28 @@ Sprint 3:
  
 - Dejar de hacer:
 
+Sprint 4:
+
+- Comenzar a hacer:
+    - Detallar más las tareas en el tablero
+    - Llegar con tiempo para hacer una ultima revision con tiempo
+
+- Hacer más:
+    - Usar más el tablero
+    - Implementar metodologias agiles
+    - Definir criterios comunes
+
+
+
+- Continuar haciendo:
+    - Reuniones presenciales
+    - Recuersero paginas utiles
+    - Analisis en conjunto de codigo
+    - Calendarizar reuniones
+    - Ir al día
+    - Dividir tareas y trabajar con GIT
+    - Consultar más seguido
+  
+- Hacer menos:
+ 
+- Dejar de hacer:

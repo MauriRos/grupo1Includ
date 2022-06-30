@@ -36,8 +36,9 @@ router.get("/loginRegister", guestMiddleware, userController.loginRegister);
 
 router.post("/register",  uploadFile.any(), validateRegisterForm,userController.register)
 router.post("/login", validacionesLogin, userController.login);
-router.get("/check", userController.check)
-
+router.get("/check", userController.check);
+router.get("/logOut", userController.logOut);
+router.get("/logIn", userController.logIn)
 
 
 module.exports = router ;

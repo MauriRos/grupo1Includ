@@ -97,6 +97,12 @@ const userController = {
                 old: req.body,
          }) 
     }
+    },
+    logOut: (req,res) => {
+        res.render('logOut')
+    },
+    logIn: (req,res) => {
+        res.render('logIn')
     }
 
 }

@@ -49,11 +49,11 @@
     <div class="userSession">
                 
             <img class="userImg" src="/images/users/default-avatar.jpg" alt="Default Avatar">
-            <% /* if (session == undefined) {*/ %>
+            <%  if (locals.session == undefined) { %>
               <a href="/user/loginRegister">Iniciar Sesión</a>
-            <%/* } else { */ %>
-              <p><%=/* session.userLogueado.user */%></p>
-              <% /*}*/ %>   
+            <% } else {  %>
+              <p><%= locals.session.userLogueado %></p>
+              <% } %>   
             <i class="iconOutSession fa-solid fa-arrow-right-from-bracket"></i>
                   
         </div>
