@@ -7,7 +7,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const mainController = {
     home: (req,res) => {
-        res.render ('home', {products: products})
+        res.render ('home', {products: products, session: req.session})
     },
     home2: (req,res) => {
         res.render ('home2', {products: products})
