@@ -48,12 +48,14 @@
     </nav>
     <div class="userSession">
                 
-            <img class="userImg" src="/images/users/default-avatar.jpg" alt="Default Avatar">
-            <%  if (locals.session == undefined) { %>
+            
+            <%  if (locals.userLogueado == undefined) { %>
+              <img class="userImg" src="/images/users/default-avatar.jpg" alt="Default Avatar">
               <a href="/user/loginRegister">Iniciar Sesión</a>
             <% } else {  %>
-              <p><%= locals.session.userLogueado %></p>
-              <% } %>   
+              <img class="userImg" src="/images/users/<%= locals.userLogueado.avatar %>" alt="Avatar de Usuario">
+              <p><%= locals.userLogueado.name %></p>
+            <% } %>   
             <i class="iconOutSession fa-solid fa-arrow-right-from-bracket"></i>
                   
         </div>
