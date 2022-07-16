@@ -8,7 +8,7 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         color: {
-            type: dataTypes.VARCHAR(20),
+            type: dataTypes.STRING,
             allowNull: false
         }
     };

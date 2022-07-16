@@ -7,8 +7,8 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        permissions: {
-            type: dataTypes.VARCHAR(30),
+        permission: {
+            type: dataTypes.STRING,
             allowNull: false
         }
     };

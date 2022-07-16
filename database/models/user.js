@@ -8,31 +8,31 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         name: {
-            type: dataTypes.VARCHAR(30),
+            type: dataTypes.STRING,
             allowNull: false
         },
         lastName: {
-            type: dataTypes.VARCHAR(30),
+            type: dataTypes.STRING,
             allowNull: false
         },
         userName: {
-            type: dataTypes.VARCHAR(30),
+            type: dataTypes.STRING,
             allowNull: false
         },
         email: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING,
             allowNull: false
         },
         password: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING,
             allowNull: false
         },
         avatar: {
-            type: dataTypes.VARCHAR(50),
+            type: dataTypes.STRING,
             allowNull: false
         },
         permissionsId: {
-            type: dataTypes.VARCHAR(30),
+            type: dataTypes.INTEGER,
             allowNull: false
         }
     };
@@ -43,7 +43,7 @@ module.exports = (sequelize, dataTypes) => {
     const User = sequelize.define(alias,cols,config);
 
     User.associate = function (models) {
-        User.belongsTo(models.Product, {
+        User.belongsTo(models.Permission, {
         foreignKey: "permissionsId",
         as: "permissions"
     })};

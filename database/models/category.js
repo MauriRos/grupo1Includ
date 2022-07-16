@@ -8,7 +8,7 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         category: {
-            type: dataTypes.VARCHAR(50),
+            type: dataTypes.STRING,
             allowNull: false
         }
     };

@@ -10,33 +10,33 @@ module.exports = (sequelize, dataTypes) => {
         // created_at: dataTypes.TIMESTAMP,
         // updated_at: dataTypes.TIMESTAMP,
         name: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING,
             allowNull: false
         },
         description: {
-            type: dataTypes.VARCHAR(1000),
+            type: dataTypes.STRING,
             allowNull: false
         },
         characteristics: {
-            type: dataTypes.VARCHAR(500),
+            type: dataTypes.STRING,
             allowNull: false
         },
         sizing: {
-            type: dataTypes.VARCHAR(300),
+            type: dataTypes.STRING,
             allowNull: false
         },
         categoryProductId: {
-            type: dataTypes.VARCHAR(45),
+            type: dataTypes.INTEGER,
             foreignKey: true,
             allowNull: false
         },
         colorId: {
-            type: dataTypes.VARCHAR(45),
+            type: dataTypes.INTEGER,
             foreignKey: true,
             allowNull: false
         },
         sizeId: {
-            type: dataTypes.VARCHAR(45),
+            type: dataTypes.INTEGER,
             foreignKey: true,
             allowNull: false
         },
@@ -45,11 +45,11 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         stock: {
-            type: dataTypes.VARCHAR(45),
+            type: dataTypes.INTEGER,
             allowNull: false
         },
         image: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING,
             allowNull: true
         },
     };
