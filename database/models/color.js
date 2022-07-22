@@ -20,7 +20,7 @@ module.exports = (sequelize, dataTypes) => {
 
     Color.associate = function (models) {
         Color.hasMany(models.Product, {
-        foreignKey: "colorId",
+        foreignKey: "colorsId",
         as: "colors"
     })};
     //Aquí debes realizar lo necesario para crear las relaciones con los otros modelos (Genre - Actor)

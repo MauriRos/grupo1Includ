@@ -17,7 +17,7 @@ function rememberMiddleware(req, res, next) {
         req.session.userLogueado = userALoguearse;
         res.locals.userLogueado = req.session.userLogueado;
 
-        console.log()
+        console.log();
     }
     next();   
 }

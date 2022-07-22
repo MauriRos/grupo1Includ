@@ -11,6 +11,8 @@ CREATE TABLE `includedb`.`categoryProduct` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
+INSERT INTO `includedb`.`categoryProduct` VALUES (1,'top'),(2,'pantalon'),(3,'accesorio');
+
 -- Creaamos la tabla colors
 
 CREATE TABLE `includedb`.`colors` (
@@ -20,6 +22,8 @@ CREATE TABLE `includedb`.`colors` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
+INSERT INTO `includedb`.`colors` VALUES (1,'rojo'),(2,'azul'),(3,'amarillo');
+
 -- Creaamos la tabla sizes
 
 CREATE TABLE `includedb`.`size` (
@@ -28,6 +32,8 @@ CREATE TABLE `includedb`.`size` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
+
+INSERT INTO `includedb`.`size` VALUES (1,'XXS'),(2,'XS'),(3,'S');
 
 -- Creamos la tabla products
 
@@ -61,6 +67,8 @@ CREATE TABLE `includedb`.`products` (
     ON UPDATE CASCADE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
+
+INSERT INTO `includedb`.`products` VALUES (1,"bombacha", "para todos los totos", "de algodon", "autoajustable" ,2 ,1, 1, 1000 , 2, "bombacha.png" );
 
 -- Creamos la tabla permissions
 

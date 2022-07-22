@@ -21,10 +21,10 @@ const productsController = {
 			}) 
 	},
 	productsList: (req,res) => {
-		console.log(Product);
+		console.log(db.Product);
 		db.Product.findAll()
-			.then(function(req,res) {
-				res.render("productsList", {products:products})
+			.then(products => {
+				res.render("productsList", {products})
 			})
 	},
 	// const genresController = {

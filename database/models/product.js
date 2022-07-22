@@ -30,7 +30,7 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: true,
             allowNull: false
         },
-        colorId: {
+        colorsId: {
             type: dataTypes.INTEGER,
             foreignKey: true,
             allowNull: false
@@ -61,7 +61,7 @@ module.exports = (sequelize, dataTypes) => {
 
     Product.associate = function (models) {
         Product.belongsTo(models.Color, {
-        foreignKey: "colorId",
+        foreignKey: "colorsId",
         as: "colors"
     });
         Product.belongsTo(models.CategoryProduct, {
