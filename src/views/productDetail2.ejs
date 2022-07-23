@@ -9,23 +9,18 @@
     <main class="mainProductDetail">
         <div class="pageName">
             <h2 class="titleDetail">PRODUCTO</h2>
-            <h4 class="subtitleDetail">(Home > <%= products.categoryProduct %> > <%= products.name %> - <%= products.color %>)</h4>
+            <h4 class="subtitleDetail">(Home > <%= products.categories.category %> > <%= products.name %> - <%= products.colors.color %>)</h4>
         </div>
         <div class="imageDetailANDcharacteristicsDetail">
             <div class="imageDetail">
                     <div class="imageBig">
                         <img class="imagenDetail" src="/images/products/<%= products.image %>" alt="<%= products.name %> ">
                     </div>
-                    <div class="carrousel">
-                        <% for( let i = 1; i < products.image.length; i++ ) { %>
-                            <img class="imagenDetailCarrusel" src="/images/products/<%= products.image[i] %>" alt="<%= products.name %> ">
-                        <% } %>
-                       
-                    </div>
+                    
         
                     <div class="colors">
                         <label class="labelColor">Color:</label>
-                        <p><%= products.color %></p>
+                        <p><%= products.colors.color %></p>
                     </div>
             </div>
             <div class="characteristicsDetail"><!-- caracteristicas del producto -->
@@ -79,7 +74,7 @@
                 <div class="tallesForm">
                         <label class="labelTalles" for="talleSelect">Talles disponibles</label>
                         <div class="contenedorTalles">
-                            <button class="inputContenedorTalles" name="talleSelect" type="submit" value="<%= products.size%>"><%= products.size%>
+                            <button class="inputContenedorTalles" name="talleSelect" type="submit" value="<%= products.sizes.id%>"><%= products.sizes.size%>
                         </div>
                         
                         <div class="quantity">

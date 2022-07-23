@@ -73,7 +73,6 @@ module.exports = (sequelize, dataTypes) => {
         as: "sizes"
     })
     }
-    //Aquí debes realizar lo necesario para crear las relaciones con los otros modelos (Genre - Actor)
 
     return Product
 };

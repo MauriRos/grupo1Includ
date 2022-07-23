@@ -3,6 +3,7 @@ let ejs = require(('ejs'));
 const fs = require('fs');
 const db = require("../../database/models");
 const { Console } = require('console');
+const { devNull } = require('os');
 
 
 const productsController = {
@@ -10,15 +11,18 @@ const productsController = {
         res.render('productCart', {products: products})
         },
     detail: (req,res) => {
-		db.Product.findByPk(req.params.id, {
+		let dbProd = db.Product.findByPk(req.params.id, {
 			include: [
 				{association: "sizes"},
 				{association: "colors"},
 				{association: "categories"}
 			]
-		})
-			.then(function(products){
-				res.render('productDetail2', {products:products} ) 
+		});
+
+		let dbColor = db.Color.findAll();
+		Promise.all([dbProd, dbColor])
+			.then(function([products, colors]){
+				res.render('productDetail2', {products:products, colors: colors} ) 
 			}) 
 	},
 	productsList: (req,res) => {
