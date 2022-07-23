@@ -14,86 +14,75 @@
                 <h5 class="subtitleCreatProduct">Home > Editar</h5>
               </div>
 
-              <form class='formularioCreateProducts' method="POST" action="/products/<%= product.id %>/edit?_method=PUT" enctype="multipart/form-data">
+              <form class='formularioCreateProducts' method="POST" action="/products/<%= products.id %>/edit?_method=PUT" enctype="multipart/form-data">
 
                   <div class="editarCP">
                       <label for="name">Nombre del Producto</label>
-                      <input class="formatCreateProductInput" type="text" value="<%=product.name  %> " minlength="6" name="name">
+                      <input class="formatCreateProductInput" type="text" value="<%=products.name  %> " minlength="6" name="name">
                   </div>
 
                   <div class="editarCP">
                       <label for="description">Descripción del Producto</label>
-                      <input class="formatCreateProductInput" type="text" value="<%=product.description  %>" minlength="6" id="description" name="description">
+                      <input class="formatCreateProductInput" type="text" value="<%=products.description  %>" minlength="6" id="description" name="description">
                   </div>
 
                   <div class="editarCP">
                     <label for="characteristics">Caracteristicas</label>
-                    <input class="formatCreateProductInput" type='text' value="<%=product.characteristics  %>" minlength="6" id="ca" name="characteristics">
+                    <input class="formatCreateProductInput" type='text' value="<%=products.characteristics  %>" minlength="6" id="ca" name="characteristics">
                   </div>
 
                   <div class="editarCP">
                     <label for="sizing">Dimensionamiento</label>
-                    <input class="formatCreateProductInput" type='textarea' value="<%=product.sizing  %>" minlength="6" id="ca" name="sizing">
+                    <input class="formatCreateProductInput" type='textarea' value="<%=products.sizing  %>" minlength="6" id="ca" name="sizing">
                   </div>
 
                   <div class="editarCP">
                     <label for="image">Imagen</label>
                     <p>Imagen Principal</p>
-                    <% for( let i = 0; i < product.image.length; i++ ) { %>
+                    <% for( let i = 0; i < products.image.length; i++ ) { %>
                       
-                      <img class="image" src="/images/products/<%= product.image[i] %> ">
+                      <img class="image" src="/images/products/<%= products.image%> ">
                     <% } %>
                     <input class="formatFileCP" type="file" name="image1" multiple accept=".jpg, .png">
                   </div>
 
                   <div class="editarCP">
                     <label for="categoryProduct">Categoría:</label>
-                        <select name="categoryProduct">
-                            <option value="top">Top</option>
-                            <option value="pantalon">Pantalon</option>
-                            <option value="accesorio">Accesorios</option>
-                        </select>
+                      <select name="categoryProduct">
+                        <option selected="selected" value="<%=products.categories.category%>"><%=products.categories.category%></option>
+                        <% categories.forEach (categories => { %> 
+                          <option value="<%= categories.id %>"><%= categories.category %></option>
+                        <% }) %> 
+                      </select>
                   </div>
 
                   <div class="editarCP">
                     <label for="color">Colores:</label>
-                        <select name="color">
-                          <option selected="selected" value="<%=product.color %>"><%=product.color %></option>
-                          <option value="Rojo">Rojo</option>
-                          <option value="Azul">Azul</option>
-                          <option value="Amarillo">Amarillo</option>
-                          <option value="Negro">Negro</option>
-                          <option value="Blanco">Blanco</option>
-                          <option value="Verde">Verde</option>
-                          <option value="Naranja">Naranja</option>
-                          <option value="Violta">Violta</option>
-                        </select>
+                      <select name="color">
+                        <option selected="selected" value="<%=products.colors.color%>"><%=products.colors.color%></option>
+                        <% colors.forEach (color => { %> 
+                          <option value="<%= colors.id %>"><%= colors.color %></option>
+                        <% }) %> 
+                      </select> 
                   </div>
                   
                   <div class="editarCP">
                     <label for="size">Talles:</label>
                         <select name="size">
-                            <option selected="selected" value="<%=product.size %>"><%=product.size %></option>
-                            <option value="XXS">XXS</option>
-                            <option value="XS">S</option>
-                            <option value="S">S</option>
-                            <option value="M">M</option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
-                            <option value="3XL">3XL</option>
-                            <option value="4XL">4XL</option>
-                            <option value="5XL">5XL</option>
-                            <option value="6XL">6XL</option>
-                        </select>
+                            <option selected="selected" value="<%=products.sizes.size %>"><%=products.sizes.size %></option>
+                              <% sizes.forEach (sizes => { %> 
+                                <option value="<%= sizes.id %>"><%= products.sizes.size %></option>
+                              <% }) %>   
+                            </select>
                     </div>
 
                   <div class="editarCP">
                     <label for="price">Precio</label>
-                    <input class="formatCreateProductInput" name="price" value="<%=product.price  %>" type="number" minlength="6" >
+                    <input class="formatCreateProductInput" name="price" value="<%=products.price  %>" type="number" minlength="6" >
                   </div>
                   <div class="editarCP">
                     <label for="cantidad">Cantidad</label>
-                    <input class="formatCreateProductInput" name="cantidad" type="number" minlength="6" >
+                    <input class="formatCreateProductInput" name="cantidad" value="<%=products.stock  %>" type="number" minlength="6" >
                   </div>
                   <div class="editarCP">
                   <button type="submit" class="form-button">Editar</button>

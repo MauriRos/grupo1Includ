@@ -25,7 +25,7 @@ const productsController = {
 				res.render('productDetail2', {products:products, colors: colors} ) 
 			}) 
 	},
-	productsList: (req,res) => {
+		productsList: (req,res) => {
 		db.Product.findAll()
 			.then(products => {
 				res.render("productsList", {products})
@@ -50,6 +50,7 @@ const productsController = {
 		let dbSize = db.Size.findAll();
 		let dbColor = db.Color.findAll();
 		let dbCategory = db.CategoryProduct.findAll();
+		
 		Promise.all([dbSize, dbColor, dbCategory])
 			.then(function([sizes, colors, categories]){
 			res.render('createProduct', {sizes:sizes, colors:colors, categories:categories })
@@ -57,10 +58,20 @@ const productsController = {
 		 
     },
 	editView: (req,res) => {
-		db.Product.findByPk(req.params.id)
-		.then(function(product){
-			res.render('edit', {products: products, product} )
+		let dbSize = db.Size.findAll();
+		let dbColor = db.Color.findAll();
+		let dbCategory = db.CategoryProduct.findAll();
+		let dbProd = db.Product.findByPk(req.params.id, {
+			include: [
+				{association: "sizes"},
+				{association: "colors"},
+				{association: "categories"}
+			]
 		})
+		Promise.all([dbSize, dbColor, dbCategory, dbProd])
+			.then(function([sizes, colors, categories, products]){
+			res.render('edit', {sizes:sizes, colors:colors, categories:categories, products:products })
+		});
 	},
     createProduct: (req,res) => {
 		let image ="";
@@ -94,7 +105,7 @@ const productsController = {
 			characteristics: req.body.characteristics,
 			sizing: req.body.sizing,
 			categoryProductId: req.body.categoryProduct,
-			colorId: req.body.color,
+			colorsId: req.body.color,
 			sizeId: req.body.size,
 			price: req.body.price,
 			stock: req.body.cantidad,
