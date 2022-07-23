@@ -1,7 +1,8 @@
 const path = require('path');
 let ejs = require(('ejs'));
 const fs = require('fs');
-const db = require("../../database/models")
+const db = require("../../database/models");
+const { Console } = require('console');
 
 
 const productsController = {
@@ -21,7 +22,6 @@ const productsController = {
 			}) 
 	},
 	productsList: (req,res) => {
-		console.log(db.Product);
 		db.Product.findAll()
 			.then(products => {
 				res.render("productsList", {products})
@@ -59,6 +59,18 @@ const productsController = {
 		})
 	},
     createProduct: (req,res) => {
+		let image =[];
+        for(let i=0; i<req.files.length; i++){
+		
+		if(req.files[i] != undefined){
+			
+			image[i] = req.files[i].filename;
+		
+		}else{
+			image= 'default-image.png'
+		}
+		};
+		
 		db.Product.create({
 			name: req.body.name,
 			description: req.body.description,
@@ -69,7 +81,7 @@ const productsController = {
 			sizeId: req.body.size,
 			price: req.body.price, 
 			stock: req.body.cantidad,  
-			image: req.body.image
+			image: image 
 		});
 		res.redirect("/products/productsList") 
 	},
