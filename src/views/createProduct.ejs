@@ -48,40 +48,27 @@
                   <div class="editarCP">
                     <label for="categoryProduct">Categoría:</label>
                         <select name="categoryProduct">
-                            <option value="top">Top</option>
-                            <option value="pantalon">Pantalon</option>
-                            <option value="accesorio">Accesorios</option>
+                          <% categories.forEach (categories => { %> 
+                            <option value="<%= categories.id %>"><%= categories.category %></option>
+                          <% }) %> 
                         </select>
                   </div>
 
                   <div class="editarCP">
                     <label for="color">Colores:</label>
                         <select name="color">
-                            <option value="Rojo">Rojo</option>
-                            <option value="Azul">Azul</option>
-                            <option value="Amarillo">Amarillo</option>
-                            <option value="Negro">Negro</option>
-                            <option value="Blanco">Blanco</option>
-                            <option value="Verde">Verde</option>
-                            <option value="Naranja">Naranja</option>
-                            <option value="Violta">Violta</option>
-                        </select>
+                          <% colors.forEach (color => { %> 
+                            <option value="<%= color.id %>"><%= color.color %></option>
+                          <% }) %> 
+                        </select> 
                   </div>
                   
                   <div class="editarCP">
                     <label for="size">Talles:</label>
                         <select name="size">
-                            <option value="XXS">XXS</option>
-                            <option value="XS">XS</option>
-                            <option value="S">S</option>
-                            <option value="M">M</option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
-                            <option value="2XL">2XL</option>
-                            <option value="3XL">3XL</option>
-                            <option value="4XL">4XL</option>
-                            <option value="5XL">5XL</option>
-                            <option value="6XL">6XL</option>
+                          <% sizes.forEach (sizes => { %> 
+                            <option value="<%= sizes.id %>"><%= sizes.size %></option>
+                          <% }) %>   
                         </select>
                     </div>
                   </div>

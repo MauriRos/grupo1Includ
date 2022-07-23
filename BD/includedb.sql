@@ -22,7 +22,7 @@ CREATE TABLE `includedb`.`colors` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-INSERT INTO `includedb`.`colors` VALUES (1,'rojo'),(2,'azul'),(3,'amarillo');
+INSERT INTO `includedb`.`colors` VALUES (1,'rojo'),(2,'azul'),(3,'amarillo'),(4,'naranja'),(5,'verde'),(6,'violeta'),(7,'blanco'),(8,'negro');
 
 -- Creaamos la tabla sizes
 
@@ -33,7 +33,7 @@ CREATE TABLE `includedb`.`size` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-INSERT INTO `includedb`.`size` VALUES (1,'XXS'),(2,'XS'),(3,'S');
+INSERT INTO `includedb`.`size` VALUES (1,'XXS'),(2,'XS'),(3,'S'),(4,'M'),(5,'L'),(6,'XL'),(7,'2XL'),(8,'3XL'),(9,'4XL'),(10,'5XL'),(11,'6XL');
 
 -- Creamos la tabla products
 

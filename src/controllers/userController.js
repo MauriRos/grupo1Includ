@@ -37,7 +37,7 @@ const userController = {
                 req.session.userLogueado = userALoguearse;
                 
                 if (req.body.remember != undefined){
-                    res.cookie("remember", userALoguearse.email, { maxAge: 600000});
+                    res.cookie("remember", userALoguearse.email, { maxAge: 6000000});
                 }
 
                 res.redirect("/")

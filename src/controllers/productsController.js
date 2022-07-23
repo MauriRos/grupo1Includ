@@ -17,7 +17,7 @@ const productsController = {
 			]
 		})
 			.then(function(products){
-				res.render('productDetail2', {products: products, product} )
+				res.render('productDetail2', {products:products} ) 
 			}) 
 	},
 	productsList: (req,res) => {
@@ -43,7 +43,14 @@ const productsController = {
 	
 	// }
     createProductView: (req,res) => {
-        res.render('createProduct')
+		let dbSize = db.Size.findAll();
+		let dbColor = db.Color.findAll();
+		let dbCategory = db.CategoryProduct.findAll();
+		Promise.all([dbSize, dbColor, dbCategory])
+			.then(function([sizes, colors, categories]){
+			res.render('createProduct', {sizes:sizes, colors:colors, categories:categories })
+		}); 
+		 
     },
 	editView: (req,res) => {
 		db.Product.findByPk(req.params.id)
@@ -58,13 +65,13 @@ const productsController = {
 			characteristics: req.body.characteristics,
 			sizing: req.body.sizing,
 			categoryProductId: req.body.categoryProduct,
-			colorId: req.body.color,
+			colorsId: req.body.color,
 			sizeId: req.body.size,
-			price: req.body.price,
-			stock: req.body.cantidad,
+			price: req.body.price, 
+			stock: req.body.cantidad,  
 			image: req.body.image
 		});
-		res.redirect("/products/productsList")
+		res.redirect("/products/productsList") 
 	},
     edit: (req, res) => {
 		db.Product.update({
