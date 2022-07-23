@@ -59,16 +59,14 @@ const productsController = {
 		})
 	},
     createProduct: (req,res) => {
-		let image =[];
-        for(let i=0; i<req.files.length; i++){
+		let image ="";
 		
-		if(req.files[i] != undefined){
+		if(req.files != undefined){
 			
-			image[i] = req.files[i].filename;
+			image = req.files.filename;
 		
 		}else{
 			image= 'default-image.png'
-		}
 		};
 		
 		db.Product.create({
@@ -81,7 +79,7 @@ const productsController = {
 			sizeId: req.body.size,
 			price: req.body.price, 
 			stock: req.body.cantidad,  
-			image: image 
+			image: req.files.filename 
 		});
 		res.redirect("/products/productsList") 
 	},

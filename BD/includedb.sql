@@ -17,7 +17,7 @@ INSERT INTO `includedb`.`categoryProduct` VALUES (1,'top'),(2,'pantalon'),(3,'ac
 
 CREATE TABLE `includedb`.`colors` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `colors` VARCHAR(45) NOT NULL,
+  `color` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
@@ -26,14 +26,14 @@ INSERT INTO `includedb`.`colors` VALUES (1,'rojo'),(2,'azul'),(3,'amarillo'),(4,
 
 -- Creaamos la tabla sizes
 
-CREATE TABLE `includedb`.`size` (
+CREATE TABLE `includedb`.`sizes` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `size` VARCHAR(5) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-INSERT INTO `includedb`.`size` VALUES (1,'XXS'),(2,'XS'),(3,'S'),(4,'M'),(5,'L'),(6,'XL'),(7,'2XL'),(8,'3XL'),(9,'4XL'),(10,'5XL'),(11,'6XL');
+INSERT INTO `includedb`.`sizes` VALUES (1,'XXS'),(2,'XS'),(3,'S'),(4,'M'),(5,'L'),(6,'XL'),(7,'2XL'),(8,'3XL'),(9,'4XL'),(10,'5XL'),(11,'6XL');
 
 -- Creamos la tabla products
 
@@ -62,13 +62,13 @@ CREATE TABLE `includedb`.`products` (
     ON UPDATE CASCADE,
   CONSTRAINT `fk_product_size_id`
     FOREIGN KEY (`sizeId`)
-    REFERENCES `includedb`.`size` (`id`)
+    REFERENCES `includedb`.`sizes` (`id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-INSERT INTO `includedb`.`products` VALUES (1,"bombacha", "para todos los totos", "de algodon", "autoajustable" ,2 ,1, 1, 1000 , 2, "bombacha.png" );
+INSERT INTO `includedb`.`products` VALUES (1,"bombacha", "para todos los totos", "de algodon", "autoajustable" ,2 ,1, 1, 1000 , 2, "1654375717277_img_.jpg" );
 
 -- Creamos la tabla permissions
 
