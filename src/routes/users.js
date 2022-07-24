@@ -20,9 +20,9 @@ const uploadFile = multer({ storage });
 //Validaciones
 const validateRegisterForm = [
    body('name').notEmpty().withMessage('Nombre obligatorio'),
-   body('apellido').notEmpty().withMessage('Apellido obligatorio'),
+   body('lastName').notEmpty().withMessage('Apellido obligatorio'),
    body('email').isEmail().withMessage('Ingrese un email correcto'),
-   body('user').notEmpty().withMessage('Ingrese su nombre de usuario'),
+   body('userName').notEmpty().withMessage('Ingrese su nombre de usuario'),
    body('password').isLength({min:8}).withMessage('Constraseña minimo 8 caracteres'),
 ]
 

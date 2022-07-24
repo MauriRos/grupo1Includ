@@ -31,10 +31,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
             allowNull: false
         },
-        permissionsId: {
-            type: dataTypes.INTEGER,
-            allowNull: false
-        }
+        // permissionId: {
+        //     type: dataTypes.INTEGER,
+        //     allowNull: true
+        // }
     };
     let config = {
         timestamps: false,
@@ -42,12 +42,12 @@ module.exports = (sequelize, dataTypes) => {
     }
     const User = sequelize.define(alias,cols,config);
 
-    User.associate = function (models) {
-        User.belongsTo(models.Permission, {
-        foreignKey: "permissionsId",
-        as: "permissions"
-    })};
-    //Aquí debes realizar lo necesario para crear las relaciones con los otros modelos (Genre - Actor)
+    // User.associate = function (models) {
+    //     User.belongsTo(models.Permission, {
+    //     foreignKey: "permissionId",
+    //     as: "permissions"
+    // })};
+
 
     return User
 };

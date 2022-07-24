@@ -4,10 +4,7 @@ const fs = require('fs');
 const {validationResult} = require('express-validator');
 const bcrypt = require('bcryptjs');
 const rememberMiddleware = require('../middleware/rememberMiddleware');
-
-
-const usersPathFile =path.join(__dirname, "../data/user.json");
-const users = JSON.parse(fs.readFileSync(usersPathFile, 'utf-8'));
+const db = require("../../database/models");
 
 
 const userController = {
@@ -57,9 +54,14 @@ const userController = {
     },
 
     register: (req,res) => {
-        let userInDB = users.find (user => user.email == req.body.email)
+        let userInDB = db.User.findOne({
+            where: {
+                email: req.body.email
+            }
+        })
+        Promise.all([userInDB])
+        .then(function([userInDB]){
         console.log(userInDB)
-
         if (userInDB != undefined){
             return res.render('loginRegister',{
                 errorsDB:  {
@@ -69,29 +71,31 @@ const userController = {
                 },
                 old : req.body,
             }) ;     
-    }
+        }})   
         // Validacion de datos 
         let errors = validationResult(req)
         // console.log(req.body)
         if(errors.isEmpty()){
         //Creación del usuario
-        let image;
+        let avatar;
         if(req.files[0] !=undefined){
-            image = req.files[0].filename
+            avatar = req.files[0].filename
         }else{
-            image = "default-avatar.jpg"
+            avatar = "default-avatar.jpg"
         }
-        let newUser = {
-            id: users[users.length - 1].id + 1,
-            ...req.body,
-            password: bcrypt.hashSync(req.body.password, 10),
-            avatar: image,
-        }
-        users.push(newUser);
-        fs.writeFileSync(usersPathFile, JSON.stringify(users, 'utf-8'));
+
+        db.User.create({
+			name: req.body.name,
+			lastName: req.body.lastName,
+			userName: req.body.userName,
+			email: req.body.email,
+			password: bcrypt.hashSync(req.body.password, 10),
+			avatar: avatar,
+            // permissionId: null
+		});
+
         res.redirect('/')
     } else {
-        console.log(errors)
        res.render('loginRegister', {
                 errors: errors.array(),
                 old: req.body,
