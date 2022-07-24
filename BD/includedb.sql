@@ -53,18 +53,15 @@ CREATE TABLE `includedb`.`products` (
   CONSTRAINT `fk_product_categoryProduct_id`
     FOREIGN KEY (`categoryProductId`)
     REFERENCES `includedb`.`categoryProduct` (`id`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
+    ,
   CONSTRAINT `fk_product_colors_id`
     FOREIGN KEY (`colorsId`)
     REFERENCES `includedb`.`colors` (`id`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
+    ,
   CONSTRAINT `fk_product_size_id`
     FOREIGN KEY (`sizeId`)
     REFERENCES `includedb`.`sizes` (`id`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE)
+    )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 

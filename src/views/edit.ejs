@@ -46,10 +46,14 @@
                     <input class="formatFileCP" type="file" name="image1" multiple accept=".jpg, .png">
                   </div>
 
+                  <div>
+                    <input name="id" value="<%= products.id%>">
+                  </div>
+
                   <div class="editarCP">
                     <label for="categoryProduct">Categoría:</label>
                       <select name="categoryProduct">
-                        <option selected="selected" value="<%=products.categories.category%>"><%=products.categories.category%></option>
+                        <option selected="selected" value="<%= products.categoryProductId%>"><%=products.categories.category%></option>
                         <% categories.forEach (categories => { %> 
                           <option value="<%= categories.id %>"><%= categories.category %></option>
                         <% }) %> 
@@ -59,9 +63,9 @@
                   <div class="editarCP">
                     <label for="color">Colores:</label>
                       <select name="color">
-                        <option selected="selected" value="<%=products.colors.color%>"><%=products.colors.color%></option>
+                        <option selected="selected" value="<%= products.colorsId%>"><%=products.colors.color%></option>
                         <% colors.forEach (color => { %> 
-                          <option value="<%= colors.id %>"><%= colors.color %></option>
+                          <option value="<%= color.id %>"><%= color.color %></option>
                         <% }) %> 
                       </select> 
                   </div>
@@ -69,9 +73,9 @@
                   <div class="editarCP">
                     <label for="size">Talles:</label>
                         <select name="size">
-                            <option selected="selected" value="<%=products.sizes.size %>"><%=products.sizes.size %></option>
+                            <option selected="selected" value="<%= products.sizeId%>"><%=products.sizes.size %></option>
                               <% sizes.forEach (sizes => { %> 
-                                <option value="<%= sizes.id %>"><%= products.sizes.size %></option>
+                                <option value="<%= sizes.id %>"><%= sizes.size %></option>
                               <% }) %>   
                             </select>
                     </div>

@@ -99,7 +99,9 @@ const productsController = {
 		res.redirect("/products/productsList") 
 	},
     edit: (req, res) => {
-		db.Product.update({
+		
+		let dbProd = db.Product.update({
+			id: req.body.id,
 			name: req.body.name,
 			description: req.body.description,
 			characteristics: req.body.characteristics,
@@ -115,7 +117,10 @@ const productsController = {
 				id: req.params.id
 			}
 		});
-		res.redirect("/productDetail2/"+ req.params.id)
+		Promise.all([dbProd])
+		.then(function([products]){
+		res.redirect("/products/"+ req.params.id)
+		})
 
 	},
 	delete: (req,res) => {
