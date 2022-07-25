@@ -21,32 +21,28 @@ const userController = {
         })
         .then(function(userInDB){
             if(errorsLogin.isEmpty()){
-            if(userInDB != undefined){
-                if(bcrypt.compareSync(req.body.password, userInDB.password)){
-                    var userALoguearse = userInDB;
-        }else{
-            return res.render('loginRegister', {errorsLogin: [{
-                msg: "Credenciales invalidas"}]}
-        )
-    }}
-    if(userInDB == undefined){
-        res.render("loginRegister", {errorsLogin: {
-        msg: "No hay un usuario registrado con este email, registrese!"}})
-    }else{
-        console.log(userInDB)
-        req.session.userLogueado = userInDB;
-        
-        if (req.body.remember != undefined){
-            res.cookie("remember", userInDB.email, { maxAge: 6000000});
-        }
-
-        res.redirect("/")
+                if(userInDB){
+                    if(bcrypt.compareSync(req.body.password, userInDB.password)){
+                        // var userALoguearse = userInDB;
+                        req.session.userLogueado = userInDB;
+                        
+                        if (req.body.remember != undefined){
+                            console.log("entro")
+                            res.cookie("remember", userInDB.email, { maxAge: 60000});
+                        }
+                        console.log(req.cookies.remember)
+                        res.redirect("/")
+                        }else{
+                        return res.render('loginRegister', {errorsLogin: [{
+                            msg: "Credenciales invalidas"}]});
+                        }
+                }else{
+                    res.render("loginRegister", {errorsLogin: {
+                    msg: "No hay un usuario registrado con este email, registrese!"}})
+                }
     
-    }
-}
-    else{
-        return res.render('loginRegister', {errorsLogin: errorsLogin}
-        )}})},
+    }})
+},
 
 
     //     if(errorsLogin.isEmpty()){
