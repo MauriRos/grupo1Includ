@@ -14,36 +14,71 @@ const userController = {
         // console.log(errorsLogin);
         // console.log(users);
         // console.log(req.body);
-        if(errorsLogin.isEmpty()){
-            for( let i=0; i<users.length; i++){
-                if(users[i].email == req.body.email){
-                    if(bcrypt.compareSync(req.body.password, users[i].password)){
-                        var userALoguearse = users[i];
-                        break;
-                    }
-                    return res.render('loginRegister', {errorsLogin: [{
-                        msg: "Credenciales invalidas"}]
-                    });
-                    
-                }}
-            if(userALoguearse == undefined){
-                res.render("loginRegister", {errorsLogin: {
-                msg: "No hay un usuario registrado con este email, registrese!"}})
-            }else{
-                console.log(userALoguearse)
-                req.session.userLogueado = userALoguearse;
-                
-                if (req.body.remember != undefined){
-                    res.cookie("remember", userALoguearse.email, { maxAge: 6000000});
-                }
-
-                res.redirect("/")
-            
+        db.User.findOne({
+            where: {
+                email: req.body.email
             }
+        })
+        .then(function(userInDB){
+            if(errorsLogin.isEmpty()){
+            if(userInDB != undefined){
+                if(bcrypt.compareSync(req.body.password, userInDB.password)){
+                    var userALoguearse = userInDB;
         }else{
-            return res.render('loginRegister', {errorsLogin: errorsLogin}
-            )};
-    },
+            return res.render('loginRegister', {errorsLogin: [{
+                msg: "Credenciales invalidas"}]}
+        )
+    }}
+    if(userInDB == undefined){
+        res.render("loginRegister", {errorsLogin: {
+        msg: "No hay un usuario registrado con este email, registrese!"}})
+    }else{
+        console.log(userInDB)
+        req.session.userLogueado = userInDB;
+        
+        if (req.body.remember != undefined){
+            res.cookie("remember", userInDB.email, { maxAge: 6000000});
+        }
+
+        res.redirect("/")
+    
+    }
+}
+    else{
+        return res.render('loginRegister', {errorsLogin: errorsLogin}
+        )}})},
+
+
+    //     if(errorsLogin.isEmpty()){
+    //         for( let i=0; i<users.length; i++){
+    //             if(users[i].email == req.body.email){
+    //                 if(bcrypt.compareSync(req.body.password, users[i].password)){
+    //                     var userALoguearse = users[i];
+    //                     break;
+    //                 }
+    //                 return res.render('loginRegister', {errorsLogin: [{
+    //                     msg: "Credenciales invalidas"}]
+    //                 });
+                    
+    //             }}
+    //         if(userALoguearse == undefined){
+    //             res.render("loginRegister", {errorsLogin: {
+    //             msg: "No hay un usuario registrado con este email, registrese!"}})
+    //         }else{
+    //             console.log(userALoguearse)
+    //             req.session.userLogueado = userALoguearse;
+                
+    //             if (req.body.remember != undefined){
+    //                 res.cookie("remember", userALoguearse.email, { maxAge: 6000000});
+    //             }
+
+    //             res.redirect("/")
+            
+    //         }
+    //     }else{
+    //         return res.render('loginRegister', {errorsLogin: errorsLogin}
+    //         )};
+    // },
     check: (req,res) => {
         res.send("el usuario logueado es "+ req.session.userLogueado.email);
         console.log(userALoguearse)
@@ -54,54 +89,49 @@ const userController = {
     },
 
     register: (req,res) => {
-        let userInDB = db.User.findOne({
+        db.User.findOne({
             where: {
                 email: req.body.email
             }
         })
-        Promise.all([userInDB])
-        .then(function([userInDB]){
-        console.log(userInDB)
-        if (userInDB != undefined){
-            return res.render('loginRegister',{
-                errorsDB:  {
-                    email: {
-                        msg:'Este email ya está registrado'
+        .then(function(userInDB){
+            if(userInDB == undefined){
+            // Validacion de datos 
+            let errors = validationResult(req)
+            // console.log(req.body)
+                if(errors.isEmpty()){
+            //Creación del usuario
+                let avatar;
+                    if(req.files[0] !=undefined){
+                        avatar = req.files[0].filename
+                        }else{
+                            avatar = "default-avatar.jpg"
                     }
-                },
-                old : req.body,
-            }) ;     
-        }})   
-        // Validacion de datos 
-        let errors = validationResult(req)
-        // console.log(req.body)
-        if(errors.isEmpty()){
-        //Creación del usuario
-        let avatar;
-        if(req.files[0] !=undefined){
-            avatar = req.files[0].filename
-        }else{
-            avatar = "default-avatar.jpg"
-        }
 
-        db.User.create({
-			name: req.body.name,
-			lastName: req.body.lastName,
-			userName: req.body.userName,
-			email: req.body.email,
-			password: bcrypt.hashSync(req.body.password, 10),
-			avatar: avatar,
-            // permissionId: null
-		});
+                db.User.create({
+                    name: req.body.name,
+                    lastName: req.body.lastName,
+                    userName: req.body.userName,
+                    email: req.body.email,
+                    password: bcrypt.hashSync(req.body.password, 10),
+                    avatar: avatar,
+                    // permissionId: null
+                });
 
-        res.redirect('/')
-    } else {
-       res.render('loginRegister', {
-                errors: errors.array(),
-                old: req.body,
-         }) 
-    }
-    },
+                res.redirect('/')
+                }} else { 
+                    
+                    if (userInDB.email){
+                        return res.render('loginRegister',{
+                            errorsDB:  {
+                                email: {
+                                    msg:'Este email ya está registrado'
+                                }
+                            },
+                            old : req.body,
+                        });
+                    }
+    }})},
     logOut: (req,res) => {
         res.render('logOut')
     },
