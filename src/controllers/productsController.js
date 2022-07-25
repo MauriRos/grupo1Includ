@@ -76,7 +76,7 @@ const productsController = {
     createProduct: (req,res) => {
 		let image ="";
 		
-		if(req.files != undefined){
+		if(req.files[0] != undefined){
 			
 			image = req.files.filename;
 		
@@ -129,6 +129,10 @@ const productsController = {
 		})
 		res.redirect('/');
 	},
+
+	filtrar: ()=>{
+
+	}
 }
     
 
