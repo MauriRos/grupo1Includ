@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const usersPathFile =path.join(__dirname, "../data/user.json");
 const users = JSON.parse(fs.readFileSync(usersPathFile, 'utf-8'));
+const db = require("../../database/models");
 
 function rememberMiddleware(req, res, next) {
     
@@ -16,8 +17,7 @@ function rememberMiddleware(req, res, next) {
         } 
         req.session.userLogueado = userALoguearse;
         res.locals.userLogueado = req.session.userLogueado;
-
-        console.log();
+        ;
     }
     next();   
 }
