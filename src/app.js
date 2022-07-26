@@ -28,8 +28,8 @@ app.use(session({
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 app.use(cookieParser());
-app.use(rememberMiddleware);
+// app.use(rememberMiddleware);
+app.use(express.json());
 app.use('/', mainRouter);
 app.use('/products', productRouter);
 app.use('/user', userRouter); 
-app.use(express.json());
