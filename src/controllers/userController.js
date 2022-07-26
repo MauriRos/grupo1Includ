@@ -27,8 +27,9 @@ const userController = {
                         req.session.userLogueado = userInDB;
                         
                         if (req.body.remember != undefined){
-                            console.log("entro")
-                            res.cookie("remember", userInDB.email, { maxAge: 60000});
+                            res.cookie("remember", req.body.email, { maxAge: 60000});
+                            console.log(req.body.email)
+                            console.log(req.cookies.remember)
                         }
                         console.log(req.cookies.remember)
                         res.redirect("/")
@@ -129,6 +130,7 @@ const userController = {
                     }
     }})},
     logOut: (req,res) => {
+        req.session.destroy();
         res.render('logOut')
     },
     logIn: (req,res) => {
