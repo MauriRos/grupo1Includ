@@ -2,8 +2,8 @@ const path = require('path');
 let ejs = require(('ejs'));
 const fs = require('fs');
 const db = require("../../database/models");
-const { Console } = require('console');
-const { devNull } = require('os');
+// const { Console } = require('console');
+// const { devNull } = require('os');
 
 
 const productsController = {
@@ -74,15 +74,16 @@ const productsController = {
 		});
 	},
     createProduct: (req,res) => {
-		let image ="";
+		let image ;
 		
 		if(req.files[0] != undefined){
 			
-			image = req.files.filename;
+			image = req.files[0].filename
 		
 		}else{
 			image= 'default-image.png'
 		};
+		console.log(image)
 		
 		db.Product.create({
 			name: req.body.name,
@@ -94,7 +95,7 @@ const productsController = {
 			sizeId: req.body.size,
 			price: req.body.price, 
 			stock: req.body.cantidad,  
-			image: req.files.filename 
+			image: image
 		});
 		res.redirect("/products/productsList") 
 	},
@@ -130,9 +131,6 @@ const productsController = {
 		res.redirect('/');
 	},
 
-	filtrar: ()=>{
-
-	}
 }
     
 
