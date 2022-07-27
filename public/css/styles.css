@@ -991,7 +991,7 @@ form{
 .editarCP{
     margin-bottom: 15px;
 }
-.editarCP label{
+.editarCP label, .imageCP label{
     margin-bottom: 5px;
     font-style: italic;
     display: block;
@@ -1003,6 +1003,13 @@ form{
 }
 .checkCP{
     display: inline;
+}
+.imageCP{
+    text-align: left;
+}
+.imageCP label{
+    padding-left: 25%;
+    margin-top: 15px;
 }
 
 

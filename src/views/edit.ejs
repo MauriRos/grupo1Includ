@@ -6,7 +6,7 @@
     <%- include('partials/header') %>
     <title>Editar Producto</title>
   
-    <main class="mainCreateProduct">
+      <main class="mainCreateProduct">
       
         <div class="contaicontainCreate">
               <div>
@@ -14,7 +14,7 @@
                 <h5 class="subtitleCreatProduct">Home > Editar</h5>
               </div>
 
-              <form class='formularioCreateProducts' method="POST" action="/products/<%= products.id %>/edit?_method=PUT" enctype="multipart/form-data">
+            <form class='formularioCreateProducts' method="POST" action="/products/<%= products.id %>/edit?_method=PUT" enctype="multipart/form-data">
 
                   <div class="editarCP">
                       <label for="name">Nombre del Producto</label>
@@ -37,13 +37,46 @@
                   </div>
 
                   <div class="editarCP">
-                    <label for="image">Imagen</label>
-                    <p>Imagen Principal</p>
-                    <% for( let i = 0; i < products.image.length; i++ ) { %>
-                      
-                      <img class="image" src="/images/products/<%= products.image%> ">
-                    <% } %>
-                    <input class="formatFileCP" type="file" name="image1" multiple accept=".jpg, .png">
+                    <label for="image">Imagenes</label>
+                    </div>
+                        
+                        <p><%= "Imagen: Principal"%> </p>
+                        <img class="image" src="/images/products/<%= products.image%> ">
+                        <div class="divImage">
+                          <label for="image">Nueva imagen Principal</label>
+                          <input class="formatFileCP" type="file" name="image" accept=".jpg, .png" >
+                        </div>
+
+                        <p><%= "Imagen: Secundaria"%> </p>
+                        <img class="image" src="/images/products/<%= products.image2%> ">
+                        <div class="divImage">
+                          <label for="image2">Nueva imagen Secundaria</label>
+                          <input class="formatFileCP" type="file" name="image2" accept=".jpg, .png" >
+                        </div>
+                        
+                        <p><%= "Imagen: miniatura"%> </p>
+                        <img class="image" src="/images/products/<%= products.image3%> ">
+                        <div class="divImage">
+                          <label for="image3">Nueva imagenes miniatura</label>
+                          <input class="formatFileCP" type="file" name="image3" accept=".jpg, .png" >
+                        </div>
+                        
+                        <p><%= "Imagen: miniatura"%> </p>
+                        <img class="image" src="/images/products/<%= products.image4%> ">
+                        <div class="divImage">
+                          <label for="image4">Nueva imagenes miniatura</label>
+                          <input class="formatFileCP" type="file" name="image4" accept=".jpg, .png" >
+                        </div>
+
+                        <p><%= "Imagen: miniatura"%> </p>
+                        <img class="image" src="/images/products/<%= products.image5%> ">
+                        <div class="divImage">
+                          <label for="image5">Nueva imagenes miniatura</label>
+                          <input class="formatFileCP" type="file" name="image5" accept=".jpg, .png" >
+                        </div>
+                    </div>
+
+                    
                   </div>
 
                   <div>
@@ -55,7 +88,7 @@
                       <select name="categoryProduct">
                         <option selected="selected" value="<%= products.categoryProductId%>"><%=products.categories.category%></option>
                         <% categories.forEach (categories => { %> 
-                          <option value="<%= categories.id %>"><%= categories.category %></option>
+                        <option value="<%= categories.id %>"><%= categories.category %></option>
                         <% }) %> 
                       </select>
                   </div>
@@ -65,7 +98,7 @@
                       <select name="color">
                         <option selected="selected" value="<%= products.colorsId%>"><%=products.colors.color%></option>
                         <% colors.forEach (color => { %> 
-                          <option value="<%= color.id %>"><%= color.color %></option>
+                        <option value="<%= color.id %>"><%= color.color %></option>
                         <% }) %> 
                       </select> 
                   </div>
@@ -74,10 +107,10 @@
                     <label for="size">Talles:</label>
                         <select name="size">
                             <option selected="selected" value="<%= products.sizeId%>"><%=products.sizes.size %></option>
-                              <% sizes.forEach (sizes => { %> 
-                                <option value="<%= sizes.id %>"><%= sizes.size %></option>
-                              <% }) %>   
-                            </select>
+                            <% sizes.forEach (sizes => { %> 
+                            <option value="<%= sizes.id %>"><%= sizes.size %></option>
+                            <% }) %>   
+                        </select>
                     </div>
 
                   <div class="editarCP">
@@ -89,14 +122,14 @@
                     <input class="formatCreateProductInput" name="cantidad" value="<%=products.stock  %>" type="number" minlength="6" >
                   </div>
                   <div class="editarCP">
-                  <button type="submit" class="form-button">Editar</button>
-                  <div class="editarCP">
+                    <button type="submit" class="form-button">Editar</button>
+                  </div>
 
             </form>
 
-          </div>
+        </div>
 
-    </main>
+      </main>
   
   <%- include('partials/footer')  %> 
 

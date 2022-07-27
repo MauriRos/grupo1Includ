@@ -74,16 +74,38 @@ const productsController = {
 		});
 	},
     createProduct: (req,res) => {
-		let image ;
-		
-		if(req.files[0] != undefined){
-			
-			image = req.files[0].filename
-		
+		let imagen ;
+		if(req.files[0] != undefined){	
+			imagen = req.files[0].filename
 		}else{
-			image= 'default-image.png'
+		imagen = 'default-image.png'
 		};
-		console.log(image)
+		let imagen2 ;
+		if(req.files[1] != undefined){	
+			imagen2 = req.files[1].filename
+		}else{
+			imagen2 = 'default-image.png'
+		};
+		let imagen3 ;
+		if(req.files[2] != undefined){	
+			imagen3 = req.files[2].filename
+		}else{
+			imagen3 = 'default-image.png'
+		};
+		let imagen4 ;
+		if(req.files[3] != undefined){	
+			imagen4 = req.files[3].filename
+		}else{
+			imagen4 = 'default-image.png'
+		};
+		let imagen5 ;
+		if(req.files[4] != undefined){	
+			imagen5 = req.files[4].filename
+		}else{
+			imagen5 = 'default-image.png'
+		};
+		
+		
 		
 		db.Product.create({
 			name: req.body.name,
@@ -95,12 +117,40 @@ const productsController = {
 			sizeId: req.body.size,
 			price: req.body.price, 
 			stock: req.body.cantidad,  
-			image: image
+			image: imagen,
+			image2: imagen2,
+			image3: imagen3,
+			image4: imagen4,
+			image5: imagen5
 		});
 		res.redirect("/products/productsList") 
 	},
     edit: (req, res) => {
-		
+		let image;
+		if (req.files[0]){
+			image = req.files[0].filename
+		}else{ image = req.params.image}
+
+		let image2;
+		if (req.files[1]){
+			image2 = req.files[1].filename
+		}else{ image2 = req.params.image2}
+
+		let image3;
+		if (req.files[2]){
+			image3 = req.files[2].filename
+		}else{ image3 = req.params.image3}
+
+		let image4;
+		if (req.files[3]){
+			image4 = req.files[3].filename
+		}else{ image4 = req.params.image4}
+
+		let image5;
+		if (req.files[4]){
+			image5 = req.files[4].filename
+		}else{ image5 = req.params.image5}
+
 		let dbProd = db.Product.update({
 			id: req.body.id,
 			name: req.body.name,
@@ -112,7 +162,11 @@ const productsController = {
 			sizeId: req.body.size,
 			price: req.body.price,
 			stock: req.body.cantidad,
-			image: req.body.image
+			image: image,
+			image2: image2,
+			image3: image3,
+			image4: image4,
+			image5: image5
 		}, {
 			where: {
 				id: req.params.id
