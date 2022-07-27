@@ -5,15 +5,14 @@ const {validationResult} = require('express-validator');
 const bcrypt = require('bcryptjs');
 const rememberMiddleware = require('../middleware/rememberMiddleware');
 const db = require("../../database/models");
+const { response } = require('express');
+
 
 
 const userController = {
     login: (req,res) => {
         // VALIDACIONES
         let errorsLogin = validationResult(req);
-        // console.log(errorsLogin);
-        // console.log(users);
-        // console.log(req.body);
         db.User.findOne({
             where: {
                 email: req.body.email
@@ -29,7 +28,7 @@ const userController = {
                         if (req.body.remember != undefined){
                             res.cookie("remember", req.body.email, { maxAge: 60000});
                             console.log(req.body.email)
-                            console.log(req.cookies.remember)
+                            console.log(req.headers.cookie["remember"])
                         }
                         console.log(req.cookies.remember)
                         res.redirect("/")
