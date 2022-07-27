@@ -27,10 +27,10 @@ const userController = {
                         
                         if (req.body.remember != undefined){
                             res.cookie("remember", req.body.email, { maxAge: 600000});
-                            console.log(req.body.email)
+                            // console.log(req.body.email)
                             // console.log(req.headers.cookie["remember"])
                         }
-                        console.log(req.cookies.remember)
+                        // console.log(req.cookies.remember)
                         res.redirect("/")
                         }else{
                         return res.render('loginRegister', {errorsLogin: [{
