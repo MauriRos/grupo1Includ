@@ -7,8 +7,8 @@ const mainRouter = require('./routes/main.js');
 const productRouter = require('./routes/products.js');
 const userRouter = require('./routes/users.js');
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
-const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const cookieParser = require('cookie-parser');
 const rememberMiddleware = require("../src/middleware/rememberMiddleware");
 
 

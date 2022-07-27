@@ -105,3 +105,29 @@ Sprint 4:
 - Hacer menos:
  
 - Dejar de hacer:
+
+
+Sprint 5:
+
+- Comenzar a hacer:
+    - Detallar más las tareas en el tablero
+    - Llegar con tiempo para hacer una ultima revision
+
+- Hacer más:
+    - Usar más el tablero
+    - Implementar metodologias agiles
+    - Definir criterios comunes
+    - Ir al día
+    - Consultar más seguido
+
+- Continuar haciendo:
+    - Reuniones presenciales
+    - Recursero paginas utiles
+    - Analisis en conjunto de codigo
+    - Calendarizar reuniones
+    - Dividir tareas y trabajar con GIT
+  
+- Hacer menos:
+ 
+- Dejar de hacer:
+    - Dejarse estar luego de entregado el sprint anterior
