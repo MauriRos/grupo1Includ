@@ -75,15 +75,36 @@ const productsController = {
 	},
     createProduct: (req,res) => {
 		let image ;
-		
-		if(req.files[0] != undefined){
-			
+		if(req.files[0] != undefined){	
 			image = req.files[0].filename
-		
 		}else{
-			image= 'default-image.png'
+			image = 'default-image.png'
 		};
-		console.log(image)
+		let image2 ;
+		if(req.files[0] != undefined){	
+			image2 = req.files[0].filename
+		}else{
+			image2 = 'default-image.png'
+		};
+		let image3 ;
+		if(req.files[0] != undefined){	
+			image3 = req.files[0].filename
+		}else{
+			image3 = 'default-image.png'
+		};
+		let image4 ;
+		if(req.files[0] != undefined){	
+			image4 = req.files[0].filename
+		}else{
+			image4 = 'default-image.png'
+		};
+		let image5 ;
+		if(req.files[0] != undefined){	
+			image5 = req.files[0].filename
+		}else{
+			image5 = 'default-image.png'
+		};
+		
 		
 		db.Product.create({
 			name: req.body.name,
@@ -95,12 +116,40 @@ const productsController = {
 			sizeId: req.body.size,
 			price: req.body.price, 
 			stock: req.body.cantidad,  
-			image: image
+			image: image,
+			image2: image2,
+			image3: image3,
+			image4: image4,
+			image5: image5
 		});
 		res.redirect("/products/productsList") 
 	},
     edit: (req, res) => {
-		
+		let image;
+		if (req.files[0]){
+			image = req.files[0].filename
+		}else{ image = req.params.image}
+
+		let image2;
+		if (req.files[0]){
+			image2 = req.files[0].filename
+		}else{ image2 = req.params.image2}
+
+		let image3;
+		if (req.files[0]){
+			image3 = req.files[0].filename
+		}else{ image3 = req.params.image3}
+
+		let image4;
+		if (req.files[0]){
+			image4 = req.files[0].filename
+		}else{ image4 = req.params.image4}
+
+		let image5;
+		if (req.files[0]){
+			image5 = req.files[0].filename
+		}else{ image5 = req.params.image5}
+
 		let dbProd = db.Product.update({
 			id: req.body.id,
 			name: req.body.name,
@@ -112,7 +161,11 @@ const productsController = {
 			sizeId: req.body.size,
 			price: req.body.price,
 			stock: req.body.cantidad,
-			image: req.body.image
+			image: image,
+			image2: image2,
+			image3: image3,
+			image4: image4,
+			image5: image5
 		}, {
 			where: {
 				id: req.params.id
