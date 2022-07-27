@@ -74,36 +74,37 @@ const productsController = {
 		});
 	},
     createProduct: (req,res) => {
-		let image ;
+		let imagen ;
 		if(req.files[0] != undefined){	
-			image = req.files[0].filename
+			imagen = req.files[0].filename
 		}else{
-			image = 'default-image.png'
+		imagen = 'default-image.png'
 		};
-		let image2 ;
-		if(req.files[0] != undefined){	
-			image2 = req.files[0].filename
+		let imagen2 ;
+		if(req.files[1] != undefined){	
+			imagen2 = req.files[1].filename
 		}else{
-			image2 = 'default-image.png'
+			imagen2 = 'default-image.png'
 		};
-		let image3 ;
-		if(req.files[0] != undefined){	
-			image3 = req.files[0].filename
+		let imagen3 ;
+		if(req.files[2] != undefined){	
+			imagen3 = req.files[2].filename
 		}else{
-			image3 = 'default-image.png'
+			imagen3 = 'default-image.png'
 		};
-		let image4 ;
-		if(req.files[0] != undefined){	
-			image4 = req.files[0].filename
+		let imagen4 ;
+		if(req.files[3] != undefined){	
+			imagen4 = req.files[3].filename
 		}else{
-			image4 = 'default-image.png'
+			imagen4 = 'default-image.png'
 		};
-		let image5 ;
-		if(req.files[0] != undefined){	
-			image5 = req.files[0].filename
+		let imagen5 ;
+		if(req.files[4] != undefined){	
+			imagen5 = req.files[4].filename
 		}else{
-			image5 = 'default-image.png'
+			imagen5 = 'default-image.png'
 		};
+		
 		
 		
 		db.Product.create({
@@ -116,11 +117,11 @@ const productsController = {
 			sizeId: req.body.size,
 			price: req.body.price, 
 			stock: req.body.cantidad,  
-			image: image,
-			image2: image2,
-			image3: image3,
-			image4: image4,
-			image5: image5
+			image: imagen,
+			image2: imagen2,
+			image3: imagen3,
+			image4: imagen4,
+			image5: imagen5
 		});
 		res.redirect("/products/productsList") 
 	},
@@ -131,23 +132,23 @@ const productsController = {
 		}else{ image = req.params.image}
 
 		let image2;
-		if (req.files[0]){
-			image2 = req.files[0].filename
+		if (req.files[1]){
+			image2 = req.files[1].filename
 		}else{ image2 = req.params.image2}
 
 		let image3;
-		if (req.files[0]){
-			image3 = req.files[0].filename
+		if (req.files[2]){
+			image3 = req.files[2].filename
 		}else{ image3 = req.params.image3}
 
 		let image4;
-		if (req.files[0]){
-			image4 = req.files[0].filename
+		if (req.files[3]){
+			image4 = req.files[3].filename
 		}else{ image4 = req.params.image4}
 
 		let image5;
-		if (req.files[0]){
-			image5 = req.files[0].filename
+		if (req.files[4]){
+			image5 = req.files[4].filename
 		}else{ image5 = req.params.image5}
 
 		let dbProd = db.Product.update({

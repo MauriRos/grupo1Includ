@@ -52,6 +52,22 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
             allowNull: true
         },
+        image2: {
+            type: dataTypes.STRING,
+            allowNull: true
+        },
+        image3: {
+            type: dataTypes.STRING,
+            allowNull: true
+        },
+        image4: {
+            type: dataTypes.STRING,
+            allowNull: true
+        },
+        image5: {
+            type: dataTypes.STRING,
+            allowNull: true
+        },
     };
     let config = {
         timestamps: false,
