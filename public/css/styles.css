@@ -135,6 +135,43 @@ main{
     font-size: 50px;
 }
 
+/*--- Product List ---*/
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 2;
+    right: 15px;
+    top: 150px;
+    transform: translate(0%, 0px);
+    background:#51b8d811 ;
+    padding: 10px;
+    height: 50px;
+    border-radius: 40px;
+    text-shadow: 0 0 5px #4893AA, 0 0 15px #4893AA,  0 0 25px #4893AA;
+    
+}
+.searchText{
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    float: left;
+    line-height: 60px;
+    transition: .3s;
+    width: 0;
+    
+}
+.searchButom{
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    
+}
+
+
 @media (min-width: 426px) {
     .carruselinfo{
         margin-top: 20px;
@@ -148,6 +185,10 @@ main{
         display: block;
         width: 100%;
         min-width: 100%;
+    }
+
+    .search:hover > .searchText {
+        width: 190px;
     }
 }
 

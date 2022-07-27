@@ -1,0 +1,23 @@
+<div class="search">
+    <input type="text" class="searchText" placeholder="Busqueda de productos">
+    <a class="searchButom">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </a> 
+</div>
+
+<script>
+    const searchText = document.querySelector(".searchText");
+    const db = require("../../database/models");
+    db.Product.findAll()
+    .then(function buscar(resultado){
+        const text = searchText.value.toLowerCase();
+        for (let product of resultado){
+            let nameProduct = product.name.toLowerCase();
+            if (nameProduct.indexOf(text) !== -1){
+                console.log("entra al search")
+            } console.log("no entra al search")
+        } console.log(resultado)
+    })
+    searchText.addEventListener("keyup", buscar);
+    buscar();    
+</script>
