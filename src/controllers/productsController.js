@@ -74,6 +74,26 @@ const productsController = {
 		});
 	},
     createProduct: (req,res) => {
+		// Probar con un switch	
+		// if (req.files.length) {
+        //     req.files.forEach(file => {
+        //         let { fieldname } = file
+        //         switch (fieldname) {
+        //             case "img1":
+        //                 img1 = file.filename
+        //                 break;
+        //             case "img2":
+        //                 img2 = file.filename
+        //                 break;
+        //             case "img3":
+        //                 img3 = file.filename
+        //                 break;
+        //             default:
+        //                 break;
+        //         }
+        //     })
+        // }
+	
 		let imagen ;
 		if(req.files[0] != undefined){	
 			imagen = req.files[0].filename

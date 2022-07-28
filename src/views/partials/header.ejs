@@ -53,10 +53,10 @@
               <img class="userImg" src="/images/users/default-avatar.jpg" alt="Default Avatar">
               <a href="/user/loginRegister">Iniciar Sesión</a>
             <% } else {  %>
-              <img class="userImg" src="/images/users/<%= locals.userLogueado.avatar %>" alt="Avatar de Usuario">
-              <p><%= locals.userLogueado.name %></p>
+              <img class="userImg" src="/images/users/<%= userLogueado.avatar %>" alt="Avatar de Usuario">
+              <p><%= locals.userLogueado.userName %></p>
             <% } %>   
-            <i class="iconOutSession fa-solid fa-arrow-right-from-bracket"></i>
+            <a href="/user/logout"><i class="iconOutSession fa-solid fa-arrow-right-from-bracket"></i></a>
                   
         </div>
   </header>

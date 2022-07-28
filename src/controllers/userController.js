@@ -27,10 +27,7 @@ const userController = {
                         
                         if (req.body.remember != undefined){
                             res.cookie("remember", req.body.email, { maxAge: 600000});
-                            // console.log(req.body.email)
-                            // console.log(req.headers.cookie["remember"])
                         }
-                        // console.log(req.cookies.remember)
                         res.redirect("/")
                         }else{
                         return res.render('loginRegister', {errorsLogin: [{
@@ -77,7 +74,7 @@ const userController = {
     // },
     check: (req,res) => {
         res.send("el usuario logueado es "+ req.session.userLogueado.email);
-        console.log(userALoguearse)
+        console.log(req.session.userLogueado)
     } ,
 
     loginRegister: (req,res) => {
@@ -131,6 +128,9 @@ const userController = {
     logOut: (req,res) => {
         req.session.destroy();
         res.render('logOut')
+    },
+    forbidden: (req,res) => {
+        res.render('forbidden')
     },
     logIn: (req,res) => {
         res.render('logIn')
