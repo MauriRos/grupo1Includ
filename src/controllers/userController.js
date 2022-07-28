@@ -134,7 +134,17 @@ const userController = {
     },
     logIn: (req,res) => {
         res.render('logIn')
-    }
+    },
+    profile: (req,res) => {
+		db.User.findOne({
+            where: {
+                // email: req.body.email -> aca va el nombre que puso juancho o algun session
+            }
+        })
+			.then(function(users){
+				res.render('profile', {users:users} ) 
+			}) 
+	},
 
 }
 

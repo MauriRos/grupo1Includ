@@ -6,7 +6,7 @@
 </div>
 
 <script>
-    const searchText = document.querySelector(".searchText");
+    const searchText = req.body(".searchText");
     const db = require("../../database/models");
     db.Product.findAll()
     .then(function buscar(resultado){

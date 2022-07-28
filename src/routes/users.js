@@ -39,7 +39,8 @@ router.post("/register",  uploadFile.any(), validateRegisterForm,userController.
 router.post("/login", validacionesLogin, userController.login);
 router.get("/check", userController.check);
 router.get("/logOut", userController.logOut);
-router.get("/logIn", userController.logIn)
+router.get("/logIn", userController.logIn);
+router.get("/profile", userController.profile)
 
 
 module.exports = router ;
