@@ -310,6 +310,7 @@ main{
 .userSession .iconOutSession{
     font-size: 15px;
     padding: 5px;
+    padding-left: 0px;
     margin: 0px;
     color: white;
     text-decoration: none
@@ -546,6 +547,7 @@ form{
 .userSession .iconOutSession{
     font-size: 15px;
     padding: 15px;
+    padding-left: 0px;
     margin: 0px;
     color: white;
     text-decoration: none;
