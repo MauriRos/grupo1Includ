@@ -51,7 +51,7 @@
             
             <%  if (!userLogueado) { %>
               <img class="userImg" src="/images/users/default-avatar.jpg" alt="Default Avatar">
-              <a href="/user/loginRegister">Iniciar Sesión</a>
+              <a class="nameUser" href="/user/loginRegister">Iniciar Sesión</a>
             <% } else {  %>
               <img class="userImg" src="/images/users/<%= userLogueado.avatar %>" alt="Avatar de Usuario">
               <p><%= userLogueado.userName %></p>

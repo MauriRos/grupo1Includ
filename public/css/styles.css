@@ -301,11 +301,19 @@ main{
     align-items: center;
     margin-right: 20px;
 }
-.userSession a{
+.userSession .nameUser{
     font-size: 15px;
     padding: 5px;
     text-decoration: none;
     color: white
+}
+.userSession .iconOutSession{
+    font-size: 15px;
+    padding: 5px;
+    margin: 0px;
+    color: white;
+    text-decoration: none
+    
 }
 .userImg{
     width: 30px;
@@ -524,16 +532,24 @@ form{
     align-items: center;
     margin-right: 20px;
     position: absolute;
-    right: -15px;
+    right: 0px;
     top: 15px;
 }
-.userSession a{
+.userSession .nameUser{
     font-size: 15px;
     padding: -5px;
     margin: 0px;
     color: white;
     text-decoration: none;
     width: 150px;
+}
+.userSession .iconOutSession{
+    font-size: 15px;
+    padding: 15px;
+    margin: 0px;
+    color: white;
+    text-decoration: none;
+    
 }
 .userImg{
     width: 50px;
