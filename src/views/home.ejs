@@ -17,11 +17,11 @@
             <!-- <h1 class="category"> TOP </h1> -->
 
               <div class="tarjeta">  
-                <%(products.filter(product => product.categoryProduct == "top")).forEach(product => { %>
+                <%(products.filter(product => product.categoryProductId === 1)).forEach(product => { %>
 
                   <article class="card"><a href="/products/<%= product.id %> ">
-                        <img class="image" src="/images/products/<%= product.image[0] %>" alt="<%= product.name %>">
-                        <img class="image2" src="/images/products/<%= product.image[1] %>" alt="<%= product.name %>">
+                        <img class="image" src="/images/products/<%= product.image %>" alt="<%= product.name %>">
+                        <img class="image2" src="/images/products/<%= product.image2 %>" alt="<%= product.name %>">
                         <div class="description">
                             <p class="nameProduct"><%= product.name %></p>
                             <p class="price">$<%= product.price %></p>
@@ -66,11 +66,11 @@
 <!-- 
         <h1 class="category"> PANTALONES </h1> -->
         <div class="tarjeta">  
-          <%(products.filter(product => product.categoryProduct == "pantalon")).forEach(product => { %>
+          <%(products.filter(product => product.categoryProductId === 2)).forEach(product => { %>
 
            <article class="card"><a href="/products/<%= product.id %> ">
-                 <img class="image" src="/images/products/<%= product.image[0] %>" alt="<%= product.name %>">
-                 <img class="image2" src="/images/products/<%= product.image[1] %>" alt="<%= product.name %>">
+                 <img class="image" src="/images/products/<%= product.image %>" alt="<%= product.name %>">
+                 <img class="image2" src="/images/products/<%= product.image2 %>" alt="<%= product.name %>">
                  <div class="description">
                      <p class="nameProduct"><%= product.name %></p>
                      <p class="price">$<%= product.price %></p>
@@ -120,11 +120,11 @@
         </div>
         <!-- <h1 class="category"> ACCESORIOS </h1> -->
         <div class="tarjeta">  
-          <%(products.filter(product => product.categoryProduct == "accesorio")).forEach(product => { %>
+          <%(products.filter(product => product.categoryProductId === 3)).forEach(product => { %>
 
            <article class="card"><a href="/products/<%= product.id %> ">
-                 <img class="image" src="/images/products/<%= product.image[0] %>" alt="<%= product.name %>">
-                 <img class="image2" src="/images/products/<%= product.image[1] %>" alt="<%= product.name %>">
+                 <img class="image" src="/images/products/<%= product.image %>" alt="<%= product.name %>">
+                 <img class="image2" src="/images/products/<%= product.image2 %>" alt="<%= product.name %>">
                  <div class="description">
                      <p class="nameProduct"><%= product.name %></p>
                      <p class="price">$<%= product.price %></p>
