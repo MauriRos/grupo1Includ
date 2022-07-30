@@ -4,6 +4,7 @@ const productsController = require('../controllers/productsController.js');
 const multer = require('multer');
 const path = require('path')
 const authMiddleware = require('../middleware/authMiddleware.js');
+const {body} = require('express-validator');
 
 const storage = multer.diskStorage({ 
     destination: function (req, file, cb) { 
@@ -14,6 +15,12 @@ const storage = multer.diskStorage({
   });
 
 const uploadFile = multer({ storage });
+const validateProductsForm = [
+   body('name').notEmpty().withMessage('Nombre de producto obligatorio'),
+   body('name').isLength({min: 5}).withMessage('Longitud mínima 5 caracteres'),
+   body('description').isLength({min: 2}).withMessage('Longitud mínima 20 caracteres')
+]
+
 
 router.get("/productDetail", productsController.detail)
 router.get("/productsList", productsController.productsList)
@@ -24,8 +31,8 @@ router.get("/", productsController.productsList);
 router.get("/:id", productsController.detail);
 
 
-router.post("/create", uploadFile.any(), productsController.createProduct);
-router.put("/:id/edit", uploadFile.any(), productsController.edit);
+router.post("/create", uploadFile.any(), validateProductsForm, productsController.createProduct);
+router.put("/:id/edit", uploadFile.any(), validateProductsForm, productsController.edit);
 router.delete("/:id", productsController.delete);
 
 

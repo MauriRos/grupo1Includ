@@ -10,7 +10,6 @@ const mainController = {
     home: (req,res) => {
         db.Product.findAll()
         .then(products => {
-            console.log(products);
             res.render("home", {products})
         });
         
