@@ -39,7 +39,7 @@ router.post("/login", validacionesLogin, userController.login);
 router.get("/check", userController.check);
 router.get("/logOut", userController.logOut);
 router.get("/logIn", userController.logIn);
-router.get("/profile", userController.profile)
+router.get("/userProfile", userController.profile)
 
 
 module.exports = router ;

@@ -135,18 +135,13 @@ const userController = {
     logIn: (req,res) => {
         res.render('logIn')
     },
-    profile: (req,res) => {
-        let user = req.session.userLogueado 
-        console.log(user)
-		// db.User.findOne({
-        //     where: {
-        //         // email: req.body.email -> aca va el nombre que puso juancho o algun session
-        //     }
-        // })
-		// 	.then(function(users){
-		// 		res.render('userProfile', {users:users} ) 
-		// 	}) 
-	},
+    profile:function (req,res) {
+        let user = req.session.user
+        db.User.findAll()
+        .then(function(users){
+            res.render('userProfile',{users:users})
+        })
+    },
 
 }
 
