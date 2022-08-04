@@ -20,14 +20,19 @@ const uploadFile = multer({ storage });
 //Validaciones
 const validateRegisterForm = [
    body('name').notEmpty().withMessage('Nombre obligatorio'),
+   body('name').isLength({min: 2}).withMessage('Longitud mínima 2 caracteres'),
    body('lastName').notEmpty().withMessage('Apellido obligatorio'),
+   body('email').notEmpty().withMessage('Email obligatorio'),
    body('email').isEmail().withMessage('Ingrese un email correcto'),
    body('userName').notEmpty().withMessage('Ingrese su nombre de usuario'),
+   body('password').notEmpty().withMessage('Contraseña obligatoria'),
    body('password').isLength({min:8}).withMessage('Constraseña minimo 8 caracteres'),
 ]
 
 const validacionesLogin = [
+   body('email').notEmpty().withMessage('Email obligatorio'),
    body("email").isEmail().withMessage("Email invalido"),
+   body('password').notEmpty().withMessage('Contraseña obligatoria'),
    body("password").isLength({min: 8}).withMessage("La constraseña debe tener 8 caracteres como minimo")	
 ]
 
@@ -36,7 +41,6 @@ router.get("/loginRegister", guestMiddleware, userController.loginRegister);
 
 router.post("/register",  uploadFile.any(), validateRegisterForm,userController.register)
 router.post("/login", validacionesLogin, userController.login);
-router.get("/check", userController.check);
 router.get("/logOut", userController.logOut);
 router.get("/logIn", userController.logIn);
 router.get("/userProfile", userController.profile)

@@ -72,11 +72,7 @@ const userController = {
     //         return res.render('loginRegister', {errorsLogin: errorsLogin}
     //         )};
     // },
-    check: (req,res) => {
-        res.send("el usuario logueado es "+ req.session.userLogueado.email);
-        console.log(req.session.userLogueado)
-    } ,
-
+ 
     loginRegister: (req,res) => {
         res.render('loginRegister')
     },
