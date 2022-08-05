@@ -2,16 +2,20 @@
     <nav class="nav">
       <ul class="site">
         <div>
-          <i class="fa-solid fa-shirt"></i>
-          <li><a href="/products/productsList">Productos</a></li>
+          <li>
+            <a href="/products/productsList">
+              <i class="fa-solid fa-shirt"></i>
+              Productos
+            </a>
+          </li>
         </div>
         <div>
-          <i class="fa-solid fa-star"></i>
-          <li><a href="/products/create">Nuevo</a></li>
-        </div>
-        <div>
-          <i class="fa-solid fa-hand-holding-dollar"></i>
-          <li><a href="x">Rebajas</a></li>
+          <li>
+            <a href="/products/create">
+              <i class="fa-solid fa-star"></i>
+              Nuevo
+            </a>
+          </li>
         </div>
         <div>
           <i class="fa-solid fa-list"></i>
@@ -23,8 +27,14 @@
     </div>
     <a href="/"><img class="logoHeaderMobile" src="/images/logos/logo-text.png"></a>
     <a href="/"><img class="logoHeaderDesktop" src="/images/logos/logo-text.png"></a>
-    <div class="cart">
-      <i class="fa-solid fa-cart-shopping"></i>
+    <div class="userSession2">
+      <%  if (!userLogueado) { %>
+        <img class="userImg" src="/images/users/default-avatar.jpg" alt="Default Avatar">
+        <a class="nameUser" href="/user/loginRegister"><i class="iconLogInSession fa-solid fa-arrow-right-to-bracket"></i></a>
+        <% } else {  %>
+          <img class="userImg" src="/images/users/<%= userLogueado.avatar %>" alt="Avatar de Usuario">
+          <a href="/user/logout"><i class="iconOutSession fa-solid fa-arrow-right-from-bracket"></i></a>
+      <% } %> 
     </div>
         <ul class="login">
           <div>
@@ -32,31 +42,32 @@
             <li><a href="x">Buscar</a></li>
           </div>
           <div>
-            <i class="fa-solid fa-circle-user"></i>
-            <li><a href="/user/loginRegister">Registrarse</a></li>
+            <li>
+              <a href="/user/loginRegister">
+                <i class="fa-solid fa-circle-user"></i>
+                Registrarse
+              </a>
+            </li>
           </div>
           <div>
-            <i class="fa-solid fa-heart"></i>
-            <li><a href="/products/edit">Deseos</a></li>
-          </div>
-          <div>
-          <i class="fa-solid fa-bag-shopping"></i>
-          <li><a href="/products/productCart">Compras</a></li>
+            <li>
+              <a href="/products/productCart">
+                <i class="fa-solid fa-bag-shopping"></i>
+                Compras
+              </a>
+            </li>
           </div>
         </ul>
       
     </nav>
-    <div class="userSession">
-                
-            
+          <div class="userSession">
             <%  if (!userLogueado) { %>
               <img class="userImg" src="/images/users/default-avatar.jpg" alt="Default Avatar">
               <a class="nameUser" href="/user/loginRegister">Iniciar Sesión</a>
-            <% } else {  %>
-              <img class="userImg" src="/images/users/<%= userLogueado.avatar %>" alt="Avatar de Usuario">
-              <p><%= userLogueado.userName %></p>
-            <% } %>   
-            <a href="/user/logout"><i class="iconOutSession fa-solid fa-arrow-right-from-bracket"></i></a>
-                  
-        </div>
+              <% } else {  %>
+                <img class="userImg" src="/images/users/<%= userLogueado.avatar %>" alt="Avatar de Usuario">
+                <p class="nameUser"><%= userLogueado.userName %></p>
+                <a href="/user/logout"><i class="iconOutSession fa-solid fa-arrow-right-from-bracket"></i></a>
+            <% } %> 
+          </div>
   </header>

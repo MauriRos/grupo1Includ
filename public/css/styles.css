@@ -2,8 +2,9 @@
 *{
     margin: 0px;
     box-sizing: border-box;
-    padding: 0px;
+    padding: 0px
 }
+
 
  Paleta de colores{
 color:  #F4FAFD;
@@ -173,6 +174,15 @@ main{
 
 
 @media (min-width: 426px) {
+    scroll-page {
+        
+        display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 5em;
+      }
+    
     .carruselinfo{
         margin-top: 20px;
         background-color: #0E0515;
@@ -296,18 +306,17 @@ main{
 
 /* --- User Session --- */
 .userSession{
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    margin-right: 20px;
+    display: none
 }
-.userSession .nameUser{
-    font-size: 15px;
-    padding: 5px;
-    text-decoration: none;
-    color: white
+.userSession2{
+    display: inline;
+    margin-right: 0px;
+    position: relative;
+    top: 15px;
 }
-.userSession .iconOutSession{
+
+.userSession2 .iconOutSession, .userSession2 .iconLogInSession{
+    
     font-size: 15px;
     padding: 5px;
     padding-left: 0px;
@@ -316,13 +325,17 @@ main{
     text-decoration: none
     
 }
+
 .userImg{
+    display: block;
     width: 30px;
+    height: 30px;
     border-radius: 50%;
+    box-shadow: 0 0 5px #4893AA, 0 0 15px #4893AA,  0 0 25px #4893AA;
     
     
 }
-.iconOutSession{
+.iconOutSession, .iconLogInSession{
     font-size: 15px;
     padding: 5px;
 }
@@ -527,6 +540,9 @@ form{
     padding: 10px;
 }
 /* --- User Session --- */
+.userSession2{
+    display: none;
+}
 .userSession{
     display: flex;
     justify-content: end;
@@ -555,7 +571,9 @@ form{
 }
 .userImg{
     width: 50px;
+    height: 50px;
     border-radius: 50%;
+    box-shadow: 0 0 5px #4893AA, 0 0 15px #4893AA,  0 0 25px #4893AA;  
     
     
 }
@@ -603,7 +621,15 @@ form{
 .footerLinks li{
     font-size: 0.7em;
 }
-
+.iconFooter {
+    font-size: 15px;
+    padding-right: 5px;
+}
+.followUs ul{
+    text-align: left;
+    position: relative;
+    left: 20px;
+}
 /* - MQ para DETALLE DE PROD - */
 .imageDetailANDcharacteristicsDetail{
     display: flex;
