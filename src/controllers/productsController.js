@@ -95,38 +95,37 @@ const productsController = {
         //     })
         // }
 		let errorsProduct = validationResult(req)
-        if(errorsProduct.errors[0] == ""){
-			let imagen ;
+        if(!errorsProduct.errors[0]){
+			let image ;
 			if(req.files[0] != undefined){	
-				imagen = req.files[0].filename
+				image = req.files[0].filename
 			}else{
-			imagen = 'default-image.png'
+			image = 'default-image.png'
 			};
-			let imagen2 ;
+			let image2 ;
 			if(req.files[1] != undefined){	
-				imagen2 = req.files[1].filename
+				image2 = req.files[1].filename
 			}else{
-				imagen2 = 'default-image.png'
+				image2 = 'default-image.png'
 			};
-			let imagen3 ;
+			let image3 ;
 			if(req.files[2] != undefined){	
-				imagen3 = req.files[2].filename
+				image3 = req.files[2].filename
 			}else{
-				imagen3 = 'default-image.png'
+				image3 = 'default-image.png'
 			};
-			let imagen4 ;
+			let image4 ;
 			if(req.files[3] != undefined){	
-				imagen4 = req.files[3].filename
+				image4 = req.files[3].filename
 			}else{
-				imagen4 = 'default-image.png'
+				image4 = 'default-image.png'
 			};
-			let imagen5 ;
+			let image5 ;
 			if(req.files[4] != undefined){	
-				imagen5 = req.files[4].filename
+				image5 = req.files[4].filename
 			}else{
-				imagen5 = 'default-image.png'
+				image5 = 'default-image.png'
 			};
-			console.log(req.files[0])
 			
 			
 			db.Product.create({
@@ -139,11 +138,11 @@ const productsController = {
 				sizeId: req.body.size,
 				price: req.body.price, 
 				stock: req.body.cantidad,  
-				image: imagen,
-				image2: imagen2,
-				image3: imagen3,
-				image4: imagen4,
-				image5: imagen5
+				image: image,
+				image2: image2,
+				image3: image3,
+				image4: image4,
+				image5: image5
 			});
 			res.redirect("/products/productsList") 
 	}else{
@@ -159,7 +158,7 @@ const productsController = {
 	},
     edit: (req, res) => {
 		let errorsProduct = validationResult(req)
-            if(errorsProduct.errors.length<0){
+            if(!errorsProduct.errors[0]){
 		let image;
 		if (req.files[0]){
 			image = req.files[0].filename
