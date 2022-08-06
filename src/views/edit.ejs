@@ -18,22 +18,22 @@
 
                   <div class="editarCP">
                       <label for="name">Nombre del Producto</label>
-                      <input class="formatCreateProductInput" type="text" value="<%=products.name  %> " minlength="6" name="name">
+                      <input class="formatCreateProductInput" type="text" value="<%=products.name  %> " name="name">
                   </div>
 
                   <div class="editarCP">
                       <label for="description">Descripción del Producto</label>
-                      <input class="formatCreateProductInput" type="text" value="<%=products.description  %>" minlength="6" id="description" name="description">
+                      <input class="formatCreateProductInput" type="text" value="<%=products.description  %>" id="description" name="description">
                   </div>
 
                   <div class="editarCP">
                     <label for="characteristics">Caracteristicas</label>
-                    <input class="formatCreateProductInput" type='text' value="<%=products.characteristics  %>" minlength="6" id="ca" name="characteristics">
+                    <input class="formatCreateProductInput" type='text' value="<%=products.characteristics  %>" id="ca" name="characteristics">
                   </div>
 
                   <div class="editarCP">
                     <label for="sizing">Dimensionamiento</label>
-                    <input class="formatCreateProductInput" type='textarea' value="<%=products.sizing  %>" minlength="6" id="ca" name="sizing">
+                    <input class="formatCreateProductInput" type='textarea' value="<%=products.sizing  %>" id="ca" name="sizing">
                   </div>
 
                   <div class="editarCP">
@@ -124,7 +124,16 @@
                   <div class="editarCP">
                     <button type="submit" class="form-button">Editar</button>
                   </div>
-
+                  <% if (typeof errorsProduct != "undefined") { %>
+                    <p style="color:red">Error</p>
+                    <ul>
+                      <% for (let i=0; i<errorsProduct.length; i++) { %>
+                        <li>
+                          <%= errorsProduct[i].msg %>
+                        </li>
+                      <% } %>
+                    </ul> 
+                  <% } %>
             </form>
 
         </div>

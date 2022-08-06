@@ -71,10 +71,7 @@
               <div class="form-format">
                 <label for="email">Email</label>
                 <input class="format-input" type="email" name="email" placeholder="ariel@perez.com"value="<%= locals.old && old.email ? old.email : '' %>">
-                <% if (typeof errorsDB != "undefined") { %>
-                  <p style="color:red">Error</p>
-                  <p class="feedback is-danger"><%= errorsDB.email.msg %></p>
-                <% } %>
+                
               </div>
               <div class="form-format">
                 <label for="password">Contraseña</label>
@@ -84,11 +81,16 @@
             </form>
                     
           </div>
-              <% if (typeof errors != "undefined") { %>
-                <p style="color:red">Error</p>
-              <% errors.forEach(error => { %>
-                <p class="feedback is-danger"><%= error.msg %></p>
-              <% })} %>
+          <% if (typeof errorsRegister != "undefined") { %>
+            <p style="color:red">Error</p>
+            <ul>
+              <% for (let i=0; i<errorsRegister.length; i++) { %>
+                <li>
+                  <small><%= errorsRegister[i].msg %></small>
+                </li>
+              <% } %>
+            </ul> 
+          <% } %>
         </section>
       </div>
     <section class="emailUpdates">

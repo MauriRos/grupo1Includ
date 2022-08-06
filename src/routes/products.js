@@ -18,7 +18,14 @@ const uploadFile = multer({ storage });
 const validateProductsForm = [
    body('name').notEmpty().withMessage('Nombre de producto obligatorio'),
    body('name').isLength({min: 5}).withMessage('Longitud mínima 5 caracteres'),
-   body('description').isLength({min: 2}).withMessage('Longitud mínima 20 caracteres')
+   body('description').isLength({min: 2}).withMessage('Longitud mínima 20 caracteres'),
+   body('image').custom((value, {req}) => {
+      if(req.files[0].mimetype === "image/jpeg" || req.files[0].mimetype === "image/png" || req.files[0].mimetype === "image/gif"){
+         return "valid format"
+      }else{
+         return false;
+      }
+  }).withMessage("Formatos de imagen válidos: JPG, PNG o GIF")
 ]
 
 

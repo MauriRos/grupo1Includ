@@ -38,7 +38,10 @@ const userController = {
                     msg: "No hay un usuario registrado con este email, registrese!"}})
                 }
     
-    }})
+    }else{
+             return res.render('loginRegister', {errorsLogin: errorsLogin.errors}
+                 )};
+         })
 },
 
 
@@ -84,11 +87,18 @@ const userController = {
             }
         })
         .then(function(userInDB){
-            if(userInDB == undefined){
-            // Validacion de datos 
-            let errors = validationResult(req)
-            // console.log(req.body)
-                if(errors.isEmpty()){
+            let errorsRegister = validationResult(req)
+            if(errorsRegister.errors.length<0){
+                if (userInDB.email){
+                    console.log("entro")
+                    return res.render('loginRegister',{
+                        errorsRegister:  
+                        [{ msg:'Este email ya está registrado'
+                            }]
+                        },
+                     );
+                } else {
+                if(userInDB == undefined){
             //Creación del usuario
                 let avatar;
                     if(req.files[0] !=undefined){
@@ -108,19 +118,12 @@ const userController = {
                 });
 
                 res.redirect('/')
-                }} else { 
+                }}} else { console.log("entro abajo")
+                    return res.render('loginRegister', {errorsRegister: errorsRegister.errors}
+                )}
                     
-                    if (userInDB.email){
-                        return res.render('loginRegister',{
-                            errorsDB:  {
-                                email: {
-                                    msg:'Este email ya está registrado'
-                                }
-                            },
-                            old : req.body,
-                        });
-                    }
-    }})},
+                    
+    })},
     logOut: (req,res) => {
         req.session.destroy();
         res.render('logOut')
