@@ -89,6 +89,17 @@ INSERT INTO `includedb`.`products` VALUES (9, "Medias" , "¡Tu nuevo básico de 
 INSERT INTO `includedb`.`products` VALUES (10, "Bandanas" , " ¡Nuestros pañuelos están destinados a parecer verdaderamente vintage! Habrá pequeñas inconsistencias en el tinte y la serigrafía. Es posible que la impresión no esté exactamente centrada. ¡Todo esto es intencional! ¡Vamos por esa vibra! ;) . Hecho y diseñado en Argentina con telas locales. Teñido e impreso con tintas/colorantes de bajo impacto y no tóxicos. ", "100% algodón - Super suave - Serigrafía de descarga de dos colores - Patrón exclusivo de margarita perezosa - Múltiples opciones de colores.", "Aproximadamente 22 mm x 22 mm", 3, 3, 1, 3500, 10, "1bandanas.jpg", "2bandanas.jpg","3bandanas.jpg", "4bandanas.jpg", "5bandanas.jpg");
 INSERT INTO `includedb`.`products` VALUES (11, "Pin" , " Metal plateado - Un posyes en la parte trasera. - Respaldo de pasador de goma Fabricado en EEUU. ", " Se vende por unidad", "1,5 mm - 2 mm de espesor", 3, 1, 1, 500, 100, "1pines.jpg", "2pines.jpg","3pines.jpg", "4pines.jpg", "5pines.jpg");
 INSERT INTO `includedb`.`products` VALUES (12, "Pin Frutas" , " Metal dorado - Dos postes en la parte trasera - Respaldo de pasador de goma Fabricado en EEUU. ", " Se vende por unidad", "1,5 mm - 2 mm de espesor", 3, 1, 1, 500, 100, "1pinesfrutas.jpg", "2pinesfrutas.jpg","3pinesfrutas.jpg", "4pinesfrutas.jpg", "5pinesfrutas.jpg");
+
+-- Creamos la tabla permissions
+CREATE TABLE `includedb`.`permissions` (
+  `id` INT NOT NULL,
+  `permission` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+INSERT INTO `includedb`.`permissions` VALUES (1,'admin'),(2,'user');
+
 -- Creamos la tabla users
 
 CREATE TABLE `includedb`.`users` (
@@ -99,17 +110,22 @@ CREATE TABLE `includedb`.`users` (
   `email` VARCHAR(45) NOT NULL,
   `password` VARCHAR(100) NOT NULL,
   `avatar` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`)
-  )
-  
+  `permissionId` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `fk_users_permissions_id`
+    FOREIGN KEY (`permissionId`)
+    REFERENCES `includedb`.`permissions` (`id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)  
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 -- Cargamos datos para tabla user.
 
-INSERT INTO `includedb`.`users` VALUES (1, "Mauricio", "Leguiza", "@MLeguiza11", "mauricio.leguiza@gmail.com", "$2a$10$TEEcpWJRQ1qtSYwDZbd6l.yDfEOgSu5bYnI87vBuEcqg1wgWHiKK6", "1654379420540_avatar_.jpg");
-INSERT INTO `includedb`.`users` VALUES (2, "Juan", "Ferrari", "@JFerrari12", "juan.ferrari@gmail.com", "$2a$10$TEEcpWJRQ1qtSYwDZbd6l.yDfEOgSu5bYnI87vBuEcqg1wgWHiKK6", "1654379454267_avatar_.jpg");
-INSERT INTO `includedb`.`users` VALUES (3, "Viviana", "Grecco", "@VGrecco13", "viviana.grecco@gmail.com", "$2a$10$TEEcpWJRQ1qtSYwDZbd6l.yDfEOgSu5bYnI87vBuEcqg1wgWHiKK6", "1654379489975_avatar_.jpg");
-INSERT INTO `includedb`.`users` VALUES (4, "Luisina", "Bassi", "@LBassi14", "luisina.bassi@gmail.com", "$2a$10$TEEcpWJRQ1qtSYwDZbd6l.yDfEOgSu5bYnI87vBuEcqg1wgWHiKK6", "1654379521969_avatar_.jpg");
-INSERT INTO `includedb`.`users` VALUES (5, "Virginia", "Amherdt", "@VAmherdt15", "virginia.amherdt@gmail.com", "$2a$10$TEEcpWJRQ1qtSYwDZbd6l.yDfEOgSu5bYnI87vBuEcqg1wgWHiKK6", "1654379570648_avatar_.jpg");
-INSERT INTO `includedb`.`users` VALUES (6, "Maximiliano", "Colombo", "@MColombo16", "maximiliano.colombo@gmail.com", "$2a$10$TEEcpWJRQ1qtSYwDZbd6l.yDfEOgSu5bYnI87vBuEcqg1wgWHiKK6", "default-avatar.jpg");
+INSERT INTO `includedb`.`users` VALUES (1, "Mauricio", "Leguiza", "@MLeguiza11", "mauricio.leguiza@gmail.com", "$2a$10$TEEcpWJRQ1qtSYwDZbd6l.yDfEOgSu5bYnI87vBuEcqg1wgWHiKK6", "1654379420540_avatar_.jpg",2);
+INSERT INTO `includedb`.`users` VALUES (2, "Juan", "Ferrari", "@JFerrari12", "juan.ferrari@gmail.com", "$2a$10$TEEcpWJRQ1qtSYwDZbd6l.yDfEOgSu5bYnI87vBuEcqg1wgWHiKK6", "1654379454267_avatar_.jpg",2);
+INSERT INTO `includedb`.`users` VALUES (3, "Viviana", "Grecco", "@VGrecco13", "viviana.grecco@gmail.com", "$2a$10$TEEcpWJRQ1qtSYwDZbd6l.yDfEOgSu5bYnI87vBuEcqg1wgWHiKK6", "1654379489975_avatar_.jpg",2);
+INSERT INTO `includedb`.`users` VALUES (4, "Luisina", "Bassi", "@LBassi14", "luisina.bassi@gmail.com", "$2a$10$TEEcpWJRQ1qtSYwDZbd6l.yDfEOgSu5bYnI87vBuEcqg1wgWHiKK6", "1654379521969_avatar_.jpg",2);
+INSERT INTO `includedb`.`users` VALUES (5, "Virginia", "Amherdt", "@VAmherdt15", "virginia.amherdt@gmail.com", "$2a$10$TEEcpWJRQ1qtSYwDZbd6l.yDfEOgSu5bYnI87vBuEcqg1wgWHiKK6", "1654379570648_avatar_.jpg",2);
+INSERT INTO `includedb`.`users` VALUES (6, "Maximiliano", "Colombo", "@MColombo16", "maximiliano.colombo@gmail.com", "$2a$10$TEEcpWJRQ1qtSYwDZbd6l.yDfEOgSu5bYnI87vBuEcqg1wgWHiKK6", "default-avatar.jpg",2);
+INSERT INTO `includedb`.`users` VALUES (7, "Administrador", "Administrador", "@MAdministrador", "administrador@gmail.com", "$2a$10$TEEcpWJRQ1qtSYwDZbd6l.yDfEOgSu5bYnI87vBuEcqg1wgWHiKK6", "1654379420540_avatar_.jpg",1);

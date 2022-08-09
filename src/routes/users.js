@@ -25,6 +25,13 @@ const validateRegisterForm = [
    body('email').notEmpty().withMessage('Email obligatorio'),
    body('email').isEmail().withMessage('Ingrese un email correcto'),
    body('userName').notEmpty().withMessage('Ingrese su nombre de usuario'),
+   body('avatar').custom((value, {req}) => {
+      if(req.files[0] == undefined || req.files[0].mimetype === "image/jpeg" || req.files[0].mimetype === "image/png" || req.files[0].mimetype === "image/gif"){
+         return "valid format"
+      }else{
+         return false;
+      }
+  }).withMessage("Formatos de imagen válidos: JPG, PNG o GIF"),
    body('password').notEmpty().withMessage('Contraseña obligatoria'),
    body('password').isLength({min:8}).withMessage('Constraseña minimo 8 caracteres'),
 ]

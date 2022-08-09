@@ -1,6 +1,5 @@
 const path = require('path');
 const fs = require('fs');
-const usersPathFile =path.join(__dirname, "../data/user.json");
 const db = require("../../database/models");
 
 function rememberMiddleware(req, res, next) {

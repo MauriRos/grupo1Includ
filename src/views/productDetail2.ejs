@@ -90,9 +90,12 @@
 
                         <button class="addToCart" type="submit" value="addToShop">Agregar al carrito <i class="fa-solid fa-angles-right"></i> $<%= products.price%></button>
                     <form class='formularioCreateProducts' method="POST" action="/products/<%= products.id %>?_method=DELETE">
-                    <button class="form-button" type="submit">Eliminar Producto</button>
-                    </form>
-                    <button class="form-button"><a href="/products/<%= products.id %>/edit">Editar Producto</a></button>
+                    <% if (userLogueado.permissionId == 1) { %>
+                        <button class="form-button" type="submit" id="delete">Eliminar Producto</button>
+                        </form>
+                        <button class="form-button"><a href="/products/<%= products.id %>/edit">Editar Producto</a></button>
+                        
+                    <% } %>
                 </div>
             </div>
         </div>
@@ -100,7 +103,16 @@
         
 
     </main>
-
+    <script>
+    let deleteButton = document.querySelector("#delete");
+    deleteButton.addEventListener("click", (e)=> {
+        let confirmar = confirm("¿Estás segurx que querés borrar este producto?");
+        if(confirmar){
+        }else{
+            e.preventDefault();
+        }
+    })       
+    </script>
     <%- include('partials/footer')  %> 
     
 </body>

@@ -18,7 +18,7 @@
 
                   <div class="editarCP">
                       <label for="name">Nombre del Producto</label>
-                      <input class="formatCreateProductInput" type="text" minlength="6" name="name">
+                      <input class="formatCreateProductInput" type="text" name="name">
                   </div>
 
                   <div class="editarCP">
@@ -101,6 +101,16 @@
                   <div class="editarCP">
                   <button type="submit" class="buttonCP">Crear</button>
                   </div>
+                  <% if (typeof errorsProduct != "undefined") { %>
+                    <p style="color:red">Error</p>
+                    <ul>
+                      <% for (let i=0; i<errorsProduct.length; i++) { %>
+                        <li>
+                          <small><%= errorsProduct[i].msg %></small>
+                        </li>
+                      <% } %>
+                    </ul> 
+                  <% } %>
             </form>
 
        
