@@ -29,7 +29,7 @@
     <a href="/"><img class="logoHeaderDesktop" src="/images/logos/logo-text.png"></a>
     <div class="userSession2">
       <%  if (!userLogueado) { %>
-        <img class="userImg" src="/images/users/default-avatar.jpg" alt="Default Avatar">
+        
         <a class="nameUser" href="/user/loginRegister"><i class="iconLogInSession fa-solid fa-arrow-right-to-bracket"></i></a>
         <% } else {  %>
           <img class="userImg" src="/images/users/<%= userLogueado.avatar %>" alt="Avatar de Usuario">

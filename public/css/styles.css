@@ -113,6 +113,9 @@ main{
     
     display: none;
 }
+.container--slider{
+    display: none;
+}
 .designerImg{
     width: 50%;
     border-radius: 30px;
@@ -177,20 +180,62 @@ main{
     scroll-page {
         
         display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  font-size: 5em;
-      }
-    
-    .carruselinfo{
-        margin-top: 20px;
-        background-color: #0E0515;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
         align-items: center;
+        justify-content: center;
+        height: 100%;
+        font-size: 5em;
+      }
+    .container--slider{
+        display: block;
+        width: 100%;
+        max-width: 900px;
+        margin: auto;
+        overflow: hidden;
+        box-shadow: 0 0 0 10px #4893AA;
+        position: relative;
     }
+    .slider{
+        display: flex;
+        width: 400%;
+        height: 400px;
+        margin-left: -150%;
+    }
+    .slider__section{
+        width: 100%;
+    }
+    .slider__img{
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .slider__btn{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background: #4893aaad;
+        color: black;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .slider__btn:hover{
+        background:#4893AA;
+    }
+    .slider__btn--left{
+        left: 10px;
+    }
+    .slider__btn--right{
+        right: 10px;
+    }
+
+
+
+
     .video-bannerDesigner{
         display: block;
         width: 100%;
@@ -691,7 +736,7 @@ form{
 
 
 .carrousel{
-    width: 90%;
+    width: 100%;
     
     margin: auto;
     display: flex;
@@ -1097,11 +1142,16 @@ form{
     .acordeon .descriptionDetail{
         height: 0px;
         padding: 0px;
+        color: black;
         overflow: hidden; 
-        transition: height 450ms; 
+    }
+    .descriptionDetail{
+        transition: height, color 3s linear
+        
     }
     .acordeon .bloqueAcordeon:hover .descriptionDetail{
         height: min-content;
+        color: white
     }
 
     /* - MQ para CARRITO DE COMPRA - */

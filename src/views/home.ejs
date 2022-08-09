@@ -170,27 +170,78 @@
 
       
 
-    <section>
+  <section>
 
       <div class="banner">
         <video class="video-bannerDesigner" src="/videos/banner-diseñoymarca.mp4" autoplay loop muted>
         </video>
       </div>
-          <div class="carruselinfo">
-            <i class="icononDesigner fa-solid fa-circle-chevron-left"></i>
-            <div class="designer">
-              <img class="designerImg" src="/images/productHome/diseño1.jpg" alt="diseñador tal">
-              <p class ="designerDescription">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique tenetur in, odio nihil nulla ullam placeat quisquam maxime accusamus suscipit officia exercitationem architecto libero ab rerum iusto fuga rem doloribus!
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam cumque quidem omnis animi, alias provident architecto qui aliquam eius ipsa veritatis sit? Quia doloribus qui error minima, officiis iusto repellat!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis perspiciatis id reprehenderit illo ducimus obcaecati in cumque facilis minima? Adipisci dolor eius ducimus explicabo repellendus, modi in placeat rem debitis!
-              </p>
-            </div>
-            <i class="icononDesigner fa-solid fa-circle-chevron-right"></i>
-          </div>
-    </section>
 
-    </main>
+    <div class="container--slider">
+      <div class="slider" id="slider">
+        <div class="slider__section">
+          <img src="/videos/diseñadores1.png" class="slider__img" alt="diseñadores1">
+        </div>
+        <div class="slider__section">
+          <img src="/videos/diseñadores2.png" class="slider__img" alt="diseñadores2">
+        </div>
+        <div class="slider__section">
+          <img src="/videos/diseñadores3.png" class="slider__img" alt="diseñadores3">
+        </div>
+      </div>
+      <div class="slider__btn slider__btn--right" id="btn-right">  
+        <i class="fa-solid fa-angle-right"></i>
+      </div>
+      <div class="slider__btn slider__btn--left" id="btn-left">  
+        <i class="fa-solid fa-angle-left"></i>
+      </div>      
+    </div>
+    <script >
+      const slider = document.querySelector("#slider");
+let sliderSection = document.querySelectorAll(".slider__section");
+let sliderSectionLast = sliderSection[sliderSection.length-1];
+
+const btnLeft = document.querySelector("#btn-left");
+const btnRight = document.querySelector("#btn-right");
+
+slider.insertAdjacentElement("afterbegin", sliderSectionLast);
+
+function Next(){
+    let sliderSectionFirst = document.querySelectorAll(".slider__section")[0];
+    slider.style.marginLeft = "-250%";
+    slider.style.transition = "all 0.5s";
+    setTimeout(function(){
+        slider.style.transition = "none";
+        slider.insertAdjacentElement("beforeend", sliderSectionFirst);
+        slider.style.marginLeft = "-150%"
+    }, 500);
+}
+
+function Prev(){
+    let sliderSection = document.querySelectorAll(".slider__section");
+    let sliderSectionLast = sliderSection[sliderSection.length -1];
+
+    slider.style.marginLeft = "-50%";
+    slider.style.transition = "all 0.5s";
+    setTimeout(function(){
+        slider.style.transition = "none";
+        slider.insertAdjacentElement("afterbegin", sliderSectionLast);
+        slider.style.marginLeft = "-150%"
+    }, 500);
+}
+
+btnRight.addEventListener("click", function(){ 
+    Next();
+});
+btnLeft.addEventListener("click", function(){
+    Prev();
+});
+    </script>
+  </section>
+  
+  
+  
+</main>
 
     <%- include('partials/footer')  %> 
     

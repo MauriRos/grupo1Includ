@@ -10,7 +10,7 @@ const methodOverride =  require('method-override'); // Pasar poder usar los mét
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const rememberMiddleware = require("../src/middleware/rememberMiddleware");
-const userLogged = require('../src/middleware/userLoggedMiddleware')
+const userLogged = require('../src/middleware/userLoggedMiddleware');
 
 
 app.use(express.static(publicPth) );
@@ -30,7 +30,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 app.use(cookieParser());
 app.use(userLogged);
-// app.use(rememberMiddleware);
+// app.use(rememberMiddleware); 
+
 app.use(express.json());
 app.use('/', mainRouter);
 app.use('/products', productRouter);

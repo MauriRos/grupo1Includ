@@ -137,7 +137,7 @@ const userController = {
         .then(function(users){
             res.render('userProfile',{users:users})
         })
-    },
+    }, 
 
 }
 
