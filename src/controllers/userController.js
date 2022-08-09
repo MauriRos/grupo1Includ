@@ -88,37 +88,35 @@ const userController = {
         })
         .then(function(userInDB){
             let errorsRegister = validationResult(req)
-            if(errorsRegister.errors.length<0){
-                if (userInDB.email){
-                    console.log("entro")
+            if(!errorsRegister.errors[0]){
+                if(!userInDB){
+                    //Creación del usuario
+                        let avatar;
+                            if(req.files[0] !=undefined){
+                                avatar = req.files[0].filename
+                                }else{
+                                    avatar = "default-avatar.jpg"
+                            }
+        
+                        db.User.create({
+                            name: req.body.name,
+                            lastName: req.body.lastName,
+                            userName: req.body.userName,
+                            email: req.body.email,
+                            password: bcrypt.hashSync(req.body.password, 10),
+                            avatar: avatar,
+                            permissionId: 2
+                        });
+                        return res.redirect('/')
+                        }
+                if(userInDB.email){
                     return res.render('loginRegister',{
                         errorsRegister:  
                         [{ msg:'Este email ya está registrado'
                             }]
                         },
                      );
-                } else {
-                if(userInDB == undefined){
-            //Creación del usuario
-                let avatar;
-                    if(req.files[0] !=undefined){
-                        avatar = req.files[0].filename
-                        }else{
-                            avatar = "default-avatar.jpg"
-                    }
-
-                db.User.create({
-                    name: req.body.name,
-                    lastName: req.body.lastName,
-                    userName: req.body.userName,
-                    email: req.body.email,
-                    password: bcrypt.hashSync(req.body.password, 10),
-                    avatar: avatar,
-                    // permissionId: null
-                });
-
-                res.redirect('/')
-                }}} else { console.log("entro abajo")
+                }} else { console.log("entro abajo")
                     return res.render('loginRegister', {errorsRegister: errorsRegister.errors}
                 )}
                     
