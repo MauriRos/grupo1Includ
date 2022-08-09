@@ -26,7 +26,7 @@ const userController = {
                         req.session.userLogueado = userInDB;
                         
                         if (req.body.remember != undefined){
-                            res.cookie("remember", req.body.email, { maxAge: 600000});
+                            res.cookie("remember", req.body.email, { maxAge: 600000000});
                         }
                         res.redirect("/")
                         }else{
@@ -124,7 +124,7 @@ const userController = {
     })},
     logOut: (req,res) => {
         req.session.destroy();
-        res.render('logOut')
+        return res.render('logOut')
     },
     forbidden: (req,res) => {
         res.render('forbidden')
