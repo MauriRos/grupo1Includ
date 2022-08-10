@@ -172,9 +172,9 @@
 
   <section>
 
-      <div class="banner">
-        <video class="video-bannerDesigner" src="/videos/banner-diseñoymarca.mp4" autoplay loop muted>
-        </video>
+      <div class="banner diseño_marca">
+        <img class="video-bannerDesigner" src="/videos/banner-diseñoymarca.png" alt="diseñoymarca">
+        
       </div>
 
     <div class="container--slider">
@@ -209,7 +209,7 @@ slider.insertAdjacentElement("afterbegin", sliderSectionLast);
 function Next(){
     let sliderSectionFirst = document.querySelectorAll(".slider__section")[0];
     slider.style.marginLeft = "-250%";
-    slider.style.transition = "all 0.5s";
+    slider.style.transition = "all 2s linear";
     setTimeout(function(){
         slider.style.transition = "none";
         slider.insertAdjacentElement("beforeend", sliderSectionFirst);
@@ -222,7 +222,7 @@ function Prev(){
     let sliderSectionLast = sliderSection[sliderSection.length -1];
 
     slider.style.marginLeft = "-50%";
-    slider.style.transition = "all 0.5s";
+    slider.style.transition = "all 2s linear";
     setTimeout(function(){
         slider.style.transition = "none";
         slider.insertAdjacentElement("afterbegin", sliderSectionLast);
@@ -236,6 +236,9 @@ btnRight.addEventListener("click", function(){
 btnLeft.addEventListener("click", function(){
     Prev();
 });
+setInterval(function(){
+    Next();
+}, 5000)
     </script>
   </section>
   

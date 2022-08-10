@@ -116,6 +116,9 @@ main{
 .container--slider{
     display: none;
 }
+.diseño_marca{
+    display: none;
+}
 .designerImg{
     width: 50%;
     border-radius: 30px;
@@ -185,19 +188,20 @@ main{
         height: 100%;
         font-size: 5em;
       }
+    .diseño_marca{
+        display: block;
+    }
     .container--slider{
         display: block;
         width: 100%;
-        max-width: 900px;
         margin: auto;
         overflow: hidden;
-        box-shadow: 0 0 0 10px #4893AA;
         position: relative;
     }
     .slider{
         display: flex;
         width: 400%;
-        height: 400px;
+        height: 100%;
         margin-left: -150%;
     }
     .slider__section{
@@ -206,18 +210,17 @@ main{
     .slider__img{
         display: block;
         width: 100%;
-        height: 100%;
         object-fit: cover;
     }
     .slider__btn{
         position: absolute;
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
         background: #4893aaad;
         color: black;
-        top: 50%;
+        top: 85%;
         transform: translateY(-50%);
-        font-size: 30px;
+        font-size: 35px;
         font-weight: bold;
         text-align: center;
         border-radius: 50%;
@@ -227,10 +230,14 @@ main{
         background:#4893AA;
     }
     .slider__btn--left{
-        left: 10px;
+        left: 20%;
+        text-align: center;
+        justify-content: center;
     }
     .slider__btn--right{
-        right: 10px;
+        right: 20%;
+        text-align: center;
+        justify-content: center;
     }
 
 
