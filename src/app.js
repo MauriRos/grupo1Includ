@@ -10,7 +10,7 @@ const methodOverride =  require('method-override'); // Pasar poder usar los mét
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const rememberMiddleware = require("../src/middleware/rememberMiddleware");
-const userLogged = require('../src/middleware/userLoggedMiddleware')
+const userLogged = require('../src/middleware/userLoggedMiddleware');
 
 
 app.use(express.static(publicPth) );
