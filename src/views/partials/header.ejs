@@ -3,23 +3,15 @@
       <ul class="site">
         <div>
           <li>
-            <a href="/products/productsList">
+            <a href="/">
               <i class="fa-solid fa-shirt"></i>
-              Productos
+              Home
             </a>
           </li>
         </div>
         <div>
-          <li>
-            <a href="/products/create">
-              <i class="fa-solid fa-star"></i>
-              Nuevo
-            </a>
-          </li>
-        </div>
-        <div>
-          <i class="fa-solid fa-list"></i>
-          <li><a href="x">Categorias</a></li>
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <li><a href="/products/productsList">Buscar</a></li>
         </div>
       </ul>
     <div class="burgerMenu">
@@ -38,10 +30,6 @@
     </div>
         <ul class="login">
           <div>
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <li><a href="x">Buscar</a></li>
-          </div>
-          <div>
             <li>
               <a href="/user/loginRegister">
                 <i class="fa-solid fa-circle-user"></i>
@@ -50,12 +38,20 @@
             </li>
           </div>
           <div>
-            <li>
+            <% if (userLogueado.permissionId == 1) { %>
+              <li>
+                <a href="/products/create">
+                  <i class="fa-solid fa-star"></i>
+                  Nuevo
+                </a>
+            <% } else { %>
+              <li>
               <a href="/products/productCart">
                 <i class="fa-solid fa-bag-shopping"></i>
                 Compras
               </a>
             </li>
+            <% } %> 
           </div>
         </ul>
       
