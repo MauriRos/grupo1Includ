@@ -683,7 +683,7 @@ form{
     left: 20px;
 }
 /* - MQ para DETALLE DE PROD - */
-.imageDetailANDcharacteristicsDetail{
+.imageDetailANDcharacteristicsDetail, .mainProfile{
     display: flex;
     flex-wrap: nowrap;
     margin-left: 20px;
