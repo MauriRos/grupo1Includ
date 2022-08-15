@@ -124,6 +124,7 @@ const userController = {
     })},
     logOut: (req,res) => {
         req.session.destroy();
+        res.cookie("remember", req.body.email, { expires: new Date(Date.now() - 1000)})
         return res.render('logOut')
     },
     forbidden: (req,res) => {
@@ -138,7 +139,7 @@ const userController = {
         .then(function(users){
             res.render('userProfile',{users:users})
         })
-    },
+    }, 
 
 }
 
