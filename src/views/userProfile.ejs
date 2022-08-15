@@ -4,15 +4,29 @@
 
   <body>
     <%- include('partials/header') %>
-    <title>User Profile</title>
-        <h1> ESTE ES EL PERFIL DEL USUARIO <%= user. %> </h1>
+
+    <div class="pageName">
+      <h2 class="titleDetail">PERFIL DE USUARIO</h2>
+      <h4 class="subtitleDetail">(Profile > <%= users.permissionId.permission %> > <%= users.name %> - <%= users.name.lastName %>)</h4>
+    </div>
+    <main>
+      <div class="imageDetail">
+        <h1> ESTE ES EL PERFIL DEL USUARIO <%= users.userName  %> </h1>
+        <div class="imageBig">
+            <img class="imagenDetail" src="/images/users/<%= users.avatar %>" alt="User Avatar">
+        </div>
+      </div>
+      <div>
+        
+      </div>
+    </main>
 
       <main class="mainLoginRegister">
       <div class="login-register">
         <section class="login1">
           <div>
             <h2 class="title">User Profile</h2>
-            <h5 class="subtitle">Profile > Registrate</h5>
+            <h5 class="subtitle">Profile > NOMBRE USUARIO</h5>
           </div>
           <form  method="POST" action="/user/login">
             <div class="inputLogin">
