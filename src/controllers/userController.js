@@ -137,7 +137,7 @@ const userController = {
         let user = req.session.user
         db.User.findAll()
         .then(function(users){
-            res.render('userProfile',{users:users})
+            res.render('userProfile',{users:users}) 
         })
     }, 
 

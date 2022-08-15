@@ -1,23 +1,31 @@
+<form method="GET" action="/products/searchResult">
 <div class="search">
-    <input type="text" class="searchText" placeholder="Busqueda de productos">
-    <a class="searchButom">
-      <i class="fa-solid fa-magnifying-glass"></i>
-    </a> 
-</div>
+        <input type="text" class="searchText" name="searchName" placeholder="Busqueda de productos">
+        <!-- <a class="searchButom"> -->
+        <button class="formButom" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <!-- </a> -->
+    </div>
+</form> 
 
 <script>
-    const searchText = req.body(".searchText");
-    const db = require("../../database/models");
-    db.Product.findAll()
-    .then(function buscar(resultado){
-        const text = searchText.value.toLowerCase();
-        for (let product of resultado){
-            let nameProduct = product.name.toLowerCase();
-            if (nameProduct.indexOf(text) !== -1){
-                console.log("entra al search")
-            } console.log("no entra al search")
-        } console.log(resultado)
-    })
-    searchText.addEventListener("keyup", buscar);
-    buscar();    
+    // let button = document.querySelector(".searchButton")
+    // let searchName = req.body.searchName
+    // db.Product.findOne({
+    //     where: {name: searchName}
+    // })
+    // .then(function(products){
+    //     return res.render('searchResult', {products: products})
+    // })
+    // db.Product.findAll()
+    // .then(function buscar(resultado){
+    //     const text = searchText.value.toLowerCase();
+    //     for (let product of resultado){
+    //         let nameProduct = product.name.toLowerCase();
+    //         if (nameProduct.indexOf(text) !== -1){
+    //             console.log("entra al search")
+    //         } console.log("no entra al search")
+    //     } console.log(resultado)
+    // })
+    // searchText.addEventListener("keyup", buscar);
+    // buscar();    
 </script>

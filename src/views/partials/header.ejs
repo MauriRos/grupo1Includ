@@ -3,23 +3,16 @@
       <ul class="site">
         <div>
           <li>
-            <a href="/products/productsList">
-              <i class="fa-solid fa-shirt"></i>
-              Productos
+            <a href="/">
+              <i class="fa-solid fa-house"></i>
+              Home
             </a>
           </li>
         </div>
         <div>
-          <li>
-            <a href="/products/create">
-              <i class="fa-solid fa-star"></i>
-              Nuevo
-            </a>
-          </li>
-        </div>
-        <div>
-          <i class="fa-solid fa-list"></i>
-          <li><a href="x">Categorias</a></li>
+          <a href="/products/productsList">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <li>Buscar</a></li>
         </div>
       </ul>
     <div class="burgerMenu">
@@ -38,24 +31,37 @@
     </div>
         <ul class="login">
           <div>
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <li><a href="x">Buscar</a></li>
-          </div>
-          <div>
-            <li>
-              <a href="/user/loginRegister">
-                <i class="fa-solid fa-circle-user"></i>
-                Registrarse
+            <%  if (userLogueado) { %>
+              <li>
+              <a class="nameUser" href="/user/userProfile">
+                <i class="fa-solid fa-circle-user"></i><br>
+                Mi Perfil
               </a>
-            </li>
+              </li>
+              <% } else {  %>
+                <li>
+                  <a href="/user/loginRegister">
+                    <i class="fa-solid fa-circle-user"></i>
+                    Registrarse
+                  </a>
+                </li>
+            <% } %> 
           </div>
           <div>
-            <li>
+            <% if (userLogueado.permissionId == 1) { %>
+              <li>
+                <a href="/products/create">
+                  <i class="fa-solid fa-star"></i>
+                  Nuevo
+                </a>
+            <% } else { %>
+              <li>
               <a href="/products/productCart">
                 <i class="fa-solid fa-bag-shopping"></i>
                 Compras
               </a>
             </li>
+            <% } %> 
           </div>
         </ul>
       

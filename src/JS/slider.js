@@ -12,7 +12,7 @@ slider.insertAdjacentElement("afterbegin", sliderSectionLast);
 function Next(){
     let sliderSectionFirst = document.querySelectorAll(".slider__section")[0];
     slider.style.marginLeft = "-250%";
-    slider.style.transition = "all 0.5s";
+    slider.style.transition = "all 2s linear";
     setTimeout(function(){
         slider.style.transition = "none";
         slider.insertAdjacentElement("beforeend", sliderSectionFirst);
@@ -25,7 +25,7 @@ function Prev(){
     let sliderSectionLast = sliderSection[sliderSection.length -1];
 
     slider.style.marginLeft = "-50%";
-    slider.style.transition = "all 0.5s";
+    slider.style.transition = "all 2s linear";
     setTimeout(function(){
         slider.style.transition = "none";
         slider.insertAdjacentElement("afterbegin", sliderSectionLast);
@@ -40,4 +40,7 @@ btnLeft.addEventListener("click", function(){
     Prev();
 });
 
+setInterval(function(){ 
+    Next();
+}, 5000);
 }  
