@@ -64,6 +64,7 @@ router.get("/create", authMiddleware, productsController.createProductView);
 router.get("/:id/edit", authMiddleware, productsController.editView);
 router.get("/", productsController.productsList);
 router.get("/:id", productsController.detail);
+// router.get("/searchResult", productsController.search);
 
 
 router.post("/create", uploadFile.any(), validateProductsForm, productsController.createProduct);
