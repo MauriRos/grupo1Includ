@@ -4,14 +4,15 @@
         <div>
           <li>
             <a href="/">
-              <i class="fa-solid fa-shirt"></i>
+              <i class="fa-solid fa-house"></i>
               Home
             </a>
           </li>
         </div>
         <div>
+          <a href="/products/productsList">
           <i class="fa-solid fa-magnifying-glass"></i>
-          <li><a href="/products/productsList">Buscar</a></li>
+          <li>Buscar</a></li>
         </div>
       </ul>
     <div class="burgerMenu">
@@ -30,12 +31,21 @@
     </div>
         <ul class="login">
           <div>
-            <li>
-              <a href="/user/loginRegister">
-                <i class="fa-solid fa-circle-user"></i>
-                Registrarse
+            <%  if (userLogueado) { %>
+              <li>
+              <a class="nameUser" href="/user/userProfile">
+                <i class="fa-solid fa-circle-user"></i><br>
+                Mi Perfil
               </a>
-            </li>
+              </li>
+              <% } else {  %>
+                <li>
+                  <a href="/user/loginRegister">
+                    <i class="fa-solid fa-circle-user"></i>
+                    Registrarse
+                  </a>
+                </li>
+            <% } %> 
           </div>
           <div>
             <% if (userLogueado.permissionId == 1) { %>

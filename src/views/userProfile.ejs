@@ -7,13 +7,13 @@
 
     <div class="pageName">
       <h2 class="titleDetail">PERFIL DE USUARIO</h2>
-      <h4 class="subtitleDetail">(Profile > <%= users.permissionId.permission %> > <%= users.name %> - <%= users.name.lastName %>)</h4>
+      <h4 class="subtitleDetail">(Profile > <%= userLogueado.permissionId.permission %> > <%= userLogueado.name %> - <%= userLogueado.lastName %>)</h4>
     </div>
     <main>
       <div class="imageDetail">
-        <h1> ESTE ES EL PERFIL DEL USUARIO <%= users.userName  %> </h1>
+        <h1> ESTE ES EL PERFIL DEL USUARIO <%= userLogueado.userName  %> </h1>
         <div class="imageBig">
-            <img class="imagenDetail" src="/images/users/<%= users.avatar %>" alt="User Avatar">
+            <img class="imagenDetail" src="/images/users/<%= userLogueado.avatar %>" alt="User Avatar">
         </div>
       </div>
       <div>
