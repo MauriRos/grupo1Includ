@@ -6,114 +6,36 @@
     <%- include('partials/header') %>
 
     <div class="pageName">
-      <h2 class="titleDetail">PERFIL DE USUARIO</h2>
+      <h2 class="titleDetail">Bienvenidx al perfil de tu usuario</h2>
       <h4 class="subtitleDetail">(Profile > <%= userLogueado.permissionId.permission %> > <%= userLogueado.name %> - <%= userLogueado.lastName %>)</h4>
     </div>
-    <main>
-      <div class="imageDetail">
-        <h1> ESTE ES EL PERFIL DEL USUARIO <%= userLogueado.userName  %> </h1>
+    
+    <main class="mainProfile">
+      <section class="imageDetail">
         <div class="imageBig">
-            <img class="imagenDetail" src="/images/users/<%= userLogueado.avatar %>" alt="User Avatar">
+          <img class="imagenDetail" src="/images/users/<%= userLogueado.avatar %>" alt="User Avatar">
         </div>
-      </div>
-      <div>
-        
-      </div>
+      </section>
+      <section>
+          <div>
+            <h2 class="itemDetail">Nombre</h2>
+            <p class="descriptionDetail"><%=  userLogueado.name%></p>
+          </div>
+          <div>
+            <h2 class="itemDetail">Apellido</h2>
+            <p class="descriptionDetail"><%= userLogueado.lastName %></p>
+          </div>
+          <div>
+            <h2 class="itemDetail">Te agendamos como</h2>
+            <p class="descriptionDetail"><%= userLogueado.userName %></p>
+          </div>
+          <div>
+            <h2 class="itemDetail">Email registrado</h2>
+            <p class="descriptionDetail"><%= userLogueado.email %></p>
+          </div>
+      </section>
     </main>
 
-      <main class="mainLoginRegister">
-      <div class="login-register">
-        <section class="login1">
-          <div>
-            <h2 class="title">User Profile</h2>
-            <h5 class="subtitle">Profile > NOMBRE USUARIO</h5>
-          </div>
-          <form  method="POST" action="/user/login">
-            <div class="inputLogin">
-              <div class="form-format">
-                <label for="email">Email</label>
-                <input class="format-input" name="email" type="email" placeholder="ariel@perez.com">
-                <% if (typeof errorsLogin != "undefined") { %>
-                  <p style="color:red">Error</p>
-                  <p class="feedback is-danger"><%= errorsLogin.msg %></p>
-                <% } %>
-              </div>
-                <div class="form-format">
-                  <label for="password">Contraseña</label>
-                  <input class="format-input" type="password" name="password">
-                </div>
-                <div class="checkRemember">
-                  <p class="remember">Recordar cuenta</p>
-                  <input class ="checkButton" type="checkbox" name="remember">
-                </div>
-                <% if (typeof errorsLogin != "undefined") { %>
-                  <p style="color:red">Error</p>
-                  <ul>
-                    <% for (let i=0; i<errorsLogin.length; i++) { %>
-                      <li>
-                        <%= errorsLogin[i].msg %>
-                      </li>
-                    <% } %>
-                  </ul> 
-                <% } %>
-                <input class="form-button" type="submit" value="Ingresar">
-          </form>
-          </div>
-        </section>
-        <section class="register">
-          <div>
-            <h2 class="title">Crear cuenta</h2>
-            <h5 class="subtitle">Home > Registrate</h5>
-          </div>
-          <div class="formulario">
-            <form method="POST" action="/user/register" enctype="multipart/form-data">
-              <div class="form-format">
-                <label for="name">Nombre</label>
-                <input class="format-input" type="text" minlength="6" name="name" value="<%= locals.old && old.name ? old.name : '' %>">
-              </div>
-              <div class="form-format">
-                <label for="apellido">Apellido</label>
-                <input class="format-input" type="text" minlength="6" name="lastName" value="<%= locals.old && old.lastName ? old.lastName : '' %>">
-              </div>
-              <div class="form-format">
-                <label for="user">¿Cómo querés que te agendemos?</label>
-                <input class="format-input" type="text" minlength="6" name="userName" value="<%= locals.old && old.userName ? old.userName : '' %>">
-              </div>
-              <div class="form-format">
-                <label for="avatar">Avatar</label>
-                <input class="format-input" type="file" name="avatar">
-              </div>
-              <div class="form-format">
-                <label for="email">Email</label>
-                <input class="format-input" type="email" name="email" placeholder="ariel@perez.com"value="<%= locals.old && old.email ? old.email : '' %>">
-                <% if (typeof errorsDB != "undefined") { %>
-                  <p style="color:red">Error</p>
-                  <p class="feedback is-danger"><%= errorsDB.email.msg %></p>
-                <% } %>
-              </div>
-              <div class="form-format">
-                <label for="password">Contraseña</label>
-                <input class="format-input" type="password" minlength="6" name="password">
-              </div>
-              <button class="form-button" type="submit">Crear cuenta</button>
-            </form>
-                    
-          </div>
-              <% if (typeof errors != "undefined") { %>
-                <p style="color:red">Error</p>
-              <% errors.forEach(error => { %>
-                <p class="feedback is-danger"><%= error.msg %></p>
-              <% })} %>
-        </section>
-      </div>
-    <section class="emailUpdates">
-        <h5>Ingresá tu email para recibir novedades</h5>
-        <label for="email">
-          <input class="format-input" type="email" name="email" placeholder="juan@perez.com">
-          <button class="form-button" type="submit" name=""><a href="./">Enviar</a></button>
-        </label>
-    </section>
-  </main>
   
   <%- include('partials/footer')  %> 
 
