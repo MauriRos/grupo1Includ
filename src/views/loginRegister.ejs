@@ -33,8 +33,8 @@
                       
                   <!-- VALIDACIONES BACKEND -->
                       <% if (typeof errorsLogin != "undefined") { %>
-                        <p style="color:red">Error</p>
-                        <p class="feedback is-danger"><%= errorsLogin.msg %></p>
+                        <small style="color:red">Error</small>
+                        <small><%= errorsLogin.msg %></small>
                       <% } %>
 
                   
@@ -58,11 +58,11 @@
                 
                   <!-- VALIDACIONES BACKEND -->
                 <% if (typeof errorsLogin != "undefined") { %>
-                  <p style="color:red">Error</p>
+                  <small style="color:red">Error</small>
                   <ul>
                     <% for (let i=0; i<errorsLogin.length; i++) { %>
                       <li>
-                        <%= errorsLogin[i].msg %>
+                        <small><%= errorsLogin[i].msg %></small>
                       </li>
                     <% } %>
                   </ul> 
@@ -127,7 +127,7 @@
               </div>
               <div class="form-format">
                 <label for="password">Contraseña</label>
-                <input class="format-input passRgister" type="password" minlength="6" name="password">
+                <input class="format-input passRgister" type="password" name="password">
                 <!-- VALIDACIONES FRONTED -->
                   <div class="error login">
                     <small class = 'errPassRegister'>
@@ -142,7 +142,7 @@
 
           <!-- VALIDACION BACKEND -->
               <% if (typeof errorsRegister != "undefined") { %>
-                <p style="color:red">Error</p>
+                <small style="color:red">Error</small>
                 <ul>
                   <% for (let i=0; i<errorsRegister.length; i++) { %>
                     <li>

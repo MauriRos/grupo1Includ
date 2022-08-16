@@ -43,38 +43,6 @@ const userController = {
                  )};
          })
 },
-
-
-    //     if(errorsLogin.isEmpty()){
-    //         for( let i=0; i<users.length; i++){
-    //             if(users[i].email == req.body.email){
-    //                 if(bcrypt.compareSync(req.body.password, users[i].password)){
-    //                     var userALoguearse = users[i];
-    //                     break;
-    //                 }
-    //                 return res.render('loginRegister', {errorsLogin: [{
-    //                     msg: "Credenciales invalidas"}]
-    //                 });
-                    
-    //             }}
-    //         if(userALoguearse == undefined){
-    //             res.render("loginRegister", {errorsLogin: {
-    //             msg: "No hay un usuario registrado con este email, registrese!"}})
-    //         }else{
-    //             console.log(userALoguearse)
-    //             req.session.userLogueado = userALoguearse;
-                
-    //             if (req.body.remember != undefined){
-    //                 res.cookie("remember", userALoguearse.email, { maxAge: 6000000});
-    //             }
-
-    //             res.redirect("/")
-            
-    //         }
-    //     }else{
-    //         return res.render('loginRegister', {errorsLogin: errorsLogin}
-    //         )};
-    // },
  
     loginRegister: (req,res) => {
         res.render('loginRegister')
@@ -116,7 +84,7 @@ const userController = {
                             }]
                         },
                      );
-                }} else { console.log("entro abajo")
+                }} else {
                     return res.render('loginRegister', {errorsRegister: errorsRegister.errors}
                 )}
                     
