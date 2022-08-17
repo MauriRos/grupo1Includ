@@ -30,12 +30,6 @@
                           </ul>
                         </small>
                       </div>
-                      
-                  <!-- VALIDACIONES BACKEND -->
-                      <% if (typeof errorsLogin != "undefined") { %>
-                        <small style="color:red">Error</small>
-                        <small><%= errorsLogin.msg %></small>
-                      <% } %>
 
                   
               </div>
@@ -58,14 +52,13 @@
                 
                   <!-- VALIDACIONES BACKEND -->
                 <% if (typeof errorsLogin != "undefined") { %>
-                  <small style="color:red">Error</small>
-                  <ul>
+                  <small class="errorsclass"><ul>
                     <% for (let i=0; i<errorsLogin.length; i++) { %>
                       <li>
-                        <small><%= errorsLogin[i].msg %></small>
+                        <%= errorsLogin[i].msg %>
                       </li>
                     <% } %>
-                  </ul> 
+                  </ul></small>
                 <% } %>
                 <input class="form-button" type="submit" value="Ingresar">
           </form>
@@ -142,14 +135,11 @@
 
           <!-- VALIDACION BACKEND -->
               <% if (typeof errorsRegister != "undefined") { %>
-                <small style="color:red">Error</small>
-                <ul>
+                <small class="errorsclass"><ul>
                   <% for (let i=0; i<errorsRegister.length; i++) { %>
-                    <li>
-                      <small><%= errorsRegister[i].msg %></small>
-                    </li>
+                    <li><%= errorsRegister[i].msg %></li>
                   <% } %>
-                </ul> 
+                </ul></small>
               <% } %>
         </section>
       </div>
@@ -163,6 +153,6 @@
   </main>
   
   <%- include('partials/footer')  %> 
-<script src="/script/validationLogin.js"></script>
+<!-- <script src="/script/validationLogin.js"></script> -->
 </body>
 </html>
