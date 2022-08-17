@@ -30,12 +30,6 @@
                           </ul>
                         </small>
                       </div>
-                      
-                  <!-- VALIDACIONES BACKEND -->
-                      <% if (typeof errorsLogin != "undefined") { %>
-                        <p style="color:red">Error</p>
-                        <p class="feedback is-danger"><%= errorsLogin.msg %></p>
-                      <% } %>
 
                   
               </div>
@@ -58,14 +52,13 @@
                 
                   <!-- VALIDACIONES BACKEND -->
                 <% if (typeof errorsLogin != "undefined") { %>
-                  <p style="color:red">Error</p>
-                  <ul>
+                  <small class="errorsclass"><ul>
                     <% for (let i=0; i<errorsLogin.length; i++) { %>
                       <li>
                         <%= errorsLogin[i].msg %>
                       </li>
                     <% } %>
-                  </ul> 
+                  </ul></small>
                 <% } %>
                 <input class="form-button" type="submit" value="Ingresar">
           </form>
@@ -127,7 +120,7 @@
               </div>
               <div class="form-format">
                 <label for="password">Contraseña</label>
-                <input class="format-input passRgister" type="password" minlength="6" name="password">
+                <input class="format-input passRgister" type="password" name="password">
                 <!-- VALIDACIONES FRONTED -->
                   <div class="error login">
                     <small class = 'errPassRegister'>
@@ -142,14 +135,11 @@
 
           <!-- VALIDACION BACKEND -->
               <% if (typeof errorsRegister != "undefined") { %>
-                <p style="color:red">Error</p>
-                <ul>
+                <small class="errorsclass"><ul>
                   <% for (let i=0; i<errorsRegister.length; i++) { %>
-                    <li>
-                      <small><%= errorsRegister[i].msg %></small>
-                    </li>
+                    <li><%= errorsRegister[i].msg %></li>
                   <% } %>
-                </ul> 
+                </ul></small>
               <% } %>
         </section>
       </div>
@@ -163,6 +153,6 @@
   </main>
   
   <%- include('partials/footer')  %> 
-<script src="/script/validationLogin.js"></script>
+<!-- <script src="/script/validationLogin.js"></script> -->
 </body>
 </html>
