@@ -14,51 +14,89 @@
                 <h5 class="subtitleCreatProduct">Home > Crear</h5>
               </div>
 
-              <form class='formularioCreateProducts' action="/products/create" method="POST" enctype="multipart/form-data">
+              <form class='formularioCreateProducts createProduct' action="/products/create" method="POST" enctype="multipart/form-data">
 
                   <div class="editarCP">
                       <label for="name">Nombre del Producto</label>
-                      <input class="formatCreateProductInput" type="text" name="name">
+                      <input class="formatCreateProductInput nameProduct" type="text" name="name">
+                      <div class="error login">
+                    <small class = 'errNameProduct'>
+                       <ul></ul>
+                    </small>
                   </div>
 
                   <div class="editarCP">
                       <label for="description">Descripción del Producto</label>
-                      <textarea class="formatCreateProductInput" name="description" id="description" rows="5" cols="50"></textarea>
-                  </div>
+                      <textarea class="formatCreateProductInput description" name="description" id="description" rows="5" cols="50"></textarea>
+                      <div class="error login">
+                        <small class = 'errDescription'>
+                           <ul></ul>
+                        </small>
+                    </div>
 
                   <div class="editarCP">
                     <label for="characteristics">Caracteristicas</label>
-                    <textarea class="formatCreateProductInput" name="characteristics" id="characteristics" rows="5" cols="50"></textarea>
-                    
+                    <textarea class="formatCreateProductInput characteristics" name="characteristics" id="characteristics" rows="5" cols="50"></textarea>
+                    <div class="error login">
+                      <small class = 'errCharacteristics'>
+                         <ul></ul>
+                      </small>
                   </div>
 
                   <div class="editarCP">
                     <label for="sizing">Dimensionamiento</label>
-                    <textarea class="formatCreateProductInput" name="sizing" id="sizing" rows="5" cols="50"></textarea>
+                    <textarea class="formatCreateProductInput sizing" name="sizing" id="sizing" rows="5" cols="50"></textarea>
+                    <div class="error login">
+                      <small class = 'errSizing'>
+                         <ul></ul>
+                      </small>
                   </div>
 
                   <div class="imageCP">
                     <div class="divImage">
                       <label for="image">Imagen Principal</label>
-                      <input class="formatFileCP" type="file" name="image" accept=".jpg, .png" >
+                      <input class="formatFileCP image" type="file" name="image" accept=".jpg, .png" >
+                      <div class="error login">
+                        <small class = 'errImage'>
+                           <ul></ul>
+                        </small>
                     </div>
                     <div class="divImage">
                       <label for="image2">Imagen Secundaria</label>
-                      <input class="formatFileCP" type="file" name="image2" accept=".jpg, .png" >
+                      <input class="formatFileCP image2" type="file" name="image2" accept=".jpg, .png" >
+                      <div class="error login">
+                        <small class = 'errImage2'>
+                           <ul></ul>
+                        </small>
                     </div>
                     <div class="divImage">
                       <label for="image3">Imagenes miniatura</label>
-                      <input class="formatFileCP" type="file" name="image3" accept=".jpg, .png" >
+                      <input class="formatFileCP image3" type="file" name="image3" accept=".jpg, .png" >
+                      <div class="error login">
+                        <small class = 'errImage3'>
+                           <ul></ul>
+                        </small>
+                    </div>
                     </div>
                     <div class="divImage">
                       <label for="image4">Imagenes miniatura</label>
-                      <input class="formatFileCP" type="file" name="image4" accept=".jpg, .png" >
+                      <input class="formatFileCP image4" type="file" name="image4" accept=".jpg, .png" >
+                      <div class="error login">
+                        <small class = 'errImage4'>
+                           <ul></ul>
+                        </small>
+                    </div>
                     </div>
                     <div class="divImage">
                       <label for="image5">Imagenes miniatura</label>
-                      <input class="formatFileCP" type="file" name="image5" accept=".jpg, .png">
+                      <input class="formatFileCP image5" type="file" name="image5" accept=".jpg, .png">
+                      <div class="error login">
+                        <small class = 'errImage5'>
+                           <ul></ul>
+                        </small>
                     </div>
-                   
+                    </div>
+
                   </div>
                   
 
@@ -118,6 +156,6 @@
     </main>
   
   <%- include('partials/footer')  %> 
-
+<script src="/script/validationNewProduct.js"></script>
 </body>
 </html>

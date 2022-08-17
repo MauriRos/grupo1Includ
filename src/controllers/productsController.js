@@ -251,6 +251,16 @@ const productsController = {
 		})
 		res.redirect('/');
 	},
+	search: (req,res) => {
+		console.log("entro a search")
+		let searchName = req.body.searchName;
+		db.Product.findOne({
+			where: {name: searchName}
+		})
+		.then(function(products){
+			return res.render('searchResult', {products: products})
+		})
+	}
 
 }
     

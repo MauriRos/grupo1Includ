@@ -8,89 +8,139 @@
   
       <main class="mainLoginRegister">
       <div class="login-register">
+
+        <!-- LOGIN -->
+
         <section class="login1">
           <div>
             <h2 class="title">Login</h2>
             <h5 class="subtitle">Home > Registrate</h5>
           </div>
-          <form  method="POST" action="/user/login">
+          <form  method="POST" action="/user/login" class="formLogin">
             <div class="inputLogin">
               <div class="form-format">
                 <label for="email">Email</label>
-                <input class="format-input" name="email" type="email" placeholder="ariel@perez.com">
-                <% if (typeof errorsLogin != "undefined") { %>
-                  <p style="color:red">Error</p>
-                  <p class="feedback is-danger"><%= errorsLogin.msg %></p>
-                <% } %>
+                <input class="format-input email" name="email"  placeholder="ariel@perez.com">
+                  
+                  <!-- VALIDACIONES FRONTED -->
+                      <div class="error login">
+                        <small class = 'errEmail'>
+                          <ul>
+                            
+                          </ul>
+                        </small>
+                      </div>
+
+                  
               </div>
                 <div class="form-format">
                   <label for="password">Contraseña</label>
-                  <input class="format-input" type="password" name="password">
+                  <input class="format-input pass" type="password" name="password">
+
+                  <!-- VALIDACIONES FRONTED -->
+                      <div class="error login">
+                        <small class = 'errPass'>
+                          <ul></ul>
+                        </small>
+                      </div>
+
                 </div>
                 <div class="checkRemember">
                   <p class="remember">Recordar cuenta</p>
                   <input class ="checkButton" type="checkbox" name="remember">
                 </div>
+                
+                  <!-- VALIDACIONES BACKEND -->
                 <% if (typeof errorsLogin != "undefined") { %>
-                  <p style="color:red">Error</p>
-                  <ul>
+                  <small class="errorsclass"><ul>
                     <% for (let i=0; i<errorsLogin.length; i++) { %>
                       <li>
                         <%= errorsLogin[i].msg %>
                       </li>
                     <% } %>
-                  </ul> 
+                  </ul></small>
                 <% } %>
                 <input class="form-button" type="submit" value="Ingresar">
           </form>
           </div>
         </section>
+
+        <!-- REGISTER -->
+
         <section class="register">
           <div>
             <h2 class="title">Crear cuenta</h2>
             <h5 class="subtitle">Home > Registrate</h5>
           </div>
           <div class="formulario">
-            <form method="POST" action="/user/register" enctype="multipart/form-data">
+            <form method="POST" action="/user/register" enctype="multipart/form-data" class="formRegister">
               <div class="form-format">
                 <label for="name">Nombre</label>
-                <input class="format-input" type="text" minlength="6" name="name" value="<%= locals.old && old.name ? old.name : '' %>">
+                <input class="format-input name" type="text"  name="name" value="<%= locals.old && old.name ? old.name : '' %>"> 
+                <!-- VALIDACIONES FRONTED -->
+                    <div class="error login">
+                      <small class = 'errNameR'>
+                        <ul></ul>
+                      </small>
+                    </div>
               </div>
               <div class="form-format">
                 <label for="apellido">Apellido</label>
-                <input class="format-input" type="text" minlength="6" name="lastName" value="<%= locals.old && old.lastName ? old.lastName : '' %>">
+                <input class="format-input LastName" type="text"  name="lastName" value="<%= locals.old && old.lastName ? old.lastName : '' %>">
+                <!-- VALIDACIONES FRONTED -->
+                <div class="error login">
+                    <small class = 'errLastName'>
+                      <ul></ul>
+                    </small>
+                </div>
               </div>
               <div class="form-format">
                 <label for="user">¿Cómo querés que te agendemos?</label>
-                <input class="format-input" type="text" minlength="6" name="userName" value="<%= locals.old && old.userName ? old.userName : '' %>">
+                <input class="format-input userName" type="text"  name="userName" value="<%= locals.old && old.userName ? old.userName : '' %>">
               </div>
               <div class="form-format">
                 <label for="avatar">Avatar</label>
-                <input class="format-input" type="file" name="avatar">
+                <input class="format-input avatar" type="file" name="avatar">
+                <!-- VALIDACIONES FRONTED -->
+                <div class="error login">
+                  <small class = 'errAvatar'>
+                    <ul></ul>
+                  </small>
+                </div>
               </div>
               <div class="form-format">
                 <label for="email">Email</label>
-                <input class="format-input" type="email" name="email" placeholder="ariel@perez.com"value="<%= locals.old && old.email ? old.email : '' %>">
-                
+                <input class="format-input emailRegister"  name="email" placeholder="ariel@perez.com" >
+                <!-- VALIDACIONES FRONTED -->
+                  <div class="error login">
+                    <small class = 'errEmailRegister'>
+                      <ul></ul>
+                    </small>
+                  </div>
               </div>
               <div class="form-format">
                 <label for="password">Contraseña</label>
-                <input class="format-input" type="password" minlength="6" name="password">
+                <input class="format-input passRgister" type="password" name="password">
+                <!-- VALIDACIONES FRONTED -->
+                  <div class="error login">
+                    <small class = 'errPassRegister'>
+                       <ul></ul>
+                    </small>
+                  </div>
               </div>
               <button class="form-button" type="submit">Crear cuenta</button>
             </form>
                     
           </div>
-          <% if (typeof errorsRegister != "undefined") { %>
-            <p style="color:red">Error</p>
-            <ul>
-              <% for (let i=0; i<errorsRegister.length; i++) { %>
-                <li>
-                  <small><%= errorsRegister[i].msg %></small>
-                </li>
+
+          <!-- VALIDACION BACKEND -->
+              <% if (typeof errorsRegister != "undefined") { %>
+                <small class="errorsclass"><ul>
+                  <% for (let i=0; i<errorsRegister.length; i++) { %>
+                    <li><%= errorsRegister[i].msg %></li>
+                  <% } %>
+                </ul></small>
               <% } %>
-            </ul> 
-          <% } %>
         </section>
       </div>
     <section class="emailUpdates">
@@ -103,6 +153,6 @@
   </main>
   
   <%- include('partials/footer')  %> 
-
+<!-- <script src="/script/validationLogin.js"></script> -->
 </body>
 </html>

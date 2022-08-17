@@ -10,7 +10,7 @@ const { response } = require('express');
 
 
 const userController = {
-    login: (req,res) => {
+    login: (req, res) => {
         // VALIDACIONES
         let errorsLogin = validationResult(req);
         db.User.findOne({
@@ -18,63 +18,37 @@ const userController = {
                 email: req.body.email
             }
         })
-        .then(function(userInDB){
-            if(errorsLogin.isEmpty()){
-                if(userInDB){
-                    if(bcrypt.compareSync(req.body.password, userInDB.password)){
-                        // var userALoguearse = userInDB;
-                        req.session.userLogueado = userInDB;
-                        
-                        if (req.body.remember != undefined){
-                            res.cookie("remember", req.body.email, { maxAge: 600000000});
+            .then(function (userInDB) {
+                if (errorsLogin.isEmpty()) {
+                    if (userInDB) {
+                        if (bcrypt.compareSync(req.body.password, userInDB.password)) {
+                            // var userALoguearse = userInDB;
+                            req.session.userLogueado = userInDB;
+
+                            if (req.body.remember != undefined) {
+                                res.cookie("remember", req.body.email, { maxAge: 600000000 });
+                            }
+                            res.redirect("/")
+                        } else {
+                            return res.render('loginRegister', {
+                                errorsLogin: [{
+                                    msg: "Credenciales invalidas"
+                                }]
+                            });
                         }
-                        res.redirect("/")
-                        }else{
-                        return res.render('loginRegister', {errorsLogin: [{
-                            msg: "Credenciales invalidas"}]});
-                        }
-                }else{
-                    res.render("loginRegister", {errorsLogin: {
-                    msg: "No hay un usuario registrado con este email, registrese!"}})
-                }
-    
-    }else{
-             return res.render('loginRegister', {errorsLogin: errorsLogin.errors}
-                 )};
-         })
-},
-
-
-    //     if(errorsLogin.isEmpty()){
-    //         for( let i=0; i<users.length; i++){
-    //             if(users[i].email == req.body.email){
-    //                 if(bcrypt.compareSync(req.body.password, users[i].password)){
-    //                     var userALoguearse = users[i];
-    //                     break;
-    //                 }
-    //                 return res.render('loginRegister', {errorsLogin: [{
-    //                     msg: "Credenciales invalidas"}]
-    //                 });
-                    
-    //             }}
-    //         if(userALoguearse == undefined){
-    //             res.render("loginRegister", {errorsLogin: {
-    //             msg: "No hay un usuario registrado con este email, registrese!"}})
-    //         }else{
-    //             console.log(userALoguearse)
-    //             req.session.userLogueado = userALoguearse;
-                
-    //             if (req.body.remember != undefined){
-    //                 res.cookie("remember", userALoguearse.email, { maxAge: 6000000});
-    //             }
-
-    //             res.redirect("/")
-            
-    //         }
-    //     }else{
-    //         return res.render('loginRegister', {errorsLogin: errorsLogin}
-    //         )};
-    // },
+                    } else {
+                        res.render("loginRegister", {
+                            errorsLogin: [{
+                                msg: "No hay un usuario registrado con este email, registrese!"
+                            }]
+                        })
+                    }
+                } else {
+                    return res.render('loginRegister', { errorsLogin: errorsLogin.errors }
+                    )
+                };
+            })
+    },
  
     loginRegister: (req,res) => {
         res.render('loginRegister')
@@ -116,7 +90,7 @@ const userController = {
                             }]
                         },
                      );
-                }} else { console.log("entro abajo")
+                }} else {
                     return res.render('loginRegister', {errorsRegister: errorsRegister.errors}
                 )}
                     

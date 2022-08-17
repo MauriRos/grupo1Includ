@@ -466,6 +466,11 @@ form{
     font-size: 13px;
     margin: 1.5%;
 }
+.errorsclass{
+    display: inline-block;
+    font-size: 13px;
+    padding-bottom: 2%;
+}
 .emailUpdates{
     display: none;
 }
