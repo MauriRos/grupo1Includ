@@ -26,3 +26,11 @@ https://www.thisisbp.com/
 
 Tablero Kanban de trabajo en plataforma Miro:
 https://miro.com/app/board/uXjVO-fg1d4=/
+
+Usuario administrador: 
+Email: administrador@gmail.com
+Contraseña: 12345678
+
+Usuario comprador:
+email: virginia.amherdt@gmail.com
+contraseña: 12345678
