@@ -21,8 +21,8 @@
                         <img class="imageProductCart" src="/images/products/<%= product.image %>" alt="Imagen del Producto <%= product.name %>"><!-- imagen del producto -->
                         <div class="descriptionProductCart"><!-- caracteristicas del producto seleccionado -->
                             <h2 class="nameProductCart"><%= product.name %></h2>
-                            <h4>Talle: <%= product.sizes.size %> </h4>
-                            <h4>Color: <%= product.colors.color %></h4>
+                            <h4>Talle: L <%= product.sizes %> </h4>
+                            <h4>Color: Blanco <%= product.colors %></h4>
                             <div class="priceStetic"><!-- precio -1+ = precio final -->
                                 <h2 class="priceCart">$ <%= product.price %>  x</h2>
                                 <div class="quantity">
@@ -30,7 +30,7 @@
                                     <input data-quantity-input="" aria-label="Quantity" type="number" min="1" size="4" pattern="[0-9]*" name="quantity" value="1">
                                     <button  data-increase-quantity="">+</button>
                                 </div>
-                                <h2 class="priceCart">= $8500,00</h2>
+                                <h2 class="priceCart">= $6500,00</h2>
                             </div>
                         </div>
                            
@@ -38,41 +38,45 @@
                 </div>
                 
                 <div class="productCart"><!-- Producto 2 -->
-                    <img class="imageProductCart" src="/images/products/<%= products[0].image[0] %>" alt="Imagen del Producto"><!-- imagen del producto -->
-                    <div class="descriptionProductCart"><!-- caracteristicas del producto seleccionado -->
-                        <h2 class="nameProductCart"><%= products[0].name %></h2>
-                        <h4>Talle: XL</h4>
-                        <h4>Color: Red</h4>
-                        <div class="priceStetic"><!-- precio -1+ = precio final -->
-                            <h2 class="priceCart">$8500,00 x</h2>
-                            <div class="quantity">
-                                <button data-decrease-quantity="">−</button>
-                                <input data-quantity-input="" aria-label="Quantity" type="number" min="1" size="4" pattern="[0-9]*" name="quantity" value="1">
-                                <button  data-increase-quantity="">+</button>
+                    <% let product2 = (products.find(product => product.id === 7))%>
+                        <img class="imageProductCart" src="/images/products/<%= product2.image %>" alt="Imagen del Producto <%= product.name %>"><!-- imagen del producto -->
+                        <div class="descriptionProductCart"><!-- caracteristicas del producto seleccionado -->
+                            <h2 class="nameProductCart"><%= product2.name %></h2>
+                            <h4>Talle: L <%= product2.sizes %> </h4>
+                            <h4>Color: Blanco <%= product2.colors %></h4>
+                            <div class="priceStetic"><!-- precio -1+ = precio final -->
+                                <h2 class="priceCart">$ <%= product2.price %>  x</h2>
+                                <div class="quantity">
+                                    <button data-decrease-quantity="">−</button>
+                                    <input data-quantity-input="" aria-label="Quantity" type="number" min="1" size="4" pattern="[0-9]*" name="quantity" value="1">
+                                    <button  data-increase-quantity="">+</button>
+                                </div>
+                                <h2 class="priceCart">= $3000,00</h2>
                             </div>
-                            <h2 class="priceCart">= $8500,00</h2>
                         </div>
-                    </div>
+                           
                     <i class="iconTrash fa-solid fa-trash-can"></i><!-- icono de basurero o cruz -->
                 </div>
                 
                 
                 <div class="productCart"><!-- Producto 3 -->
-                    <img class="imageProductCart" src="/images/products/<%= products[0].image[0] %>" alt="Imagen del Producto"><!-- imagen del producto -->
-                    <div class="descriptionProductCart"><!-- caracteristicas del producto seleccionado -->
-                        <h2 class="nameProductCart"><%= products[0].name %> </h2>
-                        <h4>Talle: 4XL</h4>
-                        <h4>Color: Pink</h4>
-                        <div class="priceStetic"><!-- precio -1+ = precio final -->
-                            <h2 class="priceCart">$8500,00 x</h2>
-                            <div class="quantity">
-                                <button data-decrease-quantity="">−</button>
-                                <input data-quantity-input="" aria-label="Quantity" type="number" min="1" size="4" pattern="[0-9]*" name="quantity" value="1">
-                                <button  data-increase-quantity="">+</button>
+                    <% let product3 = (products.find(product => product.id === 10))%>
+                        <img class="imageProductCart" src="/images/products/<%= product3.image %>" alt="Imagen del Producto <%= product.name %>"><!-- imagen del producto -->
+                        <div class="descriptionProductCart"><!-- caracteristicas del producto seleccionado -->
+                            <h2 class="nameProductCart"><%= product3.name %></h2>
+                            <h4>Talle: L <%= product3.sizes %> </h4>
+                            <h4>Color: Blanco <%= product3.colors %></h4>
+                            <div class="priceStetic"><!-- precio -1+ = precio final -->
+                                <h2 class="priceCart">$ <%= product3.price %>  x</h2>
+                                <div class="quantity">
+                                    <button data-decrease-quantity="">−</button>
+                                    <input data-quantity-input="" aria-label="Quantity" type="number" min="1" size="4" pattern="[0-9]*" name="quantity" value="1">
+                                    <button  data-increase-quantity="">+</button>
+                                </div>
+                                <h2 class="priceCart">= $3500,00</h2>
                             </div>
-                            <h2 class="priceCart">= $8500,00</h2>
                         </div>
-                    </div>
+                           
                     <i class="iconTrash fa-solid fa-trash-can"></i><!-- icono de basurero o cruz -->
                 </div>
                 
@@ -151,7 +155,7 @@
                 <i class="iconoRecomendations fa-solid fa-circle-chevron-left"></i>
                 <div class="carrouselRecomendations">
                     <% for( let i = 0; i < 5; i++ ) { %>
-                        <img src="/images/products/<%= products[0].image[i] %>" alt="Orogonal Overol - Red">
+                        <img src="/images/products/<%= products[i].image %>" alt="<%= products[i].name %> ">
                     
                     <% } %>
                 </div>
