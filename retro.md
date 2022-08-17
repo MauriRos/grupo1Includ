@@ -131,3 +131,29 @@ Sprint 5:
  
 - Dejar de hacer:
     - Dejarse estar luego de entregado el sprint anterior
+
+Sprint 6:
+
+- Comenzar a hacer:
+    - Ir al día
+    - Llegar con tiempo para hacer una ultima revision
+
+- Hacer más:
+    - Usar más el tablero
+    - Implementar metodologias agiles
+    - Definir criterios comunes
+    - Consultar más seguido
+
+- Continuar haciendo:
+    - Reuniones presenciales
+    - Recursero paginas utiles
+    - Analisis en conjunto de codigo
+    - Calendarizar reuniones
+    - Dividir tareas y trabajar con GIT
+    - Usar más el tablero
+  
+- Hacer menos:
+    - Quedarse trabado sin consultar
+
+- Dejar de hacer:
+    - Dejarse estar luego de entregado el sprint anterior
