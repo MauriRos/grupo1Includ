@@ -17,21 +17,23 @@
         <div class="buy">
             <div class="productosToBuy"><!-- Productos seleccionados -->
                 <div class="productCart"><!-- Producto 1 -->
-                    <img class="imageProductCart" src="/images/products/<%= products[0].image[0] %>" alt="Imagen del Producto"><!-- imagen del producto -->
-                    <div class="descriptionProductCart"><!-- caracteristicas del producto seleccionado -->
-                        <h2 class="nameProductCart"><%= products[0].name %></h2>
-                        <h4>Talle: M</h4>
-                        <h4>Color: Orange</h4>
-                        <div class="priceStetic"><!-- precio -1+ = precio final -->
-                            <h2 class="priceCart">$8500,00 x</h2>
-                            <div class="quantity">
-                                <button data-decrease-quantity="">−</button>
-                                <input data-quantity-input="" aria-label="Quantity" type="number" min="1" size="4" pattern="[0-9]*" name="quantity" value="1">
-                                <button  data-increase-quantity="">+</button>
+                    <% let product = (products.find(product => product.id === 3))%>
+                        <img class="imageProductCart" src="/images/products/<%= product.image %>" alt="Imagen del Producto <%= product.name %>"><!-- imagen del producto -->
+                        <div class="descriptionProductCart"><!-- caracteristicas del producto seleccionado -->
+                            <h2 class="nameProductCart"><%= product.name %></h2>
+                            <h4>Talle: <%= product.sizes.size %> </h4>
+                            <h4>Color: <%= product.colors.color %></h4>
+                            <div class="priceStetic"><!-- precio -1+ = precio final -->
+                                <h2 class="priceCart">$ <%= product.price %>  x</h2>
+                                <div class="quantity">
+                                    <button data-decrease-quantity="">−</button>
+                                    <input data-quantity-input="" aria-label="Quantity" type="number" min="1" size="4" pattern="[0-9]*" name="quantity" value="1">
+                                    <button  data-increase-quantity="">+</button>
+                                </div>
+                                <h2 class="priceCart">= $8500,00</h2>
                             </div>
-                            <h2 class="priceCart">= $8500,00</h2>
                         </div>
-                    </div>
+                           
                     <i class="iconTrash fa-solid fa-trash-can"></i><!-- icono de basurero o cruz -->
                 </div>
                 

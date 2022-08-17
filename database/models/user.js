@@ -31,22 +31,22 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
             allowNull: false
         },
-        // permissionId: {
-        //     type: dataTypes.INTEGER,
-        //     allowNull: true
-        // }
+        permissionId: {
+             type: dataTypes.INTEGER,
+             allowNull: true
+        }
     };
     let config = {
         timestamps: false,
         tableName: "users"
     }
-    const User = sequelize.define(alias,cols,config);
+    const User = sequelize.define(alias,cols,config); 
 
-    // User.associate = function (models) {
-    //     User.belongsTo(models.Permission, {
-    //     foreignKey: "permissionId",
-    //     as: "permissions"
-    // })};
+    User.associate = function (models) {
+         User.belongsTo(models.Permission, {
+         foreignKey: "permissionId",
+         as: "permissions"
+     })};
 
 
     return User

@@ -9,7 +9,27 @@ const {validationResult} = require('express-validator');
 
 const productsController = {
     cart: (req,res) => {
-        res.render('productCart', {products: products})
+		let dbProd = db.Product.findAll() 
+        let dbSize = db.Size.findByPk(dbProd.id, {
+			include: [
+				{association: "sizes"}
+			]
+		});
+		let dbColor = db.Color.findByPk(dbProd.id, {
+			include: [
+				{association: "colors"}
+			]
+		});
+		let dbCategory = db.CategoryProduct.findByPk(dbProd.id, {
+			include: [
+				{association: "categories"}
+			]
+		});
+		Promise.all([dbSize, dbColor, dbCategory, dbProd])
+			.then(function([sizes, colors, categories, products]){
+				 
+			res.render('productCart', {sizes:sizes, colors:colors, categories:categories, products:products })
+		}) 
         },
     detail: (req,res) => {
 		let dbProd = db.Product.findByPk(req.params.id, {
@@ -62,7 +82,7 @@ const productsController = {
 		let dbSize = db.Size.findAll();
 		let dbColor = db.Color.findAll();
 		let dbCategory = db.CategoryProduct.findAll();
-		let dbProd = db.Product.findByPk(req.params.id, {
+		let dbProd = db.Product.findByPk(req.params.id, { 
 			include: [
 				{association: "sizes"},
 				{association: "colors"},
