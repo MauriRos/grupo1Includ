@@ -22,7 +22,6 @@ const userController = {
                 if (errorsLogin.isEmpty()) {
                     if (userInDB) {
                         if (bcrypt.compareSync(req.body.password, userInDB.password)) {
-                            // var userALoguearse = userInDB;
                             req.session.userLogueado = userInDB;
 
                             if (req.body.remember != undefined) {
@@ -39,7 +38,7 @@ const userController = {
                     } else {
                         res.render("loginRegister", {
                             errorsLogin: [{
-                                msg: "No hay un usuario registrado con este email, registrese!"
+                                msg: "No hay un usuario registrado con el email " + req.body.email +", registrese!"
                             }]
                         })
                     }
@@ -97,9 +96,9 @@ const userController = {
                     
     })},
     logOut: (req,res) => {
+        res.clearCookie("remember")
         req.session.destroy();
-        res.cookie("remember", req.body.email, { expires: new Date(Date.now() - 1000)})
-        return res.render('logOut')
+        return res.redirect('/')
     },
     forbidden: (req,res) => {
         res.render('forbidden')

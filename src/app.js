@@ -6,6 +6,8 @@ const port = process.env.PORT || 3000;
 const mainRouter = require('./routes/main.js');
 const productRouter = require('./routes/products.js');
 const userRouter = require('./routes/users.js');
+const apiProductRouter= require ('./api/apiProductsRouter.js')
+const apiUserRouter = require('./api/apiUserRouter.js');
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
@@ -34,4 +36,6 @@ app.use(rememberMiddleware);
 app.use(express.json());
 app.use('/', mainRouter);
 app.use('/products', productRouter);
-app.use('/user', userRouter); 
+app.use('/api/products', apiProductRouter);
+app.use('/user', userRouter);
+app.use('/api/users', apiUserRouter)
