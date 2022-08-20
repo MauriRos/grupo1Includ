@@ -17,10 +17,10 @@ window.addEventListener('load', function() {
     campoEmailL.addEventListener('blur', function(){
 
         if (campoEmailL.value == ''){
-            smallErrEmail.innerHTML = "<li>"+ 'Email obligatorio frontend' + "</li>";
+            smallErrEmail.innerHTML = "<li>"+ 'Email obligatorio ' + "</li>";
             errorLoginEmail = +1;
         } else if (!validEmail.test(campoEmailL.value)){
-            smallErrEmail.innerHTML = "<li>"+ 'Email invalido frontend' + "</li>";
+            smallErrEmail.innerHTML = "<li>"+ 'Email invalido ' + "</li>";
             errorLoginEmail = +1;
         } else{
             smallErrEmail.innerHTML = "";
@@ -32,10 +32,10 @@ window.addEventListener('load', function() {
     campoPassword.addEventListener('blur', function(){
 
         if(campoPassword.value == ''){
-            smallErrpass.innerHTML = "<li>"+ 'Contraseña Obligatoria frontend' + "</li>";
+            smallErrpass.innerHTML = "<li>"+ 'Contraseña Obligatoria ' + "</li>";
             errorLoginPass = +1;
         } else if(campoPassword.value.length<8){
-            smallErrpass.innerHTML = "<li>" + "La constraseña debe tener 8 caracteres como minimo forntend" + "</li>";
+            smallErrpass.innerHTML = "<li>" + "La constraseña debe tener 8 caracteres como minimo " + "</li>";
             errorLoginPass = +1;
         } else{
             smallErrpass.innerHTML = "";
@@ -107,7 +107,7 @@ window.addEventListener('load', function() {
     campoAvatar.addEventListener('blur', function(){   
 
         if(!avatarExtensions.exec(campoAvatar.value) ){
-            smallEerrAvatar.innerHTML = "<li>" + "Formato de imagen no validad frontend";
+            smallEerrAvatar.innerHTML = "<li>" + "Formato de imagen no validad ";
             errorRegisterA = +1;
         }else if (campoAvatar == undefined) {
             smallEerrAvatar.innerHTML = "";
@@ -121,10 +121,10 @@ window.addEventListener('load', function() {
     campoEmailRegister.addEventListener('blur', function(){
 
         if (campoEmailRegister.value == ''){
-            smallErrEmailRegister.innerHTML = "<li>"+ 'Email obligatorio frontend' + "</li>";
+            smallErrEmailRegister.innerHTML = "<li>"+ 'Email obligatorio ' + "</li>";
             errorRegisterR = +1;
         } else if (!validEmail.test(campoEmailRegister.value)){
-            smallErrEmailRegister.innerHTML = "<li>"+ 'Email invalido frontend' + "</li>";
+            smallErrEmailRegister.innerHTML = "<li>"+ 'Email invalido ' + "</li>";
             errorRegisterR = +1;
         } else{
             smallErrEmailRegister.innerHTML = "";
@@ -135,7 +135,7 @@ window.addEventListener('load', function() {
     campoPassRegister.addEventListener('blur', function(){
 
         if (campoPassRegister.value == ''){
-            smallErrPassRegister.innerHTML = "<li>"+ 'Contraseña Obligatoria frontend' + "</li>";
+            smallErrPassRegister.innerHTML = "<li>"+ 'Contraseña Obligatoria ' + "</li>";
             errorRegisterP = +1;
         } else if(campoPassRegister.value.length<8){
             smallErrPassRegis+1;
