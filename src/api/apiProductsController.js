@@ -3,6 +3,7 @@ let ejs = require(('ejs'));
 const fs = require('fs');
 const db = require("../../database/models");
 const {validationResult} = require('express-validator');
+const Sequelize = require('sequelize')
 
 const apiProductsController = {
 	productsList:  (req, res) => {
@@ -59,13 +60,61 @@ const apiProductsController = {
 			.then(product => {
 				let respuesta = {
 					product,
-					relaciones: "//un array por cada relacion de uno a muchos",
-					urlImagen: "/images/products/" + product.image
+					urlImagen: "http://localhost:3000/images/products/" + product.image
 				}
 				return res.json(respuesta)
 			})
 			.catch(error => res.send("Este producto no se encuentra disponible"))
+	},
+	lastproduct: (req, res) => {
+		db.Product.findAll({
+			attributes: [Sequelize.fn('max', Sequelize.col('id'))],
+			raw: true,
+		}
+		)
+			.then(product => {
+				let id = (product[0]['max(`id`)'])
+				return id
+			})
+			.then(id => db.Product.findByPk(id, {
+				include: [
+					"sizes",
+					"colors",
+					"categories"
+				]
+			})
+				.then(product => {
+					let respuesta = {
+						product,
+						urlImagen: "http://localhost:3000/images/products/" + product.image
+					}
+					return res.json(respuesta)
+				})
+				.catch(error => res.send("Este producto no se encuentra disponible"))
+			)
+	},
+	countByCategory: (req,res) => {
+		let top =  db.Product.count({
+			where: { categoryProductId: 1 }
+		});
+		let pantalon =  db.Product.count({
+			where: { categoryProductId: 2 }
+		});
+		let accesorio =  db.Product.count({
+			where: { categoryProductId: 3 }
+		});
+		Promise.all([top, pantalon, accesorio])
+		.then(([top, pantalon, accesorio]) => {
+			let respuesta = {
+					pantalon: pantalon,
+					top: top,
+					accesorios: accesorio
+				}
+			return res.json(respuesta)
+			}
+		)
 	}
 }
+
 
 module.exports = apiProductsController;

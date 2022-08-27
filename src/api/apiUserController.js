@@ -39,6 +39,7 @@ const apiUserController = {
 					avatarURL: 'images/user/' + user.avatar
 				})
 			})
+			.catch(error => res.send("Este usuario no se encuentra en la base de datos"))
 	}
 
 }
