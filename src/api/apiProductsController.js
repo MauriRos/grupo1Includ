@@ -5,25 +5,34 @@ const db = require("../../database/models");
 const {validationResult} = require('express-validator');
 
 const apiProductsController = {
-	productsList: async (req, res) => {
-		let top = await db.Product.count({
+	productsList:  (req, res) => {
+		let top =  db.Product.count({
 			where: { categoryProductId: 1 }
 		});
-		let pantalon = await db.Product.count({
+		let pantalon =  db.Product.count({
 			where: { categoryProductId: 2 }
 		});
-		let accesorio = await db.Product.count({
+		let accesorio =  db.Product.count({
 			where: { categoryProductId: 3 }
 		});
 
-		let products = await db.Product.findAll();
-		
+		let products =  db.Product.findAll({
+			include: [
+				"sizes",
+				"colors",
+				"categories"
+			]
+		});
+		Promise.all([top, pantalon, accesorio, products])
+		.then(([top, pantalon, accesorio, products]) => {
 		let productsArray = products.map(product => {
 			let producto = {
 				id: product.id,
 				name: product.name,
 				description: product.description,
-	 			relaciones: "ver bien que pide la consigna",
+	 			sizes: product.sizes,
+				colors: product.colors,
+				category: product.categories,
 	 			detail: "/api/products/" + product.id
 			}
 			return producto
@@ -37,9 +46,16 @@ const apiProductsController = {
 			},
 			products: productsArray
 		})
+	})
 	},
 	detail: (req, res) => {
-		db.Product.findByPk(req.params.id)
+		db.Product.findByPk(req.params.id, {
+			include: [
+				"sizes",
+				"colors",
+				"categories"
+			]
+		})
 			.then(product => {
 				let respuesta = {
 					product,
