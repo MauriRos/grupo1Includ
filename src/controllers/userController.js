@@ -7,7 +7,7 @@ const rememberMiddleware = require('../middleware/rememberMiddleware');
 const db = require("../../database/models");
 const { response } = require('express');
 
-
+ 
 
 const userController = {
     login: (req, res) => {
