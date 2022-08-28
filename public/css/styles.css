@@ -1,4 +1,4 @@
-/*---ROSTI hasta linea 100 ---*/
+/*---MAURICIO ---*/
 *{
     margin: 0px;
     box-sizing: border-box;
@@ -256,53 +256,8 @@ main{
 
 
 
+/*---JUAN---*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*---JUANCHO hasta linea 200 ---*/
-
-
-/* Iconos */
-/* Carrito */
-/* <i class="fa-solid fa-cart-shopping"></i> */ 
-/* Bolso compras */
-/* <i class="fa-solid fa-bag-shopping"></i> */
-/* Corazón */
-/* <i class="fa-solid fa-heart"></i> */
-/* Register */
-/* <i class="fa-solid fa-circle-user"></i> */
-/* Lupa */
-/* <i class="fa-solid fa-magnifying-glass"></i> */
-/* Menú habmurgues */
-/* <i class="fa-solid fa-bars"></i> */
-/* Estrella */
-/* <i class="fa-solid fa-star"></i> */
-/* Remerapercha */
-/* <i class="fa-solid fa-shirt"></i> */
-/* categories */
-/* <i class="fa-solid fa-list-timeline"></i> */
-/* Manito plata */
-/* <i class="fa-solid fa-hand-holding-dollar"></i> */
-/* header */
 
 .header{
     /* display: flex; */
@@ -392,7 +347,7 @@ main{
     padding: 5px;
 }
 
-/* --- Loguin-Register --- */
+/* --- LOGIN REGISTER --- */
 .login-register{
     display: flex;
     flex-wrap: wrap;
@@ -530,183 +485,176 @@ form{
 }
 
 @media (min-width: 768px){
+
     /* Media queries para el header */
-.burgerMenu{
-    display: none;
-}
-.logoHeaderDesktop{
-    display:inline-block;
-    max-width: 220px;
-}
-.logoHeaderMobile{
-    display: none;
+    .burgerMenu{
+        display: none;
+    }
+    .logoHeaderDesktop{
+        display:inline-block;
+        max-width: 220px;
+    }
+    .logoHeaderMobile{
+        display: none;
 
-}
+    }
 
-.nav{
-    display:flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    flex-wrap: nowrap;
-}
+    .nav{
+        display:flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        flex-wrap: nowrap;
+    }
 
-/* --- Loguin - register --- */
-.cart{
-    display: none;
-}
+    /* --- LOGIN REGISTER --- */
 
-.login{
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-}
-.site{
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-}
-.header ul{
-    list-style: none;
-    display: flex;
-    flex-grow: 0.2; 
-    width: 100%;
-}
+    .cart{
+        display: none;
+    }
 
-.header nav a{
-    text-decoration: none;
-    font-weight: bolder;
-    color: white
-}
-.header i{
-    font-size: 1rem;
-    background-color: #040006;
-    border: #040006 solid 1px;
-    border-radius: 50%;
-    padding: 8%;
-}
-.header nav li{
-    margin: 0.3rem;
-    font-size: 12px;
-    
-}
-.emailUpdates{
-    display: flex;
-    justify-content: center;
-    background-color: #7A31DD;
-    padding: 10px;
-}
-/* --- User Session --- */
-.userSession2{
-    display: none;
-}
-.userSession{
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    margin-right: 20px;
-    position: absolute;
-    right: 0px;
-    top: 15px;
-}
-.userSession .nameUser{
-    font-size: 15px;
-    padding: -5px;
-    margin: 0px;
-    color: white;
-    text-decoration: none;
-    width: 150px;
-}
-.userSession .iconOutSession{
-    font-size: 15px;
-    padding: 15px;
-    padding-left: 0px;
-    margin: 0px;
-    color: white;
-    text-decoration: none;
-    
-}
-.userImg{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    box-shadow: 0 0 5px #4893AA, 0 0 15px #4893AA,  0 0 25px #4893AA;  
-    
-    
-}
-.iconOutSession{
-    font-size: 15px;
-    padding: 5px;
-    margin: 0px;
-    ;
+    .login{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+    .site{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+    .header ul{
+        list-style: none;
+        display: flex;
+        flex-grow: 0.2; 
+        width: 100%;
+    }
 
-    
-}
+    .header nav a{
+        text-decoration: none;
+        font-weight: bolder;
+        color: white
+    }
+    .header i{
+        font-size: 1rem;
+        background-color: #040006;
+        border: #040006 solid 1px;
+        border-radius: 50%;
+        padding: 8%;
+    }
+    .header nav li{
+        margin: 0.3rem;
+        font-size: 12px;
+        
+    }
+    .emailUpdates{
+        display: flex;
+        justify-content: center;
+        background-color: #7A31DD;
+        padding: 10px;
+    }
+    /* --- User Session --- */
+    .userSession2{
+        display: none;
+    }
+    .userSession{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        margin-right: 20px;
+        position: absolute;
+        right: 0px;
+        top: 15px;
+    }
+    .userSession .nameUser{
+        font-size: 15px;
+        padding: -5px;
+        margin: 0px;
+        color: white;
+        text-decoration: none;
+        width: 150px;
+    }
+    .userSession .iconOutSession{
+        font-size: 15px;
+        padding: 15px;
+        padding-left: 0px;
+        margin: 0px;
+        color: white;
+        text-decoration: none;
+        
+    }
+    .userImg{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        box-shadow: 0 0 5px #4893AA, 0 0 15px #4893AA,  0 0 25px #4893AA;  
+        
+        
+    }
+    .iconOutSession{
+        font-size: 15px;
+        padding: 5px;
+        margin: 0px;
+        ;
 
-/* FOOTER */
-.video-bannerLogin{
-    width: 100%;
-    min-width: 100%;
-    /* margin-top: 25px; */
-    display: block;
-}
-.buttonsFooterLogin{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around; 
-    width: 30%; 
-    font-size: 20px;  
-    position: absolute;
-    bottom: 10%;
-    right: 2%;
-    margin-right: 20px;
-}
+        
+    }
 
-
-.footer li{
-    display: block;
-}
-.footer ul{
-    display: block;
-    list-style: none;
-}
-.footerLinks {
-    padding: 25px;
-    display: flex;
-    justify-content: space-around;
-}
-.footerLinks li{
-    font-size: 0.7em;
-}
-.iconFooter {
-    font-size: 15px;
-    padding-right: 5px;
-}
-.followUs ul{
-    text-align: left;
-    position: relative;
-    left: 20px;
-}
-/* - MQ para DETALLE DE PROD - */
-.imageDetailANDcharacteristicsDetail, .mainProfile{
-    display: flex;
-    flex-wrap: nowrap;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-}
+    /* FOOTER */
+    .video-bannerLogin{
+        width: 100%;
+        min-width: 100%;
+        /* margin-top: 25px; */
+        display: block;
+    }
+    .buttonsFooterLogin{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around; 
+        width: 30%; 
+        font-size: 20px;  
+        position: absolute;
+        bottom: 10%;
+        right: 2%;
+        margin-right: 20px;
+    }
 
 
+    .footer li{
+        display: block;
+    }
+    .footer ul{
+        display: block;
+        list-style: none;
+    }
+    .footerLinks {
+        padding: 25px;
+        display: flex;
+        justify-content: space-around;
+    }
+    .footerLinks li{
+        font-size: 0.7em;
+    }
+    .iconFooter {
+        font-size: 15px;
+        padding-right: 5px;
+    }
+    .followUs ul{
+        text-align: left;
+        position: relative;
+        left: 20px;
+    }
+    /* - MQ para DETALLE DE PROD - */
+    .imageDetailANDcharacteristicsDetail, .mainProfile{
+        display: flex;
+        flex-wrap: nowrap;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
 
 
 
-
-
-
-
-
-
-/*---PINI hasta linea 300 ---*/
+/*---PINI ---*/
 *{
     margin: 0px;
     box-sizing: border-box;
@@ -1314,7 +1262,5 @@ form{
     transition: all 500ms;
 
     }
-    
-    
 }
 

@@ -45,7 +45,8 @@ const apiProductsController = {
 				top: top,
 				accesorios: accesorio
 			},
-			products: productsArray
+			products: productsArray,
+			urlProductsList: "http://localhost:3000/products/productsList"
 		})
 	})
 	},
