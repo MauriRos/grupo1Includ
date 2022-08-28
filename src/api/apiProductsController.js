@@ -60,7 +60,8 @@ const apiProductsController = {
 			.then(product => {
 				let respuesta = {
 					product,
-					urlImagen: "http://localhost:3000/images/products/" + product.image
+					urlImagen: "http://localhost:3000/images/products/" + product.image,
+					
 				}
 				return res.json(respuesta)
 			})
@@ -86,7 +87,8 @@ const apiProductsController = {
 				.then(product => {
 					let respuesta = {
 						product,
-						urlImagen: "http://localhost:3000/images/products/" + product.image
+						urlImagen: "http://localhost:3000/images/products/" + product.image ,
+						urlProduct: "http://localhost:3000/products/" + product.id
 					}
 					return res.json(respuesta)
 				})
