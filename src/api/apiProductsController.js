@@ -1,8 +1,6 @@
 const path = require('path');
-let ejs = require(('ejs'));
 const fs = require('fs');
 const db = require("../../database/models");
-const {validationResult} = require('express-validator');
 const Sequelize = require('sequelize')
 
 const apiProductsController = {
@@ -61,7 +59,7 @@ const apiProductsController = {
 			.then(product => {
 				let respuesta = {
 					product,
-					urlImagen: "http://localhost:3000/images/products/" + product.image,
+					urlImagen: "/images/products/" + product.image,
 					
 				}
 				return res.json(respuesta)
@@ -75,7 +73,8 @@ const apiProductsController = {
 		}
 		)
 			.then(product => {
-				let id = (product[0]['max(`id`)'])
+				console.log(product)
+				let id = product[0]['max(`id`)']
 				return id
 			})
 			.then(id => db.Product.findByPk(id, {
@@ -88,8 +87,8 @@ const apiProductsController = {
 				.then(product => {
 					let respuesta = {
 						product,
-						urlImagen: "http://localhost:3000/images/products/" + product.image ,
-						urlProduct: "http://localhost:3000/products/" + product.id
+						urlImagen: "/images/products/" + product.image ,
+						urlProduct: "/products/" + product.id
 					}
 					return res.json(respuesta)
 				})
