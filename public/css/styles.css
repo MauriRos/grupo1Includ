@@ -33,7 +33,7 @@ body{
 
 main{
 
-    background-color:#0E0515;
+    background-color:black;
     margin: auto;
     width: 100%;
 }
@@ -51,9 +51,10 @@ main{
     
     position: relative;
     border: solid 2px #4893AA;
+    box-shadow: 0 0 15px #4893AA;
     border-radius: 10px;
     position: relative;
-    background-color: #040006;
+    background-color: #4893aa36;
     width: 300px;
     margin: 15px;
     max-height: 420.2px;

@@ -88,7 +88,7 @@ const apiProductsController = {
 					let respuesta = {
 						product,
 						urlImagen: "/images/products/" + product.image ,
-						urlProduct: "/products/" + product.id
+						urlProduct: "http://localhost:3000/products/" + product.id
 					}
 					return res.json(respuesta)
 				})
