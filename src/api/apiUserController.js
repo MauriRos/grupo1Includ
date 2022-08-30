@@ -1,15 +1,6 @@
-const path = require('path');
-let ejs = require(('ejs'));
 const fs = require('fs');
-const {
-	validationResult
-} = require('express-validator');
-const bcrypt = require('bcryptjs');
-const rememberMiddleware = require('../middleware/rememberMiddleware');
 const db = require("../../database/models");
-const {
-	response
-} = require('express');
+const {	response} = require('express');
 
 const apiUserController = {
 	usersList: async (req, res) => {
@@ -22,15 +13,14 @@ const apiUserController = {
 				detail: '/api/users/' + user.id
 			};
 			return usuario
-		});
-		return res.json({
-			count: users.length,
-			users: usersArray,
-			status: 200
-
-			// users con: id, name, email, detail con url al detail
-		})
-	},
+					});
+				return res.json({
+					count: users.length,
+					users: usersArray,
+					status: 200
+				}
+				)
+			},
 	detail: (req, res) => {
 		db.User.findByPk(req.params.id)
 			.then(user => {
@@ -40,7 +30,7 @@ const apiUserController = {
 					lastName: user.lastName,
 					userName: user.userName,
 					email: user.email,
-					avatarURL: 'images/user/' + user.avatar
+					avatarURL: '/images/users/' + user.avatar
 				})
 			})
 			.catch(error => res.send("Este usuario no se encuentra en la base de datos"))
