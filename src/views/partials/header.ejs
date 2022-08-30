@@ -71,8 +71,8 @@
               <img class="userImg" src="/images/users/default-avatar.jpg" alt="Default Avatar">
               <a class="nameUser" href="/user/loginRegister">Iniciar Sesión</a>
               <% } else {  %>
-                <img class="userImg" src="/images/users/<%= userLogueado.avatar %>" alt="Avatar de Usuario">
-                <p class="nameUser"><%= userLogueado.userName %></p>
+                <a href="/user/userProfile"><img class="userImg" src="/images/users/<%= userLogueado.avatar %>" alt="Avatar de Usuario"></a>
+                <a href="/user/userProfile"><p class="nameUser"><%= userLogueado.userName %></p></a>
                 <a href="/user/logout"><i class="iconOutSession fa-solid fa-arrow-right-from-bracket"></i></a>
             <% } %> 
           </div>

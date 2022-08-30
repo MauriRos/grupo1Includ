@@ -43,14 +43,6 @@
                         <div class="descriptionDetail">
                             <ul class="ulCaracteristicas">
                                 <li><%= products.characteristics %></li>
-                                <!-- <li class="liCaracteristicas">Elavorado con mezclilla no elastica 100% algodon.</li>
-                                <li class="liCaracteristicas">No estirable.</li>
-                                <li class="liCaracteristicas">Pierna recta.</li>
-                                <li class="liCaracteristicas">Grandes bolsillos.</li>
-                                <li class="liCaracteristicas">Cuello curvo.</li>
-                                <li class="liCaracteristicas">Costuras resistentes.</li>
-                                <li class="liCaracteristicas">Botones dorados con logotipo.</li>
-                                <li class="liCaracteristicas">Etiqueta con logotipo.</li> -->
                             </ul>
                         </div>
                     </div>
@@ -58,13 +50,6 @@
                         <h2 class="itemDetail"><span class="down3"><i class="neonIcon fa-solid fa-angles-down"></i></span>Dimensionamiento</h2>
                         <div class="descriptionDetail">
                             <p class="descriptionDetail"><%= products.sizing %></p>
-                            <!-- <p class="descriptionDetail">Recomendamos encarecidamente elegir correctamente su talla ya que la tela tiene una naturaleza restrictiva.</p>
-                            <ul class="liDimensionamiento">
-                                <li class="liDimensionamiento">Jerrod mide 1.90cm y usa M</li>
-                                <li class="liDimensionamiento">Mara mide 1.65cm y usa 4XL</li>
-                                <li class="liDimensionamiento">Alex mide 1.73cm y usa S</li>
-                                <li class="liDimensionamiento">Shai mide 1.65cm y usa M</li>
-                            </ul> -->
                             
                         </div>
                     </div>
@@ -87,8 +72,9 @@
                         </div>
                         
                         
-
-                        <button class="addToCart" type="submit" value="addToShop">Agregar al carrito <i class="fa-solid fa-angles-right"></i> $<%= products.price%></button>
+                        <% if (userLogueado.permissionId != 1) { %>
+                            <a href="/products/productCart"><button class="addToCart" type="submit" value="addToShop">Agregar al carrito <i class="fa-solid fa-angles-right"></i> $<%= products.price%></button></a>
+                        <% } %>
                     <form class='formularioCreateProducts' method="POST" action="/products/<%= products.id %>?_method=DELETE">
                     <% if (userLogueado.permissionId == 1) { %>
                         <button class="form-button" type="submit" id="delete">Eliminar Producto</button>
