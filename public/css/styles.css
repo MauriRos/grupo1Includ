@@ -248,6 +248,7 @@ main{
         display: block;
         width: 100%;
         min-width: 100%;
+        margin-top: 15px;
     }
 
     .search:hover > .searchText {
@@ -661,11 +662,14 @@ form{
     box-sizing: border-box;
     padding: 0px;
 }
-.video-banner, .video-bannerCart{
+.video-banner{
     width: 100%;
     min-width: 100%;
-    /* margin-top: 25px; */
     
+}
+.video-bannerCart{
+    width: 100%;
+    min-width: 100%;   
 }
 .subtitleDetail, .subtitleProductsList, .subtitleCreatProduct{
     display: none;
