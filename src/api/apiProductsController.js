@@ -73,10 +73,6 @@ const apiProductsController = {
 		}
 		)
 			.then(product => {
-<<<<<<< HEAD
-=======
-				console.log(product)
->>>>>>> 385dfa01e1f5cb5179035fa9846b76b58dda60ec
 				let id = product[0]['max(`id`)']
 				return id
 			})
