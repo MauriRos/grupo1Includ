@@ -75,7 +75,7 @@ const apiProductsController = {
 		}
 		)
 			.then(product => {
-				let id = (product[0]['max(`id`)'])
+				let id = product[0]['max(`id`)']
 				return id
 			})
 			.then(id => db.Product.findByPk(id, {
@@ -93,7 +93,7 @@ const apiProductsController = {
 					}
 					return res.json(respuesta)
 				})
-				.catch(error => res.send("Este producto no se encuentra disponible"))
+				.catch(error => res.send("Este usuario no se encuentra disponible"))
 			)
 	},
 	countByCategory: (req,res) => {

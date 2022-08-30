@@ -5,5 +5,6 @@ const path= require('path');
 
 router.get("/", apiUserController.usersList)
 router.get("/:id", apiUserController.detail)
+router.get("lastUser", apiUserController.lastUser)
 
 module.exports = router;
