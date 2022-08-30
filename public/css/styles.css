@@ -667,7 +667,7 @@ form{
     /* margin-top: 25px; */
     
 }
-.subtitleDetail, .subtitleProductsList{
+.subtitleDetail, .subtitleProductsList, .subtitleCreatProduct{
     display: none;
     text-align: center;
     font-family: 'Rajdhani';
@@ -830,7 +830,7 @@ form{
     background-color: #0E0515;
     color:white
 }
-.subtitleCart, .subtitleProductsList{
+.subtitleCart, .subtitleProductsList, .subtitleCreatProduct{
     display: none;
     text-align: center;
     font-family: 'Rajdhani';

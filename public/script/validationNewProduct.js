@@ -10,15 +10,15 @@ window.addEventListener('load', function() {
     let smallErrCharacteristics = document.querySelector('.errCharacteristics');
     let campoSizing = document.querySelector('.sizing');
     let smallErrSizing = document.querySelector('.errSizing');
-    let campoImage = document.querySelector('.image');
+    let campoImage = document.querySelector('.VALIDimage');
     let smallErrImage = document.querySelector('.errImage');
-    let campoImage2 = document.querySelector('.image2');
+    let campoImage2 = document.querySelector('.VALIDimage2');
     let smallErrImage2 = document.querySelector('.errImage2');
-    let campoImage3 = document.querySelector('.image3');
+    let campoImage3 = document.querySelector('.VALIDimage3');
     let smallErrImage3 = document.querySelector('.errImage3');
-    let campoImage4 = document.querySelector('.image4');
+    let campoImage4 = document.querySelector('.VALIDimage4');
     let smallErrImage4 = document.querySelector('.errImage4');
-    let campoImage5 = document.querySelector('.image5');
+    let campoImage5 = document.querySelector('.VALIDimage5');
     let smallErrImage5 = document.querySelector('.errImage5');
     let imageExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
 

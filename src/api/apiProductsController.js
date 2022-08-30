@@ -73,7 +73,10 @@ const apiProductsController = {
 		}
 		)
 			.then(product => {
+<<<<<<< HEAD
+=======
 				console.log(product)
+>>>>>>> 385dfa01e1f5cb5179035fa9846b76b58dda60ec
 				let id = product[0]['max(`id`)']
 				return id
 			})
@@ -92,7 +95,7 @@ const apiProductsController = {
 					}
 					return res.json(respuesta)
 				})
-				.catch(error => res.send("Este producto no se encuentra disponible"))
+				.catch(error => res.send("Este usuario no se encuentra disponible"))
 			)
 	},
 	countByCategory: (req,res) => {

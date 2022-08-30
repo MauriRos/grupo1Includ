@@ -157,3 +157,4 @@ Sprint 6:
 
 - Dejar de hacer:
     - Dejarse estar luego de entregado el sprint anterior
+    
