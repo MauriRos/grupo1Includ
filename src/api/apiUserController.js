@@ -1,6 +1,7 @@
 const fs = require('fs');
 const db = require("../../database/models");
 const {	response} = require('express');
+const Sequelize = require('sequelize')
 
 const apiUserController = {
 	usersList: async (req, res) => {
@@ -36,12 +37,13 @@ const apiUserController = {
 			.catch(error => res.send("Este usuario no se encuentra en la base de datos"))
 	},
 	lastUser: (req, res) => {
-		db.USer.findAll({
+		db.User.findAll({
 				attributes: [Sequelize.fn('max', Sequelize.col('id'))],
 				raw: true,
 			})
 			.then(user => {
-				let id = (product[0]['max(`id`)'])
+				let id = (user[0]['max(`id`)'])
+				console.log(id)
 				return id
 			})
 			.then(id => db.User.findByPk(id))
@@ -52,7 +54,7 @@ const apiUserController = {
 					lastName: user.lastName,
 					userName: user.userName,
 					email: user.email,
-					avatarURL: 'images/user/' + user.avatar
+					avatarURL: '/images/users/' + user.avatar
 				})
 			})
 			.catch(error => res.send("Este producto no se encuentra disponible"))
