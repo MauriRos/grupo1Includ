@@ -34,8 +34,8 @@ window.addEventListener('load', function() {
         if(campoPassword.value == ''){
             smallErrpass.innerHTML = "<li>"+ 'Contraseña Obligatoria ' + "</li>";
             errorLoginPass = +1;
-        } else if(campoPassword.value.length<8){
-            smallErrpass.innerHTML = "<li>" + "La constraseña debe tener 8 caracteres como minimo " + "</li>";
+        } else if(campoPassword.value.length < 8){
+            smallErrpass.innerHTML = "<li>" + "La constraseña debe tener 8 caracteres como mínimo" + "</li>";
             errorLoginPass = +1;
         } else{
             smallErrpass.innerHTML = "";
@@ -68,11 +68,11 @@ window.addEventListener('load', function() {
     let smallErrEmailRegister = document.querySelector('.errEmailRegister');
     let campoPassRegister = document.querySelector('.passRgister');
     let smallErrPassRegister = document.querySelector('.errPassRegister');
-    let errorRegisterN = [];
-    let errorRegisterL = [];
-    let errorRegisterA = [];
-    let errorRegisterR = [];
-    let errorRegisterP= [];
+    let errorRegisterN = 0;
+    let errorRegisterL = 0;
+    let errorRegisterA = 0;
+    let errorRegisterR = 0;
+    let errorRegisterP= 0;
 
 
     
@@ -107,7 +107,7 @@ window.addEventListener('load', function() {
     campoAvatar.addEventListener('blur', function(){   
 
         if(!avatarExtensions.exec(campoAvatar.value) ){
-            smallEerrAvatar.innerHTML = "<li>" + "Formato de imagen no validad ";
+            smallEerrAvatar.innerHTML = "<li>" + "Formato de imagen no validad" + "<li>";
             errorRegisterA = +1;
         }else if (campoAvatar == undefined) {
             smallEerrAvatar.innerHTML = "";
@@ -121,10 +121,10 @@ window.addEventListener('load', function() {
     campoEmailRegister.addEventListener('blur', function(){
 
         if (campoEmailRegister.value == ''){
-            smallErrEmailRegister.innerHTML = "<li>"+ 'Email obligatorio ' + "</li>";
+            smallErrEmailRegister.innerHTML = "<li>"+ 'Email obligatorio' + "</li>";
             errorRegisterR = +1;
         } else if (!validEmail.test(campoEmailRegister.value)){
-            smallErrEmailRegister.innerHTML = "<li>"+ 'Email invalido ' + "</li>";
+            smallErrEmailRegister.innerHTML = "<li>"+ 'Email invalido' + "</li>";
             errorRegisterR = +1;
         } else{
             smallErrEmailRegister.innerHTML = "";
@@ -135,10 +135,11 @@ window.addEventListener('load', function() {
     campoPassRegister.addEventListener('blur', function(){
 
         if (campoPassRegister.value == ''){
-            smallErrPassRegister.innerHTML = "<li>"+ 'Contraseña Obligatoria ' + "</li>";
+            smallErrPassRegister.innerHTML = "<li>"+ 'Contraseña Obligatoria' + "</li>";
             errorRegisterP = +1;
-        } else if(campoPassRegister.value.length<8){
-            smallErrPassRegis+1;
+        } else if(campoPassRegister.value.length < 8){
+            smallErrPassRegister.innerHTML = "<li>"+ "La constraseña debe tener 8 caracteres como mínimo" + "</li>";
+            smallErrPassRegis = +1;
         } else {
             campoPassRegister.innerHTML = "";
             errorRegisterP = 0;
