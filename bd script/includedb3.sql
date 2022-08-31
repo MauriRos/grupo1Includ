@@ -128,4 +128,4 @@ INSERT INTO `includedb`.`users` VALUES (3, "Viviana", "Grecco", "@VGrecco13", "v
 INSERT INTO `includedb`.`users` VALUES (4, "Luisina", "Bassi", "@LBassi14", "luisina.bassi@gmail.com", "$2a$10$TEEcpWJRQ1qtSYwDZbd6l.yDfEOgSu5bYnI87vBuEcqg1wgWHiKK6", "1654379521969_avatar_.jpg",2);
 INSERT INTO `includedb`.`users` VALUES (5, "Virginia", "Amherdt", "@VAmherdt15", "virginia.amherdt@gmail.com", "$2a$10$TEEcpWJRQ1qtSYwDZbd6l.yDfEOgSu5bYnI87vBuEcqg1wgWHiKK6", "1654379570648_avatar_.jpg",2);
 INSERT INTO `includedb`.`users` VALUES (6, "Maximiliano", "Colombo", "@MColombo16", "maximiliano.colombo@gmail.com", "$2a$10$TEEcpWJRQ1qtSYwDZbd6l.yDfEOgSu5bYnI87vBuEcqg1wgWHiKK6", "default-avatar.jpg",2);
-INSERT INTO `includedb`.`users` VALUES (7, "Administrador", "Administrador", "@MAdministrador", "administrador@gmail.com", "$2a$10$TEEcpWJRQ1qtSYwDZbd6l.yDfEOgSu5bYnI87vBuEcqg1wgWHiKK6", "1654379420540_avatar_.jpg",1);
+INSERT INTO `includedb`.`users` VALUES (7, "Administrador", "Administrador", "@Administrador", "administrador@gmail.com", "$2a$10$TEEcpWJRQ1qtSYwDZbd6l.yDfEOgSu5bYnI87vBuEcqg1wgWHiKK6", "1654379420540_avatar_.jpg",1);
