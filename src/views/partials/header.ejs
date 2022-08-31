@@ -22,10 +22,10 @@
     <a href="/"><img class="logoHeaderDesktop" src="/images/logos/logo-text.png"></a>
     <div class="userSession2">
       <%  if (!userLogueado) { %>
-        
-        <a class="nameUser" href="/user/loginRegister"><i class="iconLogInSession fa-solid fa-arrow-right-to-bracket"></i></a>
+        <a href="/user/loginRegister"><img class="userImg" src="/images/users/default-avatar.jpg" alt="Default Avatar"></a>
+        <a href="/user/loginRegister" ><i class="iconOutSession fa-solid fa-arrow-right-from-bracket" style="color:transparent"></i></a>
         <% } else {  %>
-          <img class="userImg" src="/images/users/<%= userLogueado.avatar %>" alt="Avatar de Usuario">
+          <a href="/user/userProfile"><img class="userImg" src="/images/users/<%= userLogueado.avatar %>" alt="Avatar de Usuario"></a>
           <a href="/user/logout"><i class="iconOutSession fa-solid fa-arrow-right-from-bracket"></i></a>
       <% } %> 
     </div>
