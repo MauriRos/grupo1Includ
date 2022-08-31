@@ -35,7 +35,7 @@ window.addEventListener('load', function() {
             smallErrpass.innerHTML = "<li>"+ 'Contraseña Obligatoria ' + "</li>";
             errorLoginPass = +1;
         } else if(campoPassword.value.length < 8){
-            smallErrpass.innerHTML = "<li>" + "La constraseña debe tener 8 caracteres como mínimo" + "</li>";
+            smallErrpass.innerHTML = "<li>" + "8 caracteres como mínimo" + "</li>";
             errorLoginPass = +1;
         } else{
             smallErrpass.innerHTML = "";
@@ -72,7 +72,7 @@ window.addEventListener('load', function() {
     let errorRegisterL = 0;
     let errorRegisterA = 0;
     let errorRegisterR = 0;
-    let errorRegisterP= 0;
+    let errorRegisterP = 0;
 
 
     
@@ -107,7 +107,7 @@ window.addEventListener('load', function() {
     campoAvatar.addEventListener('blur', function(){   
 
         if(!avatarExtensions.exec(campoAvatar.value) ){
-            smallEerrAvatar.innerHTML = "<li>" + "Formato de imagen no validad" + "<li>";
+            smallEerrAvatar.innerHTML = "<li>" + "Formato de imagen no valida" + "</li>";
             errorRegisterA = +1;
         }else if (campoAvatar == undefined) {
             smallEerrAvatar.innerHTML = "";
@@ -138,8 +138,8 @@ window.addEventListener('load', function() {
             smallErrPassRegister.innerHTML = "<li>"+ 'Contraseña Obligatoria' + "</li>";
             errorRegisterP = +1;
         } else if(campoPassRegister.value.length < 8){
-            smallErrPassRegister.innerHTML = "<li>"+ "La constraseña debe tener 8 caracteres como mínimo" + "</li>";
-            smallErrPassRegis = +1;
+            smallErrPassRegister.innerHTML = "<li>"+ " 8 caracteres como mínimo" + "</li>";
+            errorRegisterP = +1;
         } else {
             campoPassRegister.innerHTML = "";
             errorRegisterP = 0;
