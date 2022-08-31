@@ -93,7 +93,7 @@ window.addEventListener('load', function() {
     campoImage.addEventListener('blur', function(){   
 
         if(!imageExtensions.exec(campoImage.value) ){
-            smallErrImage.innerHTML = "<li>" + "Formato de imagen no validad frontend";
+            smallErrImage.innerHTML = "<li>" + "Formato de imagen no valida";
             errorProductI = +1;
         }else {
             smallErrImage.innerHTML = "";
@@ -104,7 +104,7 @@ window.addEventListener('load', function() {
     campoImage2.addEventListener('blur', function(){   
 
         if(!imageExtensions.exec(campoImage2.value) ){
-            smallErrImage2.innerHTML = "<li>" + "Formato de imagen no validad frontend";
+            smallErrImage2.innerHTML = "<li>" + "Formato de imagen no valida";
             errorProductI2 = +1;
         }else {
             smallErrImage2.innerHTML = "";
@@ -115,7 +115,7 @@ window.addEventListener('load', function() {
     campoImage3.addEventListener('blur', function(){   
 
         if(!imageExtensions.exec(campoImage3.value) ){
-            smallErrImage3.innerHTML = "<li>" + "Formato de imagen no validad frontend";
+            smallErrImage3.innerHTML = "<li>" + "Formato de imagen no valida";
             errorProductI3 = +1;
         }else {
             smallErrImage3.innerHTML = "";
@@ -126,7 +126,7 @@ window.addEventListener('load', function() {
     campoImage4.addEventListener('blur', function(){   
 
         if(!imageExtensions.exec(campoImage4.value) ){
-            smallErrImage4.innerHTML = "<li>" + "Formato de imagen no validad frontend";
+            smallErrImage4.innerHTML = "<li>" + "Formato de imagen no valida";
             errorProductI4 = +1;
         }else {
             smallErrImage4.innerHTML = "";
@@ -137,7 +137,7 @@ window.addEventListener('load', function() {
     campoImage5.addEventListener('blur', function(){   
 
         if(!imageExtensions.exec(campoImage5.value) ){
-            smallErrImage5.innerHTML = "<li>" + "Formato de imagen no validad frontend";
+            smallErrImage5.innerHTML = "<li>" + "Formato de imagen no valida";
             errorProductI5 = +1;
         }else {
             smallErrImage5.innerHTML = "";

@@ -1069,7 +1069,10 @@ form{
     padding-left: 25%;
     margin-top: 15px;
 }
-
+.errorImagenInvalida {
+    text-align: center;
+    font-size: 17px;
+}
 
 
 /* ---- MEDIAS QUERIS------*/
