@@ -300,21 +300,53 @@ main{
     /* width: 33% */
 }
 .burgerMenu{
+    border: none;
+    background-color: black;
     color: white;
     display: inline-block;
     font-size: 1.3em;
     padding-left: 14px;
     padding-right: 14px;
 }
-.site, .login{
-    display: none;
-}
+
 .nav{
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     width: 100%;
+}
+.site, .login{
+    display: none
+}
+#menu-cerrar{
+    display: none;
+}
+.salir #menu-abrir{
+    display: none;
+}
+.salir #menu-cerrar{
+    display: block;
+    font-size: 23px;
+}
+#navBarBM{
+    display: none;
+}
+#navBarBM.visible{
+    display: block;
+    background-color: rgba(0, 0, 0, 0.74);
+    position: absolute;
+    z-index: 2;
+    top: 80px;
+}
+#navBarBM ul li a{
+    text-decoration: none;
+    color: white;
+    margin-left: 50px;
+    font-size: 15px;
+}
+#navBarBM ul{
+    text-align: left;
 }
 
 /* --- User Session --- */

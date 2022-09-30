@@ -1,7 +1,7 @@
 <header class="header">
     <nav class="nav">
       <ul class="site">
-        <div>
+        <div >
           <li>
             <a href="/">
               <i class="fa-solid fa-house"></i>
@@ -9,15 +9,20 @@
             </a>
           </li>
         </div>
-        <div>
+        <div >
           <a href="/products/productsList">
           <i class="fa-solid fa-magnifying-glass"></i>
           <li>Buscar</a></li>
         </div>
       </ul>
-    <div class="burgerMenu">
-      <i class="fa-solid fa-bars"></i>
-    </div>
+    <button class="burgerMenu" id="menu">
+      <span>
+        <i class="fa-solid fa-bars" id="menu-abrir"></i>
+      </span>
+      <span>
+        <i class="fa-solid fa-circle-xmark" id="menu-cerrar"></i>
+      </span>
+    </button>
     <a href="/"><img class="logoHeaderMobile" src="/images/logos/logo-text.png"></a>
     <a href="/"><img class="logoHeaderDesktop" src="/images/logos/logo-text.png"></a>
     <div class="userSession2">
@@ -47,6 +52,61 @@
                 </li>
             <% } %> 
           </div>
+          <div >
+            <% if (userLogueado.permissionId == 1) { %>
+              <li>
+                <a href="/products/create">
+                  <i class="fa-solid fa-star"></i>
+                  Nuevo
+                </a>
+            <% } else { %>
+              <li>
+              <a href="/products/productCart">
+                <i class="fa-solid fa-bag-shopping"></i>
+                Compras
+              </a>
+            </li>
+            <% } %> 
+          </div>
+        </ul>
+    </nav>
+    <div id="navBarBM">
+      <ul>
+        <div>
+          <li>
+            <a href="/">
+              <i class="fa-solid fa-house"></i>
+              Home
+            </a>
+          </li>
+        </div>
+        <div>
+          <li>
+            <a href="/products/productsList">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            Buscar
+            </a>
+          </li>
+        </div>
+      </ul>
+        <ul>
+          <div>
+            <%  if (userLogueado) { %>
+              <li>
+              <a class="nameUser" href="/user/userProfile">
+                <i class="fa-solid fa-circle-user"></i>
+                Mi Perfil
+              </a>
+              </li>
+              <% } else {  %>
+                <li>
+                  <a href="/user/loginRegister">
+                    <i class="fa-solid fa-circle-user"></i>
+                    Registrarse
+                  </a>
+                </li>
+            <% } %> 
+          </div>
           <div>
             <% if (userLogueado.permissionId == 1) { %>
               <li>
@@ -64,8 +124,20 @@
             <% } %> 
           </div>
         </ul>
-      
-    </nav>
+      </div>
+        <script>
+          console.log("funciona el codigo hamburguesa")
+          window.addEventListener("DOMContentLoaded", (event) => {
+            console.log("dom cargado y prosesado");
+            const menuBtn = document.getElementById("menu")
+            const nav = document.querySelector("#navBarBM")
+
+            menuBtn.addEventListener("click", (ecent) => {
+              menuBtn.classList.toggle("salir")
+              nav.classList.toggle("visible")
+            })
+          })
+        </script>
           <div class="userSession">
             <%  if (!userLogueado) { %>
               <img class="userImg" src="/images/users/default-avatar.jpg" alt="Default Avatar">
