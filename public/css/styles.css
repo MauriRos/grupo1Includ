@@ -1161,7 +1161,7 @@ form{
         overflow: hidden; 
     }
     .descriptionDetail{
-        transition: height, color 3s linear
+        transition: height .2s linear, color .5s linear
         
     }
     .acordeon .bloqueAcordeon:hover .descriptionDetail{
