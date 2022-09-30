@@ -141,7 +141,7 @@ window.addEventListener('load', function() {
             smallErrPassRegister.innerHTML = "<li>"+ " 8 caracteres como mínimo" + "</li>";
             errorRegisterP = +1;
         } else {
-            campoPassRegister.innerHTML = "";
+            smallErrPassRegister.innerHTML = "";
             errorRegisterP = 0;
         }
     });
