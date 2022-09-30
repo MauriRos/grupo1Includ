@@ -17,7 +17,7 @@ const userLogged = require('../src/middleware/userLoggedMiddleware');
 
 app.use(express.static(publicPth) );
 app.set('views', path.resolve(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs'); // esto para que era???
 
 
 app.listen(port, () => {
@@ -29,7 +29,7 @@ app.use(session({
     saveUninitialized: false}
 ));
 app.use(express.urlencoded({ extended: false }));
-app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
+app.use(methodOverride('_method')); // Para poder usar el method="POST" en el formulario por PUT y DELETE
 app.use(cookieParser());
 app.use(userLogged);
 app.use(rememberMiddleware);

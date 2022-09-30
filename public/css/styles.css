@@ -451,9 +451,6 @@ form{
 .footer{
     width: 100%;
 }
-.footer ul {
-    display:none;
-}
 .buttonsFooterLogin{
     display: none;
 }
@@ -486,8 +483,40 @@ form{
 .aboutUs, .information, .followUs{
     background-color: #040006;
 }
-.footer li{
+.followUs{
+    display: block;
+}
+.followUsDesktop{
     display: none;
+}
+
+.footer li{
+    
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.footer ul{
+    display: inline;
+    list-style: none;
+    position: relative;
+    left: 100px;
+}
+.footerLinks {
+    padding: 20px;
+    display: flex;
+    justify-content: left;
+}
+.footerLinks li{
+    font-size: 0.7em;
+}
+.iconFooter {
+    font-size: 15px;
+    padding-right: 5px;
+}
+.followUs ul{
+    text-align: left;
+    position: relative;
+    left: 100px;
 }
 
 @media (min-width: 768px){
@@ -624,19 +653,28 @@ form{
         right: 2%;
         margin-right: 20px;
     }
-
+    .followUs{
+        display: none;
+    }
+    .followUsDesktop{
+        display: block;
+    }
 
     .footer li{
-        display: block;
+        display: inline-block;
+        margin-left: 8px;
+        margin-right: 8px;
     }
     .footer ul{
         display: block;
         list-style: none;
+        position: relative;
+        left: 200px;
     }
     .footerLinks {
-        padding: 25px;
+        padding: 20px;
         display: flex;
-        justify-content: space-around;
+        justify-content: left;
     }
     .footerLinks li{
         font-size: 0.7em;
