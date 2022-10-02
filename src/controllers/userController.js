@@ -1,9 +1,5 @@
-const path = require('path');
-let ejs = require(('ejs'));
-const fs = require('fs');
 const {validationResult} = require('express-validator');
 const bcrypt = require('bcryptjs');
-const rememberMiddleware = require('../middleware/rememberMiddleware');
 const db = require("../../database/models");
 const { response } = require('express');
 

@@ -5,7 +5,6 @@ const multer = require('multer');
 const path= require('path');
 const {body} = require('express-validator');
 const guestMiddleware = require('../middleware/guestMiddleware.js');
-const rememberMiddleware = require('../middleware/rememberMiddleware.js');
 
 const storage = multer.diskStorage({ 
     destination: function (req, file, cb) { 
