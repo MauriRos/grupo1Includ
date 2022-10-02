@@ -19,7 +19,7 @@ app.use(express.static(publicPth) );
 
 //DEFINMOS MOTOR DE VISTAS EJES Y EL DIRECTORIO DONDE SE ENCUENTRAN
 app.set('views', path.resolve(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs'); // esto para que era???
 
 // LEVANTAMOS EL PUERTO
 app.listen(port, () => {
