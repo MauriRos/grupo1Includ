@@ -1,4 +1,4 @@
-'use strict';
+'use strict'; //porqué index está en models de database?
 
 const fs = require('fs');
 const path = require('path');

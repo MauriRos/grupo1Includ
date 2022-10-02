@@ -80,7 +80,7 @@ const apiProductsController = {
 				include: [
 					"sizes",
 					"colors",
-					"categories"
+					"categories" 
 				]
 			})
 				.then(product => {

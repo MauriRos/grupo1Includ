@@ -14,22 +14,28 @@ const cookieParser = require('cookie-parser');
 const rememberMiddleware = require("../src/middleware/rememberMiddleware");
 const userLogged = require('../src/middleware/userLoggedMiddleware');
 
-
+//definimos rutas estaticas
 app.use(express.static(publicPth) );
+
+//DEFINMOS MOTOR DE VISTAS EJES Y EL DIRECTORIO DONDE SE ENCUENTRAN
 app.set('views', path.resolve(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs'); // esto para que era???
 
-
+// LEVANTAMOS EL PUERTO
 app.listen(port, () => {
     console.log('Servidor Corriendo en el Puerto 3000');
 });
+
+//CREAMOS LA SESSION
 app.use(session({
     secret: 'Secreto',
     resave : false,
     saveUninitialized: false}
 ));
+
+
 app.use(express.urlencoded({ extended: false }));
-app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
+app.use(methodOverride('_method')); // PaRA poder pisar el method="POST" en el formulario por PUT y DELETE
 app.use(cookieParser());
 app.use(userLogged);
 app.use(rememberMiddleware);

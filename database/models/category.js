@@ -23,7 +23,6 @@ module.exports = (sequelize, dataTypes) => {
         foreignKey: "categoryProductId",
         as: "categories"
     })};
-    //Aquí debes realizar lo necesario para crear las relaciones con los otros modelos (Genre - Actor)
 
     return CategoryProduct
 };

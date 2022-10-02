@@ -300,21 +300,53 @@ main{
     /* width: 33% */
 }
 .burgerMenu{
+    border: none;
+    background-color: black;
     color: white;
     display: inline-block;
     font-size: 1.3em;
     padding-left: 14px;
     padding-right: 14px;
 }
-.site, .login{
-    display: none;
-}
+
 .nav{
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     width: 100%;
+}
+.site, .login{
+    display: none
+}
+#menu-cerrar{
+    display: none;
+}
+.salir #menu-abrir{
+    display: none;
+}
+.salir #menu-cerrar{
+    display: block;
+    font-size: 23px;
+}
+#navBarBM{
+    display: none;
+}
+#navBarBM.visible{
+    display: block;
+    background-color: rgba(0, 0, 0, 0.74);
+    position: absolute;
+    z-index: 2;
+    top: 80px;
+}
+#navBarBM ul li a{
+    text-decoration: none;
+    color: white;
+    margin-left: 50px;
+    font-size: 15px;
+}
+#navBarBM ul{
+    text-align: left;
 }
 
 /* --- User Session --- */
@@ -451,9 +483,6 @@ form{
 .footer{
     width: 100%;
 }
-.footer ul {
-    display:none;
-}
 .buttonsFooterLogin{
     display: none;
 }
@@ -486,8 +515,40 @@ form{
 .aboutUs, .information, .followUs{
     background-color: #040006;
 }
-.footer li{
+.followUs{
+    display: block;
+}
+.followUsDesktop{
     display: none;
+}
+
+.footer li{
+    
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.footer ul{
+    display: inline;
+    list-style: none;
+    position: relative;
+    left: 100px;
+}
+.footerLinks {
+    padding: 20px;
+    display: flex;
+    justify-content: left;
+}
+.footerLinks li{
+    font-size: 0.7em;
+}
+.iconFooter {
+    font-size: 15px;
+    padding-right: 5px;
+}
+.followUs ul{
+    text-align: left;
+    position: relative;
+    left: 100px;
 }
 
 @media (min-width: 768px){
@@ -624,19 +685,28 @@ form{
         right: 2%;
         margin-right: 20px;
     }
-
+    .followUs{
+        display: none;
+    }
+    .followUsDesktop{
+        display: block;
+    }
 
     .footer li{
-        display: block;
+        display: inline-block;
+        margin-left: 8px;
+        margin-right: 8px;
     }
     .footer ul{
         display: block;
         list-style: none;
+        position: relative;
+        left: 200px;
     }
     .footerLinks {
-        padding: 25px;
+        padding: 20px;
         display: flex;
-        justify-content: space-around;
+        justify-content: left;
     }
     .footerLinks li{
         font-size: 0.7em;
@@ -1123,7 +1193,7 @@ form{
         overflow: hidden; 
     }
     .descriptionDetail{
-        transition: height, color 3s linear
+        transition: height .2s linear, color .5s linear
         
     }
     .acordeon .bloqueAcordeon:hover .descriptionDetail{
