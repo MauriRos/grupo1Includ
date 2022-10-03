@@ -1,159 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('partials/head')  %> 
+<%- include('partials/head') %>
 
   <body>
     <%- include('partials/header') %>
-    <title>Login</title>
-  
+      <title>Login</title>
+
       <main class="mainLoginRegister">
-      <div class="login-register">
+        <div class="login-register">
 
-        <!-- LOGIN -->
+          <!-- LOGIN -->
+          <div id="login2">
 
-        <section class="login1" id="login2">
-          <div>
-            <h2 class="title">Login</h2>
-            <h5 class="subtitle">Home > Logueate</h5>
-          </div>
-          <form  method="POST" action="/user/login" class="formLogin">
-            <div class="inputLogin">
-              <div class="form-format">
-                <label for="email">Email</label>
-                <input class="format-input email" name="email"  placeholder="ariel@perez.com">
-                  
-                  <!-- VALIDACIONES FRONTED -->
-                      <div class="error login">
-                        <small class = 'errEmail'>
-                          <ul>
-                            
-                          </ul>
-                        </small>
-                      </div>
-
-                  
+            <section class="login1" >
+              <div>
+                <h2 class="title">Login</h2>
+                <h5 class="subtitle">Home > Logueate</h5>
               </div>
-                <div class="form-format">
-                  <label for="password">Contraseña</label>
-                  <input class="format-input pass" type="password" name="password">
-
-                  <!-- VALIDACIONES FRONTED -->
-                      <div class="error login">
-                        <small class = 'errPass'>
-                          <ul></ul>
-                        </small>
-                      </div>
-
-                </div>
-                <div class="checkRemember">
-                  <p class="remember">Recordar cuenta</p>
-                  <input class ="checkButton" type="checkbox" name="remember">
-                </div>
-                
-                  <!-- VALIDACIONES BACKEND -->
-                <% if (typeof errorsLogin != "undefined") { %>
-                  <small class="errorsclass"><ul>
-                    <% for (let i=0; i<errorsLogin.length; i++) { %>
-                      <li>
-                        <%= errorsLogin[i].msg %>
-                      </li>
-                    <% } %>
-                  </ul></small>
-                <% } %>
-                <input class="form-button" type="submit" value="Ingresar">
-            </div>
-          </form>
-          
-        </section>
-
-        <!-- REGISTER -->
-
-        <section class="register register1" id="register2">
-          <div>
-            <h2 class="title">Crear cuenta</h2>
-            <h5 class="subtitle">Home > Registrate</h5>
-          </div>
-          <div class="formulario">
-            <form method="POST" action="/user/register" enctype="multipart/form-data" class="formRegister">
-              <div class="form-format">
-                <label for="name">Nombre</label>
-                <input class="format-input name" type="text"  name="name" value="<%= locals.old && old.name ? old.name : '' %>"> 
-                <!-- VALIDACIONES FRONTED -->
+              <form method="POST" action="/user/login" class="formLogin">
+                <div class="inputLogin">
+                  <div class="form-format">
+                    <label for="email">Email</label>
+                    <input class="format-input email" name="email" placeholder="ariel@perez.com">
+  
+                    <!-- VALIDACIONES FRONTED -->
                     <div class="error login">
-                      <small class = 'errNameR'>
+                      <small class='errEmail'>
+                        <ul>
+  
+                        </ul>
+                      </small>
+                    </div>
+  
+  
+                  </div>
+                  <div class="form-format">
+                    <label for="password">Contraseña</label>
+                    <input class="format-input pass" type="password" name="password">
+  
+                    <!-- VALIDACIONES FRONTED -->
+                    <div class="error login">
+                      <small class='errPass'>
                         <ul></ul>
                       </small>
                     </div>
-              </div>
-              <div class="form-format">
-                <label for="apellido">Apellido</label>
-                <input class="format-input LastName" type="text"  name="lastName" value="<%= locals.old && old.lastName ? old.lastName : '' %>">
-                <!-- VALIDACIONES FRONTED -->
-                <div class="error login">
-                    <small class = 'errLastName'>
-                      <ul></ul>
-                    </small>
-                </div>
-              </div>
-              <div class="form-format">
-                <label for="user">¿Cómo querés que te agendemos?</label>
-                <input class="format-input userName" type="text"  name="userName" value="<%= locals.old && old.userName ? old.userName : '' %>">
-              </div>
-              <div class="form-format">
-                <label for="avatar">Avatar</label>
-                <input class="format-input avatar" type="file" name="avatar">
-                <!-- VALIDACIONES FRONTED -->
-                <div class="error login">
-                  <small class = 'errAvatar'>
-                    <ul></ul>
-                  </small>
-                </div>
-              </div>
-              <div class="form-format">
-                <label for="email">Email</label>
-                <input class="format-input emailRegister"  name="email" placeholder="ariel@perez.com" >
-                <!-- VALIDACIONES FRONTED -->
-                  <div class="error login">
-                    <small class = 'errEmailRegister'>
-                      <ul></ul>
-                    </small>
+  
                   </div>
-              </div>
-              <div class="form-format">
-                <label for="password">Contraseña</label>
-                <input class="format-input passRgister" type="password" name="password">
-                <!-- VALIDACIONES FRONTED -->
-                  <div class="error login">
-                    <small class = 'errPassRegister'>
-                       <ul></ul>
-                    </small>
+                  <div class="checkRemember">
+                    <p class="remember">Recordar cuenta</p>
+                    <input class="checkButton" type="checkbox" name="remember">
                   </div>
-              </div>
-              <button class="form-button" type="submit">Crear cuenta</button>
-            </form>
-                    
+  
+                  <!-- VALIDACIONES BACKEND -->
+                  <% if (typeof errorsLogin !="undefined" ) { %>
+                    <small class="errorsclass">
+                      <ul>
+                        <% for (let i=0; i<errorsLogin.length; i++) { %>
+                          <li>
+                            <%= errorsLogin[i].msg %>
+                          </li>
+                          <% } %>
+                      </ul>
+                    </small>
+                    <% } %>
+                      <input class="form-button" type="submit" value="Ingresar">
+                </div>
+              </form>
+  
+            </section>
           </div>
 
-          <!-- VALIDACION BACKEND -->
-              <% if (typeof errorsRegister != "undefined") { %>
-                <small class="errorsclass"><ul>
-                  <% for (let i=0; i<errorsRegister.length; i++) { %>
-                    <li><%= errorsRegister[i].msg %></li>
-                  <% } %>
-                </ul></small>
-              <% } %>
-        </section>
-      </div>
-    <section class="emailUpdates">
-        <h5>Ingresá tu email para recibir novedades</h5>
-        <label for="email">
-          <input class="format-input" type="email" name="email" placeholder="juan@perez.com">
-          <button class="form-button" type="submit" name=""><a href="./">Enviar</a></button>
-        </label>
-    </section>
-  </main>
+          <!-- REGISTER -->
+          <div  id="register2">
+            
+            <section class="register1">
+              <div>
+                <h2 class="title">Crear cuenta</h2>
+                <h5 class="subtitle">Home > Registrate</h5>
+              </div>
+              <div class="formulario">
+                <form method="POST" action="/user/register" enctype="multipart/form-data" class="formRegister">
+                  <div class="form-format">
+                    <label for="name">Nombre</label>
+                    <input class="format-input name" type="text" name="name"
+                      value="<%= locals.old && old.name ? old.name : '' %>">
+                    <!-- VALIDACIONES FRONTED -->
+                    <div class="error login">
+                      <small class='errNameR'>
+                        <ul></ul>
+                      </small>
+                    </div>
+                  </div>
+                  <div class="form-format">
+                    <label for="apellido">Apellido</label>
+                    <input class="format-input LastName" type="text" name="lastName"
+                      value="<%= locals.old && old.lastName ? old.lastName : '' %>">
+                    <!-- VALIDACIONES FRONTED -->
+                    <div class="error login">
+                      <small class='errLastName'>
+                        <ul></ul>
+                      </small>
+                    </div>
+                  </div>
+                  <div class="form-format">
+                    <label for="user">¿Cómo querés que te agendemos?</label>
+                    <input class="format-input userName" type="text" name="userName"
+                      value="<%= locals.old && old.userName ? old.userName : '' %>">
+                  </div>
+                  <div class="form-format">
+                    <label for="avatar">Avatar</label>
+                    <input class="format-input avatar" type="file" name="avatar">
+                    <!-- VALIDACIONES FRONTED -->
+                    <div class="error login">
+                      <small class='errAvatar'>
+                        <ul></ul>
+                      </small>
+                    </div>
+                  </div>
+                  <div class="form-format">
+                    <label for="email">Email</label>
+                    <input class="format-input emailRegister" name="email" placeholder="ariel@perez.com">
+                    <!-- VALIDACIONES FRONTED -->
+                    <div class="error login">
+                      <small class='errEmailRegister'>
+                        <ul></ul>
+                      </small>
+                    </div>
+                  </div>
+                  <div class="form-format">
+                    <label for="password">Contraseña</label>
+                    <input class="format-input passRgister" type="password" name="password">
+                    <!-- VALIDACIONES FRONTED -->
+                    <div class="error login">
+                      <small class='errPassRegister'>
+                        <ul></ul>
+                      </small>
+                    </div>
+                  </div>
+                  <button class="form-button" type="submit">Crear cuenta</button>
+                </form>
   
-  <%- include('partials/footer')  %> 
-<script src="/script/validationLogin.js"></script>
-</body>
+              </div>
+  
+              <!-- VALIDACION BACKEND -->
+              <% if (typeof errorsRegister !="undefined" ) { %>
+                <small class="errorsclass">
+                  <ul>
+                    <% for (let i=0; i<errorsRegister.length; i++) { %>
+                      <li>
+                        <%= errorsRegister[i].msg %>
+                      </li>
+                      <% } %>
+                  </ul>
+                </small>
+                <% } %>
+            </section>
+          </div>
+        </div>
+        <section class="emailUpdates">
+          <h5>Ingresá tu email para recibir novedades</h5>
+          <label for="email">
+            <input class="format-input" type="email" name="email" placeholder="juan@perez.com">
+            <button class="form-button" type="submit" name=""><a href="./">Enviar</a></button>
+          </label>
+        </section>
+      </main>
+
+      <%- include('partials/footer') %>
+        <script src="/script/validationLogin.js"></script>
+  </body>
+
 </html>

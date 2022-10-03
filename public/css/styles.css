@@ -409,7 +409,7 @@ main{
     width: 382px;
     text-align: center;
 }
-.register{
+.register1{
     width: 382px;
     text-align: center;
 }
@@ -637,10 +637,10 @@ form{
     #register2{
         transition: opacity 1500ms
     }
-    .register1:hover ~ #login2 {
+    #register2:hover ~ #login2{
         opacity: 0;
     }
-    .login1:hover ~ #register2{
+    #login2:hover ~ #register2{
         opacity: 0;
     } 
     /* --- User Session --- */
