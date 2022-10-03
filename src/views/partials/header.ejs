@@ -126,16 +126,14 @@
         </ul>
       </div>
         <script>
-          console.log("funciona el codigo hamburguesa")
           window.addEventListener("DOMContentLoaded", (event) => {
-            console.log("dom cargado y prosesado");
             const menuBtn = document.getElementById("menu")
             const nav = document.querySelector("#navBarBM")
-
-            menuBtn.addEventListener("click", (ecent) => {
-              menuBtn.classList.toggle("salir")
-              nav.classList.toggle("visible")
-            })
+            
+            menuBtn.addEventListener("click", (event) => {
+            menuBtn.classList.toggle("salir")
+            nav.classList.toggle("visible")
+              })
           })
         </script>
           <div class="userSession">

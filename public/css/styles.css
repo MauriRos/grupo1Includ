@@ -332,13 +332,24 @@ main{
 #navBarBM{
     display: none;
 }
+@keyframes desplazarMenu {
+    100%{
+        transform: translateX(150px);
+    }
+}
 #navBarBM.visible{
     display: block;
     background-color: rgba(0, 0, 0, 0.74);
+    animation-name: desplazarMenu;
+    animation-duration: 2000ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
     position: absolute;
     z-index: 2;
     top: 80px;
+    left: -150px;
 }
+
 #navBarBM ul li a{
     text-decoration: none;
     color: white;
@@ -746,7 +757,7 @@ form{
     width: 100%;
     min-width: 100%;   
 }
-.subtitleDetail, .subtitleProductsList, .subtitleCreatProduct{
+.subtitleDetail, .subtitleProductsList, .subtitleCreatProduct, .subtitle{
     display: none;
     text-align: center;
     font-family: 'Rajdhani';
@@ -1153,7 +1164,7 @@ form{
 /* ---- MEDIAS QUERIS------*/
 
 @media (min-width: 426px) {
-    .subtitleDetail, .subtitleCart, .subtitleProductsList, .subtitleCreatProduct{
+    .subtitleDetail, .subtitleCart, .subtitleProductsList, .subtitleCreatProduct, .subtitle{
         display: block;
         opacity: .5;
     }
