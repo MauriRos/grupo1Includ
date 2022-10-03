@@ -413,6 +413,7 @@ main{
     width: 382px;
     text-align: center;
 }
+
 .formulario{
     display: flex;
     justify-content: center;
@@ -630,6 +631,18 @@ form{
         background-color: #7A31DD;
         padding: 10px;
     }
+    #login2{
+        transition: opacity 1500ms;
+    }
+    #register2{
+        transition: opacity 1500ms
+    }
+    .register1:hover ~ #login2 {
+        opacity: 0;
+    }
+    .login1:hover ~ #register2{
+        opacity: 0;
+    } 
     /* --- User Session --- */
     .userSession2{
         display: none;
